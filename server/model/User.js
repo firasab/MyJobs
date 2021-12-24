@@ -1,6 +1,6 @@
 const mongoose=require('mongoose');
 const Schema=mongoose.Schema;
-// Create the User Schema
+
 const UserSchema = new Schema({
     name: {
         type: String,
@@ -8,7 +8,7 @@ const UserSchema = new Schema({
     },
     email: {
         type: String,
-        unique: true, // Unique index. If you specify `unique: true`
+        unique: true, 
         required: true
     },
     password: {

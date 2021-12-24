@@ -28,7 +28,7 @@ class Home extends Component {
       return (
         <div style={{   margin: 'auto', width: '50%'}}> <h1>Welcome To MyJobs webiste if you are the admin please login</h1>
           <h2 style={{   margin: 'auto', width: '55%'}} >To open the login page click  <Link to="/login">Login</Link></h2>
-          <h3 style={{   margin: 'auto', width: '60%'}} >You cant Log In ? Please contact the maneger!</h3>
+          <h3 style={{   margin: 'auto', width: '60%'}} >You cant Login ? Please contact the maneger!</h3>
         </div >
       )
     }

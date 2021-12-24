@@ -12,7 +12,7 @@ const Navbar = () => {
         <>
            <Nav>
                <NavLink to="/" >
-               <img src="https://i.imgur.com/rKsvR29.png"  alt="LOGO" width="300" height="300"/>
+               <img src="https://i.imgur.com/rKsvR29.png"  alt="LOGO" width="300" height="300" style={{ marginLeft: '-740px'}}/>
                </NavLink>
                <Bars />
                     <NavMenu>

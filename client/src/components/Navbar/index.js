@@ -16,7 +16,7 @@ const Navbar = () => {
                </NavLink>
                <Bars />
                     <NavMenu>
-                        <NavLink to="/about" activeStyle>
+                        <NavLink to="/about" activeStyle sty>
                             About Us
                         </NavLink>
                         <NavLink to="/jobs" activeStyle>
@@ -24,7 +24,7 @@ const Navbar = () => {
                         </NavLink>
                     </NavMenu>
                     <NavBtn>
-                        <NavBtnLink to="/login" activeStyle >Login</NavBtnLink>
+                        <NavBtnLink to="/login" activeStyle style={{ marginLeft: '300px'}}>Login</NavBtnLink>
                     </NavBtn>
             
            </Nav>

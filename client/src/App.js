@@ -1,28 +1,39 @@
-import React from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import Login from './pages/Login'
-import Register from './pages/Register'
-import Dashboard from './pages/Dashboard'
-import Navbar from'./components/Navbar'
-import Home from './pages/Jobs';
-import About from './pages/About';
-import Jobs from './pages/Jobs';
+import React from "react";
+import { BrowserRouter as Router,Route } from "react-router-dom";
+import Login from "./components/Auth/Login";
+import Home from "./components/Home/home";
+import About from "./components/Home/About";
+import Register from "./components/Auth/Register";
+import GuestRoute from "./components/GuestRoute";
+import AuthRoute from "./components/AuthRoute";
+import Layout from "./components/Layout";
+import 'react-notifications/lib/notifications.css';
+import Worker from "./components/workers/Workers";
+import Jobs from "./components/jobs/Jobs";
+import Companies from "./components/companies/Companies";
+import MakeSqed from "./components/makeSqed/MakeSqed";
 
-const App = () => {
+
+function App() {
   return (
-    <BrowserRouter>
-    <Navbar />
-    <Switch>
-    <Route path="/login" exact component={Login} />
-    <Route path="/register" exact component={Register} />
-    <Route path="/dashboard" exact component={Dashboard} />
-    <Route path='/' exact component={Home} />
-    <Route path='/about'  component={About} />
-    <Route path='/jobs'  component={Jobs} />
-    </Switch>
-    </BrowserRouter>
+    <Router>
+      <Layout>
+        <div>
+          <GuestRoute path="/login" component={Login} />
+          <GuestRoute path="/register" component={Register} />
+          <AuthRoute path="/home" component={Home} />
+          <GuestRoute path="/about" component={About} />
+          <AuthRoute path="/workers" component={Worker} />
+          <AuthRoute path="/jobs" component={Jobs} />
+          <AuthRoute path="/companies" component={Companies} />
+          <AuthRoute path="/makeSqed" component={MakeSqed} />
   
-  )
+          
+        </div>
+        <Route path="/" exact component={Home} />
+      </Layout>
+    </Router>
+  );
 }
 
-export default App
+export default App;

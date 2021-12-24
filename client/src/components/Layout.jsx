@@ -1,0 +1,97 @@
+import React, { Fragment, useState } from "react";
+import { NavLink } from "react-router-dom";
+import { connect } from "react-redux";
+
+function Layout(props) {
+
+  const handleLogout = e => {
+    e.preventDefault();
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    props.logout();
+  };
+  const [pathname, setPathname] = useState('/');
+  const checkActive = (match, location) => {
+    if (!location) return false;
+    setPathname(location.pathname);
+    return pathname === "/" ? false : pathname === "/";
+  }
+  return (
+    <div>
+      <div className="navbar  navbar-expand-lg bg-dark navbar-dark">
+        <NavLink to="/" className="navbar-brand"> <img src="https://i.imgur.com/rKsvR29.png"  style={{ height: '90px', width: '100px' }} alt="codeclouds logo" /></NavLink>
+        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+
+          {props.loggedIn ? (
+            <Fragment>
+              <ul className="navbar-nav mr-auto">
+              <li className={"nav-item " + (pathname === '/workers' ? 'active' : '')}>
+                  <NavLink isActive={checkActive} to="/workers" className="nav-link">Workers</NavLink>
+                </li>
+                <li className={"nav-item " + (pathname === '/jobs' ? 'active' : '')} >
+                  <NavLink isActive={checkActive} to="/jobs" className="nav-link">Jobs</NavLink>
+                </li>
+                <li className={"nav-item " + (pathname === '/companies' ? 'active' : '')}>
+                  <NavLink isActive={checkActive} to="/companies" className="nav-link">Companies</NavLink>
+                </li>
+                <li className={"nav-item " + (pathname === '/makeSqed' ? 'active' : '')}>
+                  <NavLink isActive={checkActive} to="/makeSqed" className="nav-link">Create Weekly Schedule</NavLink>
+                </li>
+                {/* <li className={"nav-item " + (pathname === '/reminder' ? 'active' : '')}>
+                  <NavLink isActive={checkActive} to="/reminder" className="nav-link">Reminder</NavLink>
+                </li> */}
+              </ul>
+              <ul className="navbar-nav ml-auto">
+                <li className={"nav-item " + (pathname === '/logout' ? 'active' : '')}>
+                  <NavLink isActive={checkActive}
+                    className="nav-link"
+                    to="/logout"
+                    onClick={handleLogout}
+                  >
+                    Logout
+                  </NavLink>
+                </li>
+              </ul>
+            </Fragment>
+          ) : (
+              <Fragment>
+                <ul className="navbar-nav ml-auto">
+                  <li className={"nav-item " + (pathname === '/register' ? 'active' : '')}>
+                    <NavLink isActive={checkActive} to="/register" className="nav-link">Register</NavLink>
+                  </li>
+                  <li className={"nav-item " + (pathname === '/about' ? 'active' : '')}>
+                    <NavLink isActive={checkActive} to="/about" className="nav-link">About Us</NavLink>
+                  </li>
+                  <li className={"nav-item " + (pathname === '/login' ? 'active' : '')}>
+                    <NavLink isActive={checkActive} to="/login" className="nav-link">Login</NavLink>
+                  </li>
+                </ul>
+              </Fragment>
+            )}
+
+
+        </div>
+      </div>
+      {props.children}
+    </div >
+  );
+}
+
+const mapStateToProps = state => {
+  return {
+    loggedIn: state.auth.loggedIn
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    logout: () => dispatch({ type: "SET_LOGOUT" })
+  };
+};
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Layout);

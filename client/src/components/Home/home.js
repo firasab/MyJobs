@@ -14,10 +14,10 @@ class Home extends Component {
       return (
         <div className="container">
           <div className="card" >
-            <div className="card-body">
+            <div className="card-body" >
               <h5 className="card-title">WelCome {this.props.name}</h5>
               <p className="card-text">Email :{this.props.email}</p>
-              <p> Dear {this.props.name}, here u can mange myJobs workers, companies and Jobs </p>
+              <p> Dear {this.props.name}, here you can mange myJobs workers, companies and Jobs </p>
               
             </div>
           </div>

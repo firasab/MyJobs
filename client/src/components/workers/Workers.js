@@ -5,7 +5,8 @@ const Workers = () => {
     return (
         <Fragment>
             <ButtonGroup style={{  display: 'flex', backgroundColor:'white'}}>
-             <Button style={{   backgroundColor: 'black', color: 'white' , fontSize: '20px', padding: '10px 60px',borderRadius: '5px',
+             <Button onClick="location.href = '/workersForm';" id="myButton" class="float-left submit-button"
+             style={{   backgroundColor: 'black', color: 'white' , fontSize: '20px', padding: '10px 60px',borderRadius: '5px',
               margin: '10px 0px', cursor: 'pointer'}}> Add worker </Button>
              <Button  style={{   backgroundColor: 'black', color: 'white' , fontSize: '20px', padding: '10px 60px',borderRadius: '5px',
               margin: '10px 0px', cursor: 'pointer'}}> Delete worker </Button>

@@ -15,6 +15,7 @@ import MakeSqed from "./components/makeSqed/MakeSqed";
 import ManegeJobs from "./components/jobs/ManegeJobs";
 
 
+
 function App() {
   return (
     <Router>
@@ -29,6 +30,7 @@ function App() {
           <AuthRoute path="/companies" component={Companies} />
           <AuthRoute path="/makeSqed" component={MakeSqed} />
           <AuthRoute path="/manegeJobs" component={ManegeJobs} />
+        
   
           
         </div>

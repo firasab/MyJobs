@@ -12,6 +12,7 @@ import Worker from "./components/workers/Workers";
 import Jobs from "./components/jobs/Jobs";
 import Companies from "./components/companies/Companies";
 import MakeSqed from "./components/makeSqed/MakeSqed";
+import ManegeJobs from "./components/jobs/ManegeJobs";
 
 
 function App() {
@@ -24,9 +25,10 @@ function App() {
           <AuthRoute path="/home" component={Home} />
           <GuestRoute path="/about" component={About} />
           <AuthRoute path="/workers" component={Worker} />
-          <AuthRoute path="/jobs" component={Jobs} />
+          <GuestRoute path="/jobs" component={Jobs} />
           <AuthRoute path="/companies" component={Companies} />
           <AuthRoute path="/makeSqed" component={MakeSqed} />
+          <AuthRoute path="/manegeJobs" component={ManegeJobs} />
   
           
         </div>

@@ -44,7 +44,7 @@ router.post('/register', (req, res) => {
             newUser.save().then(user => {
                 return res.status(201).json({
                     success: true,
-                    msg: "Hurry! User is now registered."
+                    msg: "Thank you! User is now registered."
                 });
             });
         });
@@ -78,7 +78,7 @@ router.post('/login', (req, res) => {
                         success: true,
                         token: `Bearer ${token}`,
                         user: user,
-                        msg: "Welcome! You are now logged in."
+                        msg: "Thank you! You are now logged in."
                     });
                 })
             } else {

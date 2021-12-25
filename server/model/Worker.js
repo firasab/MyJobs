@@ -6,6 +6,17 @@ const WorkerSchema = new Schema({
         type: String,
         required: true
     },
+    email: {
+        type: String,
+        unique: true, 
+        required: true
+    },
+    password: {
+        type: String,
+        required: true,
+        min:4,
+        max:20
+    },
     id: {
         type: String,
         required: true

@@ -13,6 +13,7 @@ import Jobs from "./components/jobs/Jobs";
 import Companies from "./components/companies/Companies";
 import MakeSqed from "./components/makeSqed/MakeSqed";
 import ManegeJobs from "./components/jobs/ManegeJobs";
+import Add_worker from "./components/Auth/Add_worker";
 
 
 
@@ -30,6 +31,7 @@ function App() {
           <AuthRoute path="/companies" component={Companies} />
           <AuthRoute path="/makeSqed" component={MakeSqed} />
           <AuthRoute path="/manegeJobs" component={ManegeJobs} />
+          <AuthRoute path="/add_worker" component={Add_worker} />
         
   
           

@@ -35,6 +35,8 @@ mongoose.connect(db, {
 
 const users = require('./routes/api/users');
 app.use('/api/users', users);
+const workers = require('./routes/api/workers');
+app.use('/api/workers', workers);
 
 
 app.get('*', (req, res) => {

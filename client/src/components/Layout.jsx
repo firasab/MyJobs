@@ -19,7 +19,7 @@ function Layout(props) {
   return (
     <div>
       <div className="navbar  navbar-expand-lg bg-dark navbar-dark">
-        <NavLink to="/" className="navbar-brand"> <img src="https://i.imgur.com/rKsvR29.png"  style={{ height: '90px', width: '100px' }} alt="codeclouds logo" /></NavLink>
+        <NavLink to="/" className="navbar-brand"> <img src="https://i.imgur.com/woypsI9.png"  style={{ height: '50px', width: '50px' }} alt="codeclouds logo" />MyJobs</NavLink>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>

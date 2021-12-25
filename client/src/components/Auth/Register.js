@@ -59,7 +59,7 @@ class Register extends Component {
                         <div className="col-sm-2"></div>
                         <div className="col-sm-8">
                             <div className="card">
-                                <div className="card-header text-center">Login</div>
+                                <div className="card-header text-center">Register</div>
                                 <div className="card-body">
                                 <div className="form-group">
                                         <label >Name</label>

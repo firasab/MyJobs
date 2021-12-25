@@ -42,7 +42,7 @@
                 newWorker.save().then(worker => {
                     return res.status(201).json({
                         success: true,
-                        msg: "Thank you! Worker is now registered."
+                        msg: "New worker has been added!"
                     });
                 });
             });

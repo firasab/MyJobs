@@ -14,6 +14,10 @@ import Companies from "./components/companies/Companies";
 import MakeSqed from "./components/makeSqed/MakeSqed";
 import ManegeJobs from "./components/jobs/ManegeJobs";
 import Add_worker from "./components/Auth/Add_worker";
+import Delete_worker from "./components/Auth/Delete_worker";
+import Update_worker from "./components/Auth/Update_worker";
+import workerList from "./components/WorkerList/workerList";
+
 
 
 
@@ -32,6 +36,9 @@ function App() {
           <AuthRoute path="/makeSqed" component={MakeSqed} />
           <AuthRoute path="/manegeJobs" component={ManegeJobs} />
           <AuthRoute path="/add_worker" component={Add_worker} />
+          <AuthRoute path="/workerList" component={workerList} />
+          <AuthRoute path="/delete_worker" component={Delete_worker} />
+          <AuthRoute path="/update_worker" component={Update_worker} />
         
   
           

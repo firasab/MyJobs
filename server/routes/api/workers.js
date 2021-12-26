@@ -3,6 +3,7 @@
     const bcrypt = require('bcryptjs');
     const passport = require('passport');
     const Worker = require('../../model/Worker');
+    const WorkerList = require('../../model/WorkerList');
 
 
     router.post('/add_worker', (req, res) => {
@@ -49,9 +50,20 @@
         });
     });
 
+    //////////////////////////////////////////////////////////////////////
+
+    router.get('/workerList', (req, res) => {
+        WorkerList.find({}, (err, workers) => {
+            if(err){
+                res.send("something went really wrong");
+                next();
+            }
+            res.json(workers);
+        });
     
+    });
 
-
+////////////////////////////////////////////////////////////////////////////////
     router.get('/profile', passport.authenticate('jwt', {
         session: false
     }), (req, res) => {

@@ -9,7 +9,7 @@ const Workers = () => {
             <ButtonGroup style={{  display: 'flex', backgroundColor:'white'}}>
             <Link to="/add_worker" >
              <Button style={{   backgroundColor: 'black', color: 'white' , fontSize: '20px', padding: '10px 60px',borderRadius: '5px',
-              margin: '10px 0px', cursor: 'pointer', marginLeft: '750px'}}> Add worker </Button></Link>
+              margin: '10px 0px', cursor: 'pointer', marginLeft: '500px'}}> Add worker </Button></Link>
             <Link to="/delete_worker">
              <Button  style={{   backgroundColor: 'black', color: 'white' , fontSize: '20px', padding: '10px 60px',borderRadius: '5px',
               margin: '10px 0px', cursor: 'pointer'}}> Delete worker </Button>

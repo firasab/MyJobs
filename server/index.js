@@ -5,6 +5,7 @@ const cors = require('cors');
 const path = require('path');
 const passport=require('passport')
 const workerRoutes = require('./routes/worker.js');
+const jobRoutes = require('./routes/job.js');
 
 const app = express();
 
@@ -35,6 +36,8 @@ mongoose.connect(db, {
 const users = require('./routes/api/users');
 app.use('/api/users', users);
 app.use('/workers', workerRoutes);
+app.use('/jobs', jobRoutes);
+
 
 
 app.get('*', (req, res) => {

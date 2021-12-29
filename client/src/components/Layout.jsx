@@ -31,11 +31,11 @@ function Layout(props) {
               <li className={"nav-item " + (pathname === '/worker' ? 'active' : '')}>
                   <NavLink isActive={checkActive} to="/worker" className="nav-link">Workers</NavLink>
                 </li>
-                <li className={"nav-item " + (pathname === '/manegeJobs' ? 'active' : '')} >
-                  <NavLink isActive={checkActive} to="/manegeJobs" className="nav-link">Jobs</NavLink>
+                <li className={"nav-item " + (pathname === '/job' ? 'active' : '')} >
+                  <NavLink isActive={checkActive} to="/job" className="nav-link">Jobs</NavLink>
                 </li>
-                <li className={"nav-item " + (pathname === '/companies' ? 'active' : '')}>
-                  <NavLink isActive={checkActive} to="/companies" className="nav-link">Companies</NavLink>
+                <li className={"nav-item " + (pathname === '/company' ? 'active' : '')}>
+                  <NavLink isActive={checkActive} to="/company" className="nav-link">Companies</NavLink>
                 </li>
                 <li className={"nav-item " + (pathname === '/makeSqed' ? 'active' : '')}>
                   <NavLink isActive={checkActive} to="/makeSqed" className="nav-link">Create Weekly Schedule</NavLink>
@@ -57,8 +57,8 @@ function Layout(props) {
           ) : (
               <Fragment>
                 <ul className="navbar-nav ml-auto">
-                  <li className={"nav-item " + (pathname === '/jobs' ? 'active' : '')}>
-                    <NavLink isActive={checkActive} to="/jobs" className="nav-link">Jobs</NavLink>
+                  <li className={"nav-item " + (pathname === '/showJobForVwier' ? 'active' : '')}>
+                    <NavLink isActive={checkActive} to="/showJobForVwier" className="nav-link">Jobs</NavLink>
                   </li>
                   <li className={"nav-item " + (pathname === '/about' ? 'active' : '')}>
                     <NavLink isActive={checkActive} to="/about" className="nav-link">About Us</NavLink>

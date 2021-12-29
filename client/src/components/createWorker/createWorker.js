@@ -41,7 +41,7 @@ export default function CreateWorker() {
       </Box>
       <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
         <AccountCircle sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-        <TextField id="input-with-sx" label="Location" variant="standard" value={worker.location} onChange={(event) => {
+        <TextField id="input-with-sx" label="Address" variant="standard" value={worker.location} onChange={(event) => {
           setWorker({ ...worker, location:event.target.value })
         }}/>
       </Box>

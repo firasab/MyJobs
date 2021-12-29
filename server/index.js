@@ -4,15 +4,14 @@ const bodyParser=require('body-parser');
 const cors = require('cors');
 const path = require('path');
 const passport=require('passport')
+const workerRoutes = require('./routes/worker.js');
 
 const app = express();
 
 
 
-app.use(bodyParser.urlencoded({
-    extended:false
-}));
-app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ limit: "20mb", extended:true }));
+app.use(bodyParser.json({ limit: "20mb", extended:true }));
 
 app.use(cors());
 
@@ -35,8 +34,7 @@ mongoose.connect(db, {
 
 const users = require('./routes/api/users');
 app.use('/api/users', users);
-const workers = require('./routes/api/workers');
-app.use('/api/workers', workers);
+app.use('/workers', workerRoutes);
 
 
 app.get('*', (req, res) => {

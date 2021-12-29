@@ -28,8 +28,8 @@ function Layout(props) {
           {props.loggedIn ? (
             <Fragment>
               <ul className="navbar-nav mr-auto">
-              <li className={"nav-item " + (pathname === '/workers' ? 'active' : '')}>
-                  <NavLink isActive={checkActive} to="/workers" className="nav-link">Workers</NavLink>
+              <li className={"nav-item " + (pathname === '/worker' ? 'active' : '')}>
+                  <NavLink isActive={checkActive} to="/worker" className="nav-link">Workers</NavLink>
                 </li>
                 <li className={"nav-item " + (pathname === '/manegeJobs' ? 'active' : '')} >
                   <NavLink isActive={checkActive} to="/manegeJobs" className="nav-link">Jobs</NavLink>

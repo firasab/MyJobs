@@ -11,7 +11,6 @@ export default function CreateWorker() {
   const [worker, setWorker] = useState({
     name: '',
     id: '',
-    password: '',
     location: '',
     phoneNumber: '',
     email: ''
@@ -42,12 +41,6 @@ export default function CreateWorker() {
       </Box>
       <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
         <AccountCircle sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-        <TextField id="input-with-sx" label="Password" variant="standard" value={worker.password} onChange={(event) => {
-          setWorker({ ...worker, password:event.target.value })
-        }}/>
-      </Box>
-      <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
-        <AccountCircle sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
         <TextField id="input-with-sx" label="Location" variant="standard" value={worker.location} onChange={(event) => {
           setWorker({ ...worker, location:event.target.value })
         }}/>
@@ -64,7 +57,7 @@ export default function CreateWorker() {
           setWorker({ ...worker, email:event.target.value })
         }}/>
       </Box>
-      <Button variant="contained" color="success" onClick={createWorker}> Create </Button>
+      <Button variant="contained" color="success"  style= {{ marginLeft: '90px'}} onClick={createWorker}> Create </Button>
     </Box>
     </>
   );

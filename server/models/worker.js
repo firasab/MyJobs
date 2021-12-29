@@ -10,10 +10,6 @@ const workerSchema = new Schema({
         type: String,
    
     },
-    password: {
-        type: String,
-      
-    },
     location: {
         type: String,
         default: "Jerusalem"

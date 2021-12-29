@@ -12,6 +12,7 @@ import worker from "./components/worker";
 
 
 
+
 function App() {
   return (
     <Router>
@@ -22,6 +23,7 @@ function App() {
           <AuthRoute path="/home" component={Home} />
           <GuestRoute path="/about" component={About} />
           <AuthRoute path="/worker" component={worker} />
+     
           
         </div>
         <Route path="/" exact component={Home} />

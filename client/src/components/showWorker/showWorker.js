@@ -35,7 +35,6 @@ export default function ShowWorker() {
           <TableRow>
             <TableCell>Name</TableCell>
             <TableCell align="right">ID</TableCell>
-            <TableCell align="right">Password</TableCell>
             <TableCell align="right">Location</TableCell>
             <TableCell align="right">Phone Number</TableCell>
             <TableCell align="right">Email</TableCell>
@@ -51,7 +50,6 @@ export default function ShowWorker() {
                 {worker.name}
               </TableCell>
               <TableCell align="right">{worker.id}</TableCell>
-              <TableCell align="right">{worker.password}</TableCell>
               <TableCell align="right">{worker.location}</TableCell>
               <TableCell align="right">{worker.phoneNumber}</TableCell>
               <TableCell align="right">{worker.email}</TableCell>

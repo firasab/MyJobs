@@ -46,7 +46,7 @@ class Login extends Component {
             <div className="col-sm-2"></div>
             <div className="col-sm-8">
               <div className="card">
-              <img src="https://i.imgur.com/kI8pQ2D.png"  alt="LOGIN-LOGO" width="300" height="300" style= {{ marginLeft: '600px'}} />
+              <img src="https://i.imgur.com/kI8pQ2D.png"  alt="LOGIN-LOGO" width="300" height="300" style= {{ marginLeft: '450px'}} />
                 <div className="card-body">
                   <div className="form-group">
                     <label >Email address</label>

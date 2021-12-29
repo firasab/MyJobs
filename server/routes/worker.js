@@ -26,6 +26,18 @@ router.post('/', async (req,res) => {
     }
 })
 
+router.delete('/:id', async (req,res) => {
+    const id = req.params.id;
+
+    try {
+       await workerData.findByIdAndRemove(id).exec();
+       res.send(' Worker has been deleted successfully! ')
+       
+    } catch (error) {
+        console.log(error);
+    }
+})
+
 
 
 module.exports = router;

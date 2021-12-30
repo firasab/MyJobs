@@ -24,6 +24,10 @@ class Register extends Component {
         NotificationManager.warning("Your Password Not Matched ! Please Check your pasword and confirm password");
         return false;
     }
+
+    
+
+
     const data = {
       name: this.state.name,
       email: this.state.email,
@@ -34,7 +38,7 @@ class Register extends Component {
     .post("http://localhost:9000/api/users/register", data)
     .then(result => {
       NotificationManager.success(result.data.msg);
-      this.props.history.push("/login");
+      this.props.push("/login");
     })
     .catch(err => {
       if (err.response && err.response.status === 400)

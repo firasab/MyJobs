@@ -24,11 +24,15 @@ class Login extends Component {
         this.props.history.push("/home");
       })
       .catch(err => {
-        if (err.response && err.response.status === 404)
-          NotificationManager.error(err.response.data.msg);
-        else
-          NotificationManager.error("Something Went Wrong");
+        if (err.response && err.response.status === 404){
+     //     NotificationManager.error(err.response.data.msg);
+          window.location.reload(false);
+        }else{
+         // NotificationManager.error("Something Went Wrong");
+         window.location.reload(false);
         this.setState({ errors: err.response })
+       
+        }
       });
   };
   handleInput = e => {

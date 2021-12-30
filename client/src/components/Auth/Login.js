@@ -11,7 +11,7 @@ class Login extends Component {
     e.preventDefault();
     if (this.state.email === '' || this.state.password === '') {
       NotificationManager.warning("Email And Password Required");
-      return false;
+      window.location.reload(false);
     }
     const data = { email: this.state.email, password: this.state.password };
     axios

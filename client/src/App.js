@@ -12,6 +12,7 @@ import worker from "./components/worker";
 import job from "./components/job";
 import view from "./components/view";
 import company from "./components/company";
+import workSchedule from "./components/workSchedule";
 
 
 
@@ -28,6 +29,7 @@ function App() {
           <AuthRoute path="/job" component={job} />
           <GuestRoute path="/view" component={view} />
           <AuthRoute path="/company" component={company} />
+          <AuthRoute path="/workSchedule" component={workSchedule} />
 
           
      

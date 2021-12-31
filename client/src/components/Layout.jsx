@@ -57,8 +57,8 @@ function Layout(props) {
           ) : (
               <Fragment>
                 <ul className="navbar-nav ml-auto">
-                  <li className={"nav-item " + (pathname === '/showJobForVwier' ? 'active' : '')}>
-                    <NavLink isActive={checkActive} to="/showJobForVwier" className="nav-link">Jobs</NavLink>
+                  <li className={"nav-item " + (pathname === '/view' ? 'active' : '')}>
+                    <NavLink isActive={checkActive} to="/view" className="nav-link">Jobs</NavLink>
                   </li>
                   <li className={"nav-item " + (pathname === '/about' ? 'active' : '')}>
                     <NavLink isActive={checkActive} to="/about" className="nav-link">About Us</NavLink>

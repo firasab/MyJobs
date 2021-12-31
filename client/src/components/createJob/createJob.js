@@ -18,6 +18,7 @@ export default function CreateJob() {
   
   const createJob = () => {
     axios.post('http://localhost:9000/jobs', job).then(() => {
+      alert('Job has beed added!');
       window.location.reload(false);
     })
     

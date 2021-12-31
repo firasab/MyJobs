@@ -16,6 +16,7 @@ export default function ShowJob() {
 
   const deleteJob = (id) => {
     axios.delete(`http://localhost:9000/jobs/${id}`).then (() => {
+      alert('Job has beed deleted!');
       window.location.reload(false);
     })
   }

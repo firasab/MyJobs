@@ -22,6 +22,7 @@ class Login extends Component {
         this.props.setLogin(JSON.stringify(result.data.user));
         NotificationManager.success(result.data.msg);
         this.props.history.push("/home");
+        alert('You login successfully!');
       })
       .catch(err => {
         if (err.response && err.response.status === 404){

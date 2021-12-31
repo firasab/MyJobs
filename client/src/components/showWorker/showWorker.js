@@ -16,6 +16,7 @@ export default function ShowWorker() {
 
   const deleteWorker = (id) => {
     axios.delete(`http://localhost:9000/workers/${id}`).then (() => {
+      alert('Worker has beed deleted!');
       window.location.reload(false);
     })
   }

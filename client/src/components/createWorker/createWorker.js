@@ -18,6 +18,7 @@ export default function CreateWorker() {
   
   const createWorker = () => {
     axios.post('http://localhost:9000/workers', worker).then(() => {
+      alert('Worker has beed added!');
       window.location.reload(false);
     })
     

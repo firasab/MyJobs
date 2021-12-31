@@ -38,6 +38,7 @@ export default function ShowWorker() {
             <TableCell align="right">Location</TableCell>
             <TableCell align="right">Phone Number</TableCell>
             <TableCell align="right">Email</TableCell>
+            <TableCell align="right">Company</TableCell>
             <TableCell align="right">Action</TableCell>
           </TableRow>
         </TableHead>
@@ -53,6 +54,7 @@ export default function ShowWorker() {
               <TableCell align="right">{worker.location}</TableCell>
               <TableCell align="right">{worker.phoneNumber}</TableCell>
               <TableCell align="right">{worker.email}</TableCell>
+              <TableCell align="right">{worker.companyName}</TableCell>
               <TableCell align="right">  <IconButton aria-label="delete" onClick={() => deleteWorker(worker._id)}> <DeleteIcon /> </IconButton> </TableCell>
             </TableRow>
           ))}

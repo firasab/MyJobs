@@ -18,12 +18,12 @@ const job = () => {
                 <Grow in>
                     <Container>
                         <Grid container justifyContent="space-between" alignItems="stretch">
-                            <Grid item xs={12} sm={7}>
+                            <Grid item xs={12} sm={12}>
                                 <AppBar className={classes.appBar} position="static" color="inherit">
                                     <Job />
                                 </AppBar>
                             </Grid>
-                            <Grid item xs={12} sm={4}>
+                            <Grid style= {{ marginLeft: '400px'}}  item xs={12} sm={4}>
                             <AppBar className={classes.appBar} position="static" color="inherit">
                                     <Create />
                                 </AppBar>

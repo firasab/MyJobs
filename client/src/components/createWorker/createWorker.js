@@ -57,6 +57,12 @@ export default function CreateWorker() {
           setWorker({ ...worker, email:event.target.value })
         }}/>
       </Box>
+      <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+        <AccountCircle sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+        <TextField id="input-with-sx" label="Company name" variant="standard" value={worker.companyName}  onChange={(event) => {
+          setWorker({ ...worker, companyName:event.target.value })
+        }}/>
+      </Box>
       <Button variant="contained" color="success"  style= {{ marginLeft: '90px'}} onClick={createWorker}> Create </Button>
     </Box>
     </>

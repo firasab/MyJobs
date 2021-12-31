@@ -22,6 +22,9 @@ const workerSchema = new Schema({
     email: {
         type: String,
        
+    },
+    companyName: {
+        type: String
     }
 });
 module.exports = worker = mongoose.model('worker', workerSchema);

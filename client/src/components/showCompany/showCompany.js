@@ -12,58 +12,56 @@ import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 
-export default function ShowJob() {
-  const [jobsList, setJobsList] = useState([])
+export default function ShowCompany() {
+  const [companiesList, setCompaniesList] = useState([])
 
-  const deleteJob = (id) => {
-    axios.delete(`http://localhost:9000/jobs/${id}`).then (() => {
-      alert('Job has beed deleted!');
+  const deleteCompany = (id) => {
+    axios.delete(`http://localhost:9000/companies/${id}`).then (() => {
+      alert('Company has beed deleted!');
       window.location.reload(false);
     })
   }
 
-  const editJob = (id) => {
-    axios.put(`http://localhost:9000/jobs/${id}`).then (() => {
-      alert('Job has beed updated!');
+  const editCompany = (id) => {
+    axios.put(`http://localhost:9000/companies/${id}`).then (() => {
+      alert('Company has beed updated!');
       window.location.reload(false);
     })
   }
 
   useEffect(() => {
-    axios.get('http://localhost:9000/jobs').then( (allJobs) => {
-      setJobsList(allJobs.data);
+    axios.get('http://localhost:9000/companies').then( (allCompanies) => {
+        setCompaniesList(allCompanies.data);
 
     } )
   }, [])
   return (
     <>
-    <h2> Jobs's list </h2>
+    <h2> Companies's list </h2>
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Company Name</TableCell>
-            <TableCell align="right">Discription</TableCell>
-            <TableCell align="right">Position</TableCell>
-            <TableCell align="right">Pay Per Hour</TableCell>
+            <TableCell>Name</TableCell>
+            <TableCell align="right">Field</TableCell>
+            <TableCell align="right">Number of worker</TableCell>
             <TableCell align="right">Address</TableCell>
             <TableCell align="right">Action</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {jobsList.map((job, key) => (
+          {companiesList.map((company, key) => (
             <TableRow key={key}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                {job.name}
+                {company.name}
               </TableCell>
-              <TableCell align="right">{job.discription}</TableCell>
-              <TableCell align="right">{job.position}</TableCell>
-              <TableCell align="right">{job.payPerHour}</TableCell>
-              <TableCell align="right">{job.address}</TableCell>
-              <TableCell align="right">  <IconButton aria-label="delete" onClick={() => deleteJob(job._id)}> <DeleteIcon /> </IconButton>
-              <IconButton aria-label="edit" onClick={() => editJob(job._id)}> <EditIcon /> </IconButton> </TableCell>
+              <TableCell align="right">{company.field}</TableCell>
+              <TableCell align="right">{company.numberOfWorker}</TableCell>
+              <TableCell align="right">{company.address}</TableCell>
+              <TableCell align="right">  <IconButton aria-label="delete" onClick={() => deleteCompany(company._id)}> <DeleteIcon /> </IconButton>
+              <IconButton aria-label="edit" onClick={() => editCompany(company._id)}> <EditIcon /> </IconButton> </TableCell>
             </TableRow>
           ))}
         </TableBody>

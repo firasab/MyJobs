@@ -11,6 +11,7 @@ import 'react-notifications/lib/notifications.css';
 import worker from "./components/worker";
 import job from "./components/job";
 import view from "./components/view";
+import company from "./components/company";
 
 
 
@@ -26,6 +27,7 @@ function App() {
           <AuthRoute path="/worker" component={worker} />
           <AuthRoute path="/job" component={job} />
           <GuestRoute path="/view" component={view} />
+          <AuthRoute path="/company" component={company} />
 
           
      

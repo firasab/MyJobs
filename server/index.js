@@ -6,6 +6,7 @@ const path = require('path');
 const passport=require('passport')
 const workerRoutes = require('./routes/worker.js');
 const jobRoutes = require('./routes/job.js');
+const companyRoutes = require('./routes/company.js');
 
 const app = express();
 
@@ -37,6 +38,7 @@ const users = require('./routes/api/users');
 app.use('/api/users', users);
 app.use('/workers', workerRoutes);
 app.use('/jobs', jobRoutes);
+app.use('/companies', companyRoutes);
 
 
 

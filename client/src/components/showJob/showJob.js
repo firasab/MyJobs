@@ -10,6 +10,7 @@ import axios from 'axios';
 import { useState , useEffect } from 'react';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
+import EditIcon from '@mui/icons-material/Edit';
 
 export default function ShowJob() {
   const [jobsList, setJobsList] = useState([])
@@ -17,6 +18,13 @@ export default function ShowJob() {
   const deleteJob = (id) => {
     axios.delete(`http://localhost:9000/jobs/${id}`).then (() => {
       alert('Job has beed deleted!');
+      window.location.reload(false);
+    })
+  }
+
+  const editJob = (id) => {
+    axios.put(`http://localhost:9000/workers/${id}`).then (() => {
+      alert('Worker has beed updated!');
       window.location.reload(false);
     })
   }
@@ -54,7 +62,8 @@ export default function ShowJob() {
               <TableCell align="right">{job.position}</TableCell>
               <TableCell align="right">{job.payPerHour}</TableCell>
               <TableCell align="right">{job.address}</TableCell>
-              <TableCell align="right">  <IconButton aria-label="delete" onClick={() => deleteJob(job._id)}> <DeleteIcon /> </IconButton> </TableCell>
+              <TableCell align="right">  <IconButton aria-label="delete" onClick={() => deleteJob(job._id)}> <DeleteIcon /> </IconButton>
+              <IconButton aria-label="edit" onClick={() => editJob(job._id)}> <EditIcon /> </IconButton> </TableCell>
             </TableRow>
           ))}
         </TableBody>

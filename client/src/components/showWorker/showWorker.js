@@ -10,6 +10,7 @@ import axios from 'axios';
 import { useState , useEffect } from 'react';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
+import EditIcon from '@mui/icons-material/Edit';
 
 export default function ShowWorker() {
   const [workersList, setWorkerList] = useState([])
@@ -17,6 +18,13 @@ export default function ShowWorker() {
   const deleteWorker = (id) => {
     axios.delete(`http://localhost:9000/workers/${id}`).then (() => {
       alert('Worker has beed deleted!');
+      window.location.reload(false);
+    })
+  }
+
+  const editWorker = (id) => {
+    axios.put(`http://localhost:9000/workers/${id}`).then (() => {
+      alert('Worker has beed updated!');
       window.location.reload(false);
     })
   }
@@ -56,7 +64,8 @@ export default function ShowWorker() {
               <TableCell align="right">{worker.phoneNumber}</TableCell>
               <TableCell align="right">{worker.email}</TableCell>
               <TableCell align="right">{worker.companyName}</TableCell>
-              <TableCell align="right">  <IconButton aria-label="delete" onClick={() => deleteWorker(worker._id)}> <DeleteIcon /> </IconButton> </TableCell>
+              <TableCell align="right">  <IconButton aria-label="delete" onClick={() => deleteWorker(worker._id)}> <DeleteIcon /> </IconButton>
+                                         <IconButton aria-label="edit" onClick={() => editWorker(worker._id)}> <EditIcon /> </IconButton> </TableCell>
             </TableRow>
           ))}
         </TableBody>

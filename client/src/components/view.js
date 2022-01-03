@@ -14,11 +14,14 @@ const view = () => {
                     <Typography className={classes.heading} variant="h2" align="center"> Welcome to MyJobs website!</Typography>
                 </AppBar>
                 <Grow in>
-                    <Container>
-                            <Grid item xs={12} sm={12}>
+                    <Container style={{ display: "flex", justifyContent:"space-around"}}>
+                            <Grid item xs={12} sm={12} >
                                 <AppBar className={classes.appBar} position="static" color="inherit">
                                     <View />
+                                   
                                 </AppBar>
+                            
+                             
                             </Grid>
                     </Container>
                 </Grow>

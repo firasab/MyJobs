@@ -16,10 +16,10 @@ const view = () => {
                 <Grow in>
                     <Container style={{ display: "flex", justifyContent:"space-around"}}>
                             <Grid item xs={12} sm={12} >
-                                <AppBar className={classes.appBar} position="static" color="inherit">
+                               
                                     <View />
                                    
-                                </AppBar>
+                                
                             
                              
                             </Grid>

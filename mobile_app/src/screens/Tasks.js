@@ -7,26 +7,17 @@ import {
   SectionList,
   StatusBar
 } from "react-native";
-import Constants from "expo-constants";
-import Background from '../components/Background'
+
 
 
 const DATA = [
     {
-      title: "20.1.2021",
-      data: ["work", "work", "work"]
+      title: "20.1.2022",
+      data: ["sunday from 6:30 to 15:00", "monday from 6:30 to 13:00", "friday from 6:30 to 15:00"]
     },
     {
-      title: "21.1.2021",
-      data: ["work", "work","work", "work"]
-    },
-    {
-      title: "22.1.2021",
-      data: ["work", "work", "work"]
-    },
-    {
-      title: "23.1.2021",
-      data: ["work", "work"]
+      title: "21.1.2022",
+      data: ["friday from 6:30 to 18:00", "saturday from 6:30 to 17:00", "sunday from 6:30 to 15:00"]
     }
   ];
   

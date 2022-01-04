@@ -1,9 +1,8 @@
 import React from 'react'
 import { Provider } from 'react-native-paper'
-import { NavigationContainer,useNavigation, StyleSheet,CommonActions} from '@react-navigation/native'
+import { NavigationContainer,useNavigation} from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { theme } from './src/core/theme'
-import { Button } from 'react-native'
 import { SimpleLineIcons } from '@expo/vector-icons'; 
 
 import {

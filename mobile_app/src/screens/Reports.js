@@ -3,52 +3,12 @@ import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar} from 'react-
 const DATA = [
 	{
 	  id: '0',
-	  title: 'First Item',
+	  title: 'Started work at',
 	},
 	{
 	  id: '1',
-	  title: 'Second Item',
-	},
-	{
-	  id: '2',
-	  title: 'Third Item',
-	},
-	{
-		id: '3',
-		title: 'First Item',
-	  },
-	  {
-		id: '4',
-		title: 'Second Item',
-	  },
-	  {
-		id: '5',
-		title: 'Third Item',
-	  },
-	  {
-		id: '6',
-		title: 'First Item',
-	  },
-	  {
-		id: '7',
-		title: 'Second Item',
-	  },
-	  {
-		id: '8',
-		title: 'Third Item',
-	  },
-	  {
-		  id: '9',
-		  title: 'First Item',
-		},
-		{
-		  id: '10',
-		  title: 'Second Item',
-		},
-		{
-		  id: '11',
-		  title: 'Third Item',
-		},
+	  title: 'Finished work at',
+	}
   ];
 const Item = ({ title }) => (
 	<View style={styles.item}>

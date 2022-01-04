@@ -5,8 +5,6 @@ import Logo from '../components/Logo'
 import { StyleSheet } from 'react-native'
 
 const About = (props) => {
- 
-
   return (
     <Background>
       <Logo />

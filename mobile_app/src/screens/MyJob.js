@@ -1,8 +1,4 @@
 import React from 'react'
-import { Text,View} from 'react-native';
-//import Background1 from '../components/Background'
-import Button from '../components/Button'
-import BackButton from '../components/BackButton'
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { MaterialIcons,MaterialCommunityIcons } from '@expo/vector-icons';
 import {Ionicons, AntDesign,FontAwesome } from '@expo/vector-icons'; 

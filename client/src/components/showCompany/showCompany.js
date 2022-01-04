@@ -14,21 +14,21 @@ import EditIcon from '@mui/icons-material/Edit';
 
 export default function ShowCompany() {
   const [companiesList, setCompaniesList] = useState([])
-
+//delete method to delete company from database
   const deleteCompany = (id) => {
     axios.delete(`http://localhost:9000/companies/${id}`).then (() => {
       alert('Company has beed deleted!');
       window.location.reload(false);
     })
   }
-
+//edit method to edit company from database
   const editCompany = (id) => {
     axios.put(`http://localhost:9000/companies/${id}`).then (() => {
       alert('Company has beed updated!');
       window.location.reload(false);
     })
   }
-
+//get method to get company from database
   useEffect(() => {
     axios.get('http://localhost:9000/companies').then( (allCompanies) => {
         setCompaniesList(allCompanies.data);

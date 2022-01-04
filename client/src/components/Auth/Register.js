@@ -13,12 +13,14 @@ class Register extends Component {
     };
   }
   handleForm = e => {
+    //check if password, confirme password and email are not empty
     e.preventDefault();
     if(this.state.password==='' || this.state.password_confirmation==='' || this.state.email==='' || this.state.name==='')
     {
         NotificationManager.warning("Please Enter Name,Email Password And Confirm Password");
         return false;
     }
+        //check if password and the confimation password are the same 
     else if(this.state.password!==this.state.password_confirmation)
     {
         NotificationManager.warning("Your Password Not Matched ! Please Check your pasword and confirm password");
@@ -34,6 +36,7 @@ class Register extends Component {
       password: this.state.password,
       password_confirmation: this.state.password_confirmation
     };
+    //post method to send the admin infromation to database
     axios
     .post("http://localhost:9000/api/users/register", data)
     .then(result => {

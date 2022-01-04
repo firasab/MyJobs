@@ -14,21 +14,21 @@ import EditIcon from '@mui/icons-material/Edit';
 
 export default function ShowWorker() {
   const [workersList, setWorkerList] = useState([])
-
+//delete method to delete worker from database
   const deleteWorker = (id) => {
     axios.delete(`http://localhost:9000/workers/${id}`).then (() => {
       alert('Worker has beed deleted!');
       window.location.reload(false);
     })
   }
-
+//edit method to edit worker from database
   const editWorker = (id) => {
     axios.put(`http://localhost:9000/workers/${id}`).then (() => {
       alert('Worker has beed updated!');
       window.location.reload(false);
     })
   }
-
+//get method to get worker from database
   useEffect(() => {
     axios.get('http://localhost:9000/workers').then( (allWorkers) => {
       setWorkerList(allWorkers.data);

@@ -1,9 +1,11 @@
 import React from 'react'
 import { TouchableOpacity, Image, StyleSheet } from 'react-native'
 import { getStatusBarHeight } from 'react-native-status-bar-height'
-import { SimpleLineIcons } from '@expo/vector-icons';
+
 const BackButton = ({ goBack }) => (
-    <SimpleLineIcons name="logout" size={24} color="black" />
+  <TouchableOpacity onPress={goBack} style={styles.container}>
+
+  </TouchableOpacity>
 )
 
 const styles = StyleSheet.create({

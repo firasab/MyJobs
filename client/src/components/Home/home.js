@@ -15,7 +15,7 @@ class Home extends Component {
         <div className="container">
           <div className="card" >
             <div className="card-body" >
-              <h5 className="card-title">Welcome {this.props.name}</h5>
+              <h5 className="card-title">Welcome {this.props.name}</h5> {/* get the admin name from database and put it in the props place*/ }
               <p className="card-text">Email :{this.props.email}</p>
               <p> Dear {this.props.name}, here you can mange myJobs workers, companies and Jobs </p>
               

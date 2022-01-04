@@ -6,7 +6,7 @@ import Button from '@mui/material/Button';
 import { useState } from 'react';
 import axios from 'axios';
 
-
+//set the company featuers
 export default function CreateCompany() {
   const [company, setCompany] = useState({
     name: '',
@@ -14,7 +14,7 @@ export default function CreateCompany() {
     numberOfWorker: '',
     address: ''
   });
-  
+  //post method to add company to database
   const createCompany = () => {
     axios.post('http://localhost:9000/companies', company).then(() => {
       alert('Company has beed added!');

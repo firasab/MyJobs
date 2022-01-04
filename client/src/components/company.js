@@ -5,7 +5,7 @@ import React from 'react'
 import makeStyles from '../styles'
 
 
-
+//create how is the look in creae company page
 const company = () => {
     const classes = makeStyles();
     return (

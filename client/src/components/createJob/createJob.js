@@ -6,7 +6,7 @@ import Button from '@mui/material/Button';
 import { useState } from 'react';
 import axios from 'axios';
 
-
+//set the job featuers
 export default function CreateJob() {
   const [job, setJob] = useState({
     name: '',
@@ -15,7 +15,7 @@ export default function CreateJob() {
     payPerHour: '',
     address: ''
   });
-  
+    //post method to add job to database
   const createJob = () => {
     axios.post('http://localhost:9000/jobs', job).then(() => {
       alert('Job has beed added!');

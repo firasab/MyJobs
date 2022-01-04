@@ -7,7 +7,7 @@ import { useState } from 'react';
 import axios from 'axios';
 
 
-
+//set the worker featuers
 export default function CreateWorker() {
   const [worker, setWorker] = useState({
     name: '',
@@ -16,7 +16,7 @@ export default function CreateWorker() {
     phoneNumber: '',
     email: ''
   });
-  
+      //post method to add worker to database
   const createWorker = () => {
     axios.post('http://localhost:9000/workers', worker).then(() => {
       alert('Worker has beed added!');

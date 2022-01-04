@@ -7,12 +7,14 @@ class Login extends Component {
     super(props);
     this.state = { email: "", password: "", errors: {} };
   }
+  //check if email or passworf are empty
   handleForm = e => {
     e.preventDefault();
     if (this.state.email === '' || this.state.password === '') {
       NotificationManager.warning("Email And Password Required");
       window.location.reload(false);
     }
+    //post method to get the admin information from the database
     const data = { email: this.state.email, password: this.state.password };
     axios
       .post("http://localhost:9000/api/users/login", data)

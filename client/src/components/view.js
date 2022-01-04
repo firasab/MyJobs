@@ -16,12 +16,7 @@ const view = () => {
                 <Grow in>
                     <Container style={{ display: "flex", justifyContent:"space-around"}}>
                             <Grid item xs={12} sm={12} >
-                               
                                     <View />
-                                   
-                                
-                            
-                             
                             </Grid>
                     </Container>
                 </Grow>

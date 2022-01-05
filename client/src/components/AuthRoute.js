@@ -1,8 +1,9 @@
 import { Route, Redirect } from "react-router-dom";
 import React from "react";
 import { connect } from "react-redux";
+
+//to prevent the users who didnt login from seeing the rest of the pages
 const AuthRoute = ({ component: Component, ...rest }) => {
-  //to prevent the users who didnt log in from seeing the rest of the pages
   return (
     <Route
       {...rest}

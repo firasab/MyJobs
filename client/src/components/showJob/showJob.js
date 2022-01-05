@@ -14,27 +14,28 @@ import EditIcon from '@mui/icons-material/Edit';
 
 export default function ShowJob() {
   const [jobsList, setJobsList] = useState([])
-
+  //delete job method
   const deleteJob = (id) => {
     axios.delete(`http://localhost:9000/jobs/${id}`).then (() => {
       alert('Job has beed deleted!');
       window.location.reload(false);
     })
   }
-
+//edit job method
   const editJob = (id) => {
     axios.put(`http://localhost:9000/jobs/${id}`).then (() => {
       alert('Job has beed updated!');
       window.location.reload(false);
     })
   }
-
+//get all jobs method
   useEffect(() => {
     axios.get('http://localhost:9000/jobs').then( (allJobs) => {
       setJobsList(allJobs.data);
 
     } )
   }, [])
+    //the design of the table of the jobs list 
   return (
     <>
     <h2> Jobs's list </h2>

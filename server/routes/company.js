@@ -3,7 +3,7 @@ const companyData = require('../models/company');
 
 
 const router = express.Router();
-
+//get all companies from database 
 router.get('/', async (req,res) => {
     try {
         const allCompanies = await companyData.find();
@@ -13,7 +13,7 @@ router.get('/', async (req,res) => {
         res.status(404).json({ message: error.message})
     }
 })
-
+//add a company to database
 router.post('/', async (req,res) => {
     const companyDe = req.body;
     const newCompany = new companyData(companyDe);
@@ -25,7 +25,7 @@ router.post('/', async (req,res) => {
         res.status(409).json({ message: error.message});
     }
 })
-
+//delete sompany from database
 router.delete('/:id', async (req,res) => {
     const id = req.params.id;
 

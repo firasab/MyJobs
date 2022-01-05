@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { NotificationContainer, NotificationManager } from 'react-notifications';
+import { NotificationContainer } from 'react-notifications';
 import axios from 'axios';
 class Register extends Component {
   constructor(props) {
@@ -17,14 +17,14 @@ class Register extends Component {
     e.preventDefault();
     if(this.state.password==='' || this.state.password_confirmation==='' || this.state.email==='' || this.state.name==='')
     {
-        NotificationManager.warning("Please Enter Name,Email Password And Confirm Password");
-        return false;
+      alert('Please Enter Name,Email Password And Confirm Password');
+      window.location.reload(false);
     }
         //check if password and the confimation password are the same 
     else if(this.state.password!==this.state.password_confirmation)
     {
-        NotificationManager.warning("Your Password Not Matched ! Please Check your pasword and confirm password");
-        return false;
+      alert('Your Password Not Matched ! Please Check your pasword and confirm password');
+      window.location.reload(false);
     }
 
     
@@ -40,14 +40,22 @@ class Register extends Component {
     axios
     .post("http://localhost:9000/api/users/register", data)
     .then(result => {
-      NotificationManager.success(result.data.msg);
-      this.props.push("/login");
+       //if the register is success move me to login page
+      alert('your regustion is success!')
+      this.props.history.push("/login");
     })
     .catch(err => {
-      if (err.response && err.response.status === 400)
-        NotificationManager.error(err.response.data.msg);
+      if (err.response && err.response.status === 400){
+        //if the register is failed return return there is error and return us to the register page
+        alert('Something Went Wrong');
+        window.location.reload(false);
+      }
       else
-        NotificationManager.error("Something Went Wrong");
+      {
+         //if the register is failed return return there is error and return us to the register page
+        alert('Something Went Wrong');
+        window.location.reload(false);
+      }
       this.setState({ errors: err.response })
     });
 };

@@ -24,6 +24,7 @@ export default function CreateJob() {
     
 
   }
+  //the design of the create job funtion
   return (
     <>
     <h2>Create Job</h2>

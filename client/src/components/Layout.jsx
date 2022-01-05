@@ -2,8 +2,8 @@ import React, { Fragment, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 
+//navbar
 function Layout(props) {
-
   const handleLogout = e => {
     e.preventDefault();
     localStorage.removeItem("token");

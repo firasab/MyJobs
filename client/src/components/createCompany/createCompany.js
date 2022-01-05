@@ -23,6 +23,7 @@ export default function CreateCompany() {
     
 
   }
+  //the design of the create company funtion
   return (
     <>
     <h2>Create Company</h2>

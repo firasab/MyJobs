@@ -2,6 +2,7 @@ import { Route, Redirect } from "react-router-dom";
 import React from "react";
 import { connect } from "react-redux";
 
+//the pages that will be public for all the viwers
 const GuestRoute = ({ component: Component, ...rest }) => {
   return (
     <Route

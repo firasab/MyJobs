@@ -30,10 +30,6 @@ function App() {
           <GuestRoute path="/view" component={view} />
           <AuthRoute path="/company" component={company} />
           <AuthRoute path="/workSchedule" component={workSchedule} />
-
-          
-     
-          
         </div>
         <Route path="/" exact component={Home} />
       </Layout>

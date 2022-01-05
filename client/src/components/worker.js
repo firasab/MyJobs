@@ -5,7 +5,7 @@ import React from 'react'
 import makeStyles from '../styles'
 
 
-
+//design of putting creating worker and the workers list in the samme page
 const worker = () => {
     const classes = makeStyles();
     return (

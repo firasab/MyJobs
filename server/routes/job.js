@@ -3,7 +3,7 @@ const jobData = require('../models/job');
 
 
 const router = express.Router();
-
+//get all jobs from database
 router.get('/', async (req,res) => {
     try {
         const allJobs = await jobData.find();
@@ -13,7 +13,7 @@ router.get('/', async (req,res) => {
         res.status(404).json({ message: error.message})
     }
 })
-
+//add a job to database
 router.post('/', async (req,res) => {
     const jobDe = req.body;
     const newJob = new jobData(jobDe);
@@ -25,7 +25,7 @@ router.post('/', async (req,res) => {
         res.status(409).json({ message: error.message});
     }
 })
-
+//dalate a job from database
 router.delete('/:id', async (req,res) => {
     const id = req.params.id;
 

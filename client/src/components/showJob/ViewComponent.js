@@ -15,6 +15,7 @@ const openJob = () => {
 }
 export default function ViewComponent (props)  {
 
+  //the showing job page component to be able to show the viwers the jobs each one is separated from the onther
   return (
     <>
     <h2> View </h2>

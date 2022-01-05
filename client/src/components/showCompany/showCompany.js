@@ -35,6 +35,7 @@ export default function ShowCompany() {
 
     } )
   }, [])
+  //the design of the table of the companies list 
   return (
     <>
     <h2> Companies's list </h2>

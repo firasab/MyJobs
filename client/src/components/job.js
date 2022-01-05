@@ -5,7 +5,7 @@ import React from 'react'
 import makeStyles from '../styles'
 
 
-
+//design of putting creating job and the jobs list in the samme page
 const job = () => {
     const classes = makeStyles();
     return (

@@ -3,7 +3,7 @@ const workerData = require('../models/worker');
 
 
 const router = express.Router();
-
+//get all workers from database
 router.get('/', async (req,res) => {
     try {
         const allWorkers = await workerData.find();
@@ -13,7 +13,7 @@ router.get('/', async (req,res) => {
         res.status(404).json({ message: error.message})
     }
 })
-
+//add worker to database
 router.post('/', async (req,res) => {
     const workerDe = req.body;
     const newWorker = new workerData(workerDe);
@@ -25,7 +25,7 @@ router.post('/', async (req,res) => {
         res.status(409).json({ message: error.message});
     }
 })
-
+//delete worker from database
 router.delete('/:id', async (req,res) => {
     const id = req.params.id;
 
@@ -37,12 +37,6 @@ router.delete('/:id', async (req,res) => {
         console.log(error);
     }
 })
-
-
-
-
-  
-
 
 
 module.exports = router;

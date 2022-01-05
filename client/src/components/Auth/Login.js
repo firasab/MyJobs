@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import axios from 'axios';
-import { NotificationContainer, NotificationManager } from 'react-notifications';
+import { NotificationContainer} from 'react-notifications';
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -11,7 +11,7 @@ class Login extends Component {
   handleForm = e => {
     e.preventDefault();
     if (this.state.email === '' || this.state.password === '') {
-      NotificationManager.warning("Email And Password Required");
+      alert('Email And Password Required!');
       window.location.reload(false);
     }
     //post method to get the admin information from the database
@@ -22,19 +22,19 @@ class Login extends Component {
         localStorage.setItem("token", result.data.token);
         localStorage.setItem("user", JSON.stringify(result.data.user));
         this.props.setLogin(JSON.stringify(result.data.user));
-        NotificationManager.success(result.data.msg);
-        this.props.history.push("/home");
+        // send a notification when the login success and move us to the home page
         alert('You login successfully!');
+        this.props.history.push("/home");
       })
       .catch(err => {
         if (err.response && err.response.status === 404){
-     //     NotificationManager.error(err.response.data.msg);
-          window.location.reload(false);
-        }else{
-         // NotificationManager.error("Something Went Wrong");
+            // send a notification when the login didnt success and move us to the login page
+          alert('check your email end passwork!');
          window.location.reload(false);
-        this.setState({ errors: err.response })
-       
+        }else{
+          // send a notification when the login didnt success and move us to the login page
+          alert('Something Went Wrong!');
+        window.location.reload(false);
         }
       });
   };
@@ -44,6 +44,7 @@ class Login extends Component {
     const value = e.target.value;
     this.setState({ [name]: value });
   };
+  //the design of login page
   render() {
     return (
       <div className="content">

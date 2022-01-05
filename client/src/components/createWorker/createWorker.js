@@ -25,6 +25,7 @@ export default function CreateWorker() {
     
 
   }
+  //the design of the create worker funtion
   return (
     <>
     <h2>Create worker</h2>

@@ -4,7 +4,7 @@ import React from 'react'
 import makeStyles from '../styles'
 
 
-
+//design  the jobs list in public page
 const view = () => {
     const classes = makeStyles();
     return (

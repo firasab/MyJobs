@@ -6,7 +6,7 @@ const passport = require('passport');
 const key = require('../../config/keys').secret;
 const User = require('../../model/User');
 
-
+//register new user to the database
 router.post('/register', (req, res) => {
     let {
         name,
@@ -51,7 +51,7 @@ router.post('/register', (req, res) => {
     });
 });
 
-
+//login the user to the database
 router.post('/login', (req, res) => {
     User.findOne({
         email: req.body.email
@@ -91,13 +91,5 @@ router.post('/login', (req, res) => {
     });
 });
 
-
-router.get('/profile', passport.authenticate('jwt', {
-    session: false
-}), (req, res) => {
-    return res.json({
-        user: req.user
-    });
-});
 
 module.exports = router;

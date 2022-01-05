@@ -10,7 +10,7 @@ export default function ViewJob() {
   const [jobsList, setJobsList] = useState([])
 
 
-
+//to get the jobs from the database
   useEffect(() => {
     axios.get('http://localhost:9000/jobs').then( (allJobs) => {
       setJobsList(allJobs.data);
@@ -18,17 +18,15 @@ export default function ViewJob() {
     } 
     )
   }, [])
+  //to fill the information of each job 
   return (
     <>
           {jobsList.map((job, key) => (
-              <>
-                                
+              <>                 
                <AppBar className={classes.appBar} position="static" color="inherit">
                <ViewComponent name={job.name} discription={job.discription} position={job.position} payPerHour={job.payPerHour} address={job.address} />
-               </AppBar>
-                            
-              </>
-             
+               </AppBar>              
+              </> 
           ))}
     </>
   );

@@ -22,7 +22,7 @@ function App() {
       <Layout>
         <div>
           <GuestRoute path="/login" component={Login} />
-          <GuestRoute path="/register" component={Register} />
+          <AuthRoute path="/register" component={Register} />
           <AuthRoute path="/home" component={Home} />
           <GuestRoute path="/about" component={About} />
           <AuthRoute path="/worker" component={worker} />

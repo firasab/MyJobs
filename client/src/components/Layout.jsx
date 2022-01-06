@@ -40,6 +40,9 @@ function Layout(props) {
                 <li className={"nav-item " + (pathname === '/workSchedule' ? 'active' : '')}>
                   <NavLink isActive={checkActive} to="/workSchedule" className="nav-link">Create Weekly Schedule</NavLink>
                 </li>
+                <li className={"nav-item " + (pathname === '/register' ? 'active' : '')}>
+                  <NavLink isActive={checkActive} to="/register" className="nav-link">Register</NavLink>
+                </li>
                 { }
               </ul>
               <ul className="navbar-nav ml-auto">
@@ -52,6 +55,7 @@ function Layout(props) {
                     Logout
                   </NavLink>
                 </li>
+             
               </ul>
             </Fragment>
           ) : (

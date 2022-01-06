@@ -11,6 +11,7 @@ import { useState , useEffect } from 'react';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@mui/icons-material/Edit';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 export default function ShowJob() {
   const [jobsList, setJobsList] = useState([])
@@ -48,7 +49,7 @@ export default function ShowJob() {
             <TableCell align="right">Position</TableCell>
             <TableCell align="right">Pay Per Hour</TableCell>
             <TableCell align="right">Address</TableCell>
-            <TableCell align="right">Action</TableCell>
+            <TableCell align="right" >Action</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -64,7 +65,8 @@ export default function ShowJob() {
               <TableCell align="right">{job.payPerHour}</TableCell>
               <TableCell align="right">{job.address}</TableCell>
               <TableCell align="right">  <IconButton aria-label="delete" onClick={() => deleteJob(job._id)}> <DeleteIcon /> </IconButton>
-              <IconButton aria-label="edit" onClick={() => editJob(job._id)}> <EditIcon /> </IconButton> </TableCell>
+              <IconButton aria-label="edit" onClick={() => editJob(job._id)}> <EditIcon /> </IconButton>
+              <IconButton aria-label="edit" > <AccountCircleIcon /> </IconButton>  </TableCell>
             </TableRow>
           ))}
         </TableBody>

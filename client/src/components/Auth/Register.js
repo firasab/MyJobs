@@ -42,7 +42,7 @@ class Register extends Component {
     .then(result => {
        //if the register is success move me to login page
       alert('your regustion is success!')
-      this.props.history.push("/login");
+      
     })
     .catch(err => {
       if (err.response && err.response.status === 400){
@@ -74,7 +74,7 @@ class Register extends Component {
                         <div className="col-sm-2"></div>
                         <div className="col-sm-8">
                             <div className="card">
-                                <div className="card-header text-center">Register</div>
+                                <div className="card-header text-center">Add new Admin</div>
                                 <div className="card-body">
                                 <div className="form-group">
                                         <label >Name</label>

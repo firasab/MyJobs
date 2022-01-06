@@ -41,7 +41,7 @@ function Layout(props) {
                   <NavLink isActive={checkActive} to="/workSchedule" className="nav-link">Create Weekly Schedule</NavLink>
                 </li>
                 <li className={"nav-item " + (pathname === '/register' ? 'active' : '')}>
-                  <NavLink isActive={checkActive} to="/register" className="nav-link">Register</NavLink>
+                  <NavLink isActive={checkActive} to="/register" className="nav-link">Add new admin</NavLink>
                 </li>
                 { }
               </ul>

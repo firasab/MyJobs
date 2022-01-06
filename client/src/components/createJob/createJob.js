@@ -1,10 +1,14 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import AccountCircle from '@mui/icons-material/AccountCircle';
 import Button from '@mui/material/Button';
 import { useState } from 'react';
 import axios from 'axios';
+import RadarIcon from '@mui/icons-material/Radar';
+import ApartmentIcon from '@mui/icons-material/Apartment';
+import PointOfSaleIcon from '@mui/icons-material/PointOfSale';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import FeedIcon from '@mui/icons-material/Feed';
 
 //set the job featuers
 export default function CreateJob() {
@@ -30,31 +34,31 @@ export default function CreateJob() {
     <h2>Create Job</h2>
     <Box sx={{ '& > :not(style)': { m: 1 } }}>
       <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
-        <AccountCircle sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+        <ApartmentIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
         <TextField id="input-with-sx" className="name" label="Company Name" variant="standard" value={job.name} onChange={(event) => {
           setJob({ ...job, name:event.target.value })
         }} />
       </Box>
       <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
-        <AccountCircle sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+        <FeedIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
         <TextField id="input-with-sx"  className="discription" label="Discription" variant="standard" value={job.discription} onChange={(event) => {
           setJob({ ...job, discription:event.target.value })
         }}/>
       </Box>
       <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
-        <AccountCircle sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+        <RadarIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
         <TextField id="input-with-sx" label="Position" variant="standard" value={job.position} onChange={(event) => {
           setJob({ ...job, position:event.target.value })
         }}/>
       </Box>
       <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
-        <AccountCircle sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+        <PointOfSaleIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
         <TextField id="input-with-sx" label="Pay Per Hour" variant="standard" value={job.payPerHour} onChange={(event) => {
           setJob({ ...job, payPerHour:event.target.value })
         }}/>
       </Box>
       <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
-        <AccountCircle sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+        <LocationOnIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
         <TextField id="input-with-sx" label="Address" variant="standard" value={job.address}  onChange={(event) => {
           setJob({ ...job, address:event.target.value })
         }}/>

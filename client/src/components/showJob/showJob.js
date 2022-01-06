@@ -8,10 +8,10 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import axios from 'axios';
 import { useState , useEffect } from 'react';
-import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import { Link} from 'react-router-dom'
 
 export default function ShowJob() {
   const [jobsList, setJobsList] = useState([])
@@ -22,13 +22,7 @@ export default function ShowJob() {
       window.location.reload(false);
     })
   }
-//edit job method
-  const editJob = (id) => {
-    axios.put(`http://localhost:9000/jobs/${id}`).then (() => {
-      alert('Job has beed updated!');
-      window.location.reload(false);
-    })
-  }
+
 //get all jobs method
   useEffect(() => {
     axios.get('http://localhost:9000/jobs').then( (allJobs) => {
@@ -36,6 +30,10 @@ export default function ShowJob() {
 
     } )
   }, [])
+  const handleClick = (() => {
+
+  })
+
     //the design of the table of the jobs list 
   return (
     <>
@@ -64,9 +62,12 @@ export default function ShowJob() {
               <TableCell align="right">{job.position}</TableCell>
               <TableCell align="right">{job.payPerHour}</TableCell>
               <TableCell align="right">{job.address}</TableCell>
-              <TableCell align="right">  <IconButton aria-label="delete" onClick={() => deleteJob(job._id)}> <DeleteIcon /> </IconButton>
-              <IconButton aria-label="edit" onClick={() => editJob(job._id)}> <EditIcon /> </IconButton>
-              <IconButton aria-label="edit" > <AccountCircleIcon /> </IconButton>  </TableCell>
+              <TableCell align="right"> 
+              <Link aria-label="delete" onClick={() => deleteJob(job._id)} style={{ marginLeft: "5px" }} ><DeleteIcon />  </Link> 
+              <Link to={{pathname: `/editJob/`,state: job._id,}}  onClick={() => handleClick(job._id)} style={{ marginLeft: "5px" }} ><EditIcon />  </Link> 
+              <Link to={{pathname: `/profileJob/`,state: job._id,}}  onClick={() => handleClick(job._id)} style={{ marginLeft: "5px" }} ><AccountCircleIcon /> </Link> 
+              
+               </TableCell>
             </TableRow>
           ))}
         </TableBody>

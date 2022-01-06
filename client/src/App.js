@@ -12,7 +12,11 @@ import worker from "./components/worker";
 import job from "./components/job";
 import view from "./components/view";
 import company from "./components/company";
+import profileCompany from "./components/showCompany/profileCompany";
 import workSchedule from "./components/workSchedule";
+import applyJob from "./components/showJob/applyJob";
+import profileJob from "./components/showJob/profileJob";
+import profileWorker from "./components/showWorker/profileWorker";
 
 
 
@@ -29,7 +33,11 @@ function App() {
           <AuthRoute path="/job" component={job} />
           <GuestRoute path="/view" component={view} />
           <AuthRoute path="/company" component={company} />
+          <AuthRoute path="/profileCompany" component={profileCompany} />
           <AuthRoute path="/workSchedule" component={workSchedule} />
+          <GuestRoute path="/applyJob" component={applyJob} />
+          <AuthRoute path="/profileJob" component={profileJob} />
+          <AuthRoute path="/profileWorker" component={profileWorker} />
         </div>
         <Route path="/" exact component={Home} />
       </Layout>

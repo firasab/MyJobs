@@ -9,16 +9,18 @@ import TableHead from '@mui/material/TableHead';
 import Table from '@mui/material/Table';
 
 
-const openJob = () => {
-  alert('opening The job Page');
-  
-}
+
+// const applyJob = () => {
+//  alert('opening The job Page');
+ 
+ 
+// }
 export default function ViewComponent (props)  {
 
   //the showing job page component to be able to show the viwers the jobs each one is separated from the onther
   return (
     <>
-    <h2> View </h2>
+    
 
     <TableContainer component={Paper}>
     <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -37,10 +39,10 @@ export default function ViewComponent (props)  {
               <TableCell align="right">{props.position}</TableCell>
               <TableCell align="right">{props.payPerHour}</TableCell>
               <TableCell align="right">{props.address}</TableCell>
-              <IconButton aria-label="edit" onClick={() => openJob()} style={{marginLeft: '50px'}}> <ForwardToInboxIcon />Apply</IconButton>  
-          
+              <IconButton aria-label="edit" onClick={()=> window.open("/applyJob", "_blank")} style={{marginLeft: '50px'}}> <ForwardToInboxIcon />Apply</IconButton>  
+              
           </Table>
-
+          
           </TableContainer>
     </>
   );

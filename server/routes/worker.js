@@ -38,5 +38,20 @@ router.delete('/:id', async (req,res) => {
     }
 })
 
+// router.put('/:id', (req, res) => {
+//     const worker = getWorker(req.params.id)
+   
+//     if (!worker) return res.status(404).json({})
+   
+//     worker.name = req.body.name
+//     worker.id = req.body.id
+//     worker.location = req.body.location
+//     worker.phoneNumber = req.body.phoneNumber
+//     worker.email = req.body.email
+//     worker.company = req.body.company
+
+//     res.json(worker)
+//    })
+
 
 module.exports = router;

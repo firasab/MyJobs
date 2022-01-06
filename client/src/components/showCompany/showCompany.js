@@ -8,10 +8,10 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import axios from 'axios';
 import { useState , useEffect } from 'react';
-import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import { Link} from 'react-router-dom'
 
 export default function ShowCompany() {
   const [companiesList, setCompaniesList] = useState([])
@@ -23,12 +23,12 @@ export default function ShowCompany() {
     })
   }
 //edit method to edit company from database
-  const editCompany = (id) => {
-    axios.put(`http://localhost:9000/companies/${id}`).then (() => {
-      alert('Company has beed updated!');
-      window.location.reload(false);
-    })
-  }
+  // const editCompany = (id) => {
+  //   axios.put(`http://localhost:9000/companies/${id}`).then (() => {
+  //     alert('Company has beed updated!');
+  //     window.location.reload(false);
+  //   })
+  // }
 //get method to get company from database
   useEffect(() => {
     axios.get('http://localhost:9000/companies').then( (allCompanies) => {
@@ -36,6 +36,11 @@ export default function ShowCompany() {
 
     } )
   }, [])
+
+  const handleClick = (() => {
+
+  })
+
   //the design of the table of the companies list 
   return (
     <>
@@ -62,9 +67,13 @@ export default function ShowCompany() {
               <TableCell align="right">{company.field}</TableCell>
               <TableCell align="right">{company.numberOfWorker}</TableCell>
               <TableCell align="right">{company.address}</TableCell>
-              <TableCell align="right">  <IconButton aria-label="delete" onClick={() => deleteCompany(company._id)}> <DeleteIcon /> </IconButton>
-              <IconButton aria-label="edit" onClick={() => editCompany(company._id)}> <EditIcon /> </IconButton> 
-              <IconButton aria-label="edit" > <AccountCircleIcon /> </IconButton></TableCell>
+              <TableCell align="right">  
+              <Link aria-label="delete" onClick={() => deleteCompany(company._id)} style={{ marginLeft: "5px" }} > <DeleteIcon /> </Link> 
+              <Link to={{pathname: `/editCompany/`,state: company._id,}}  onClick={() => handleClick(company._id)} style={{ marginLeft: "5px" }} ><EditIcon /> </Link> 
+              <Link to={{pathname: `/profileCompany/`,state: company._id,}}  onClick={() => handleClick(company._id)} style={{ marginLeft: "5px" }} ><AccountCircleIcon /> </Link> 
+              
+              
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>

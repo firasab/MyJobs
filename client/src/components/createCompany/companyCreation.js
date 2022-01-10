@@ -1,11 +1,11 @@
 import { Container, AppBar, Typography, Grid, Grow } from '@material-ui/core'
-import Company from './showCompany/showCompany';
+import Create from './createCompany';
 import React from 'react'
-import makeStyles from '../styles'
-import { Link} from 'react-router-dom'
+import makeStyles from '../../styles'
+
 
 //design of putting creating company and the companies list in the samme page
-const company = () => {
+const companyCreation = () => {
     const classes = makeStyles();
     return (
         <div >
@@ -17,15 +17,9 @@ const company = () => {
                 <Grow in>
                     <Container>
                         <Grid container justifyContent="space-between" alignItems="stretch">
-                            <Grid item  style= {{ marginLeft: '400px'}} xs={12} sm={4}>
-                                <AppBar className={classes.appBar} position="static" color="inherit">
-                                <Link to={{pathname: `/companyCreation`}}  style={{ marginLeft: "5px" }} >Create New Copmany</Link>
-                                </AppBar>
-                            </Grid>
-                            <Grid  item xs={12} sm={12}>
+                            <Grid style= {{ marginLeft: '400px'}}  item xs={12} sm={4}>
                             <AppBar className={classes.appBar} position="static" color="inherit">
-                           
-                            <Company />
+                                    <Create />
                                 </AppBar>
                             </Grid>
                         </Grid>
@@ -36,4 +30,4 @@ const company = () => {
     )
 }
 
-export default company
+export default companyCreation

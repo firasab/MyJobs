@@ -1,9 +1,8 @@
 import { Container, AppBar, Typography, Grid, Grow } from '@material-ui/core'
 import Job from './showJob/showJob';
-import Create from './createJob/createJob';
 import React from 'react'
 import makeStyles from '../styles'
-
+import { Link} from 'react-router-dom'
 
 //design of putting creating job and the jobs list in the samme page
 const job = () => {
@@ -12,20 +11,20 @@ const job = () => {
         <div >
             <Container maxWidth="lg">
                 <AppBar className={classes.appBar} position="static" color="inherit">
-                    <Typography className={classes.heading} variant="h2" align="center"> Job Create & Show </Typography>
+                    <Typography className={classes.heading} variant="h2" align="center"> Job Creation & Show </Typography>
                 </AppBar>
-
                 <Grow in>
                     <Container>
                         <Grid container justifyContent="space-between" alignItems="stretch">
-                            <Grid item xs={12} sm={12}>
+                            <Grid item  style= {{ marginLeft: '400px'}} xs={12} sm={4}>
                                 <AppBar className={classes.appBar} position="static" color="inherit">
-                                    <Job />
+                                <Link to={{pathname: `/jobCreation`}}  style={{ marginLeft: "5px" }} >Create New Job</Link>
+                                   
                                 </AppBar>
                             </Grid>
-                            <Grid style= {{ marginLeft: '400px'}}  item xs={12} sm={4}>
+                            <Grid   item xs={12} sm={12}>
                             <AppBar className={classes.appBar} position="static" color="inherit">
-                                    <Create />
+                            <Job />
                                 </AppBar>
                             </Grid>
                         </Grid>

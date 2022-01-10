@@ -17,8 +17,9 @@ import workSchedule from "./components/workSchedule";
 import applyJob from "./components/showJob/applyJob";
 import profileJob from "./components/showJob/profileJob";
 import profileWorker from "./components/showWorker/profileWorker";
-
-
+import workerCreation from "./components/createWorker/workerCreation";
+import companyCreation from "./components/createCompany/companyCreation";
+import jobCreation from "./components/createJob/jobCreation";
 
 function App() {
   return (
@@ -38,6 +39,9 @@ function App() {
           <GuestRoute path="/applyJob" component={applyJob} />
           <AuthRoute path="/profileJob" component={profileJob} />
           <AuthRoute path="/profileWorker" component={profileWorker} />
+          <AuthRoute path="/workerCreation" component={workerCreation} />
+          <AuthRoute path="/companyCreation" component={companyCreation} />
+          <AuthRoute path="/jobCreation" component={jobCreation} />
         </div>
         <Route path="/" exact component={Home} />
       </Layout>

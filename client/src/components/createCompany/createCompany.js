@@ -21,7 +21,7 @@ export default function CreateCompany() {
   const createCompany = () => {
     axios.post('http://localhost:9000/companies', company).then(() => {
       alert('Company has beed added!');
-      window.location.reload(false);
+      window.location.replace('/company')
     })
     
 

@@ -38,7 +38,7 @@ export default function ViewComponent (props)  {
               <TableCell align="right">{props.position}</TableCell>
               <TableCell align="right">{props.payPerHour}</TableCell>
               <TableCell align="right">{props.address}</TableCell>       
-              <Link to={{pathname: `/applyJob/`}}   style={{ marginLeft: "5px" }} ><ForwardToInboxIcon />Apply </Link>
+              <Link to={{pathname: `/jobFormCreation/`}}   style={{ marginLeft: "5px" }} ><ForwardToInboxIcon />Apply </Link>
           </Table>
           
           </TableContainer>

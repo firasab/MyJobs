@@ -14,12 +14,13 @@ import view from "./components/view";
 import company from "./components/company";
 import profileCompany from "./components/showCompany/profileCompany";
 import workSchedule from "./components/workSchedule";
-import applyJob from "./components/showJob/applyJob";
-import profileJob from "./components/showJob/profileJob";
 import profileWorker from "./components/showWorker/profileWorker";
 import workerCreation from "./components/createWorker/workerCreation";
 import companyCreation from "./components/createCompany/companyCreation";
 import jobCreation from "./components/createJob/jobCreation";
+import workerEdition from "./components/editWorker/workerEdition";
+import jobFormCreation from "./components/createJob/jobFormCreation";
+import jobForm from "./components/jobForm";
 
 function App() {
   return (
@@ -36,12 +37,13 @@ function App() {
           <AuthRoute path="/company" component={company} />
           <AuthRoute path="/profileCompany" component={profileCompany} />
           <AuthRoute path="/workSchedule" component={workSchedule} />
-          <GuestRoute path="/applyJob" component={applyJob} />
-          <AuthRoute path="/profileJob" component={profileJob} />
           <AuthRoute path="/profileWorker" component={profileWorker} />
           <AuthRoute path="/workerCreation" component={workerCreation} />
           <AuthRoute path="/companyCreation" component={companyCreation} />
           <AuthRoute path="/jobCreation" component={jobCreation} />
+          <AuthRoute path="/workerEdition" component={workerEdition} />
+          <GuestRoute path="/jobFormCreation" component={jobFormCreation} />
+          <AuthRoute path="/jobForm" component={jobForm} />
         </div>
         <Route path="/" exact component={Home} />
       </Layout>

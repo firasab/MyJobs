@@ -7,6 +7,7 @@ const passport=require('passport')
 const workerRoutes = require('./routes/worker.js');
 const jobRoutes = require('./routes/job.js');
 const companyRoutes = require('./routes/company.js');
+const jobFormRoutes = require('./routes/jobForm.js');
 
 const app = express();
 
@@ -39,6 +40,7 @@ app.use('/api/users', users);
 app.use('/workers', workerRoutes);
 app.use('/jobs', jobRoutes);
 app.use('/companies', companyRoutes);
+app.use('/jobForms', jobFormRoutes);
 
 
 

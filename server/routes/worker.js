@@ -38,20 +38,50 @@ router.delete('/:id', async (req,res) => {
     }
 })
 
-// router.put('/:id', (req, res) => {
-//     const worker = getWorker(req.params.id)
-   
-//     if (!worker) return res.status(404).json({})
-   
-//     worker.name = req.body.name
-//     worker.id = req.body.id
-//     worker.location = req.body.location
-//     worker.phoneNumber = req.body.phoneNumber
-//     worker.email = req.body.email
-//     worker.company = req.body.company
 
-//     res.json(worker)
-//    })
+/*
+//get worker by id 
+router.get('/:id', async (request, response) => {
+    try{
+        const worker = await workerData.findById(request.params.id);
+        response.status(200).json(worker);
+    }catch( error ){
+        response.status(404).json({ message: error.message })
+    }
+});
+// update worker after edit 
+router.put('/:id', async (request, response) => {
+    let worker = await workerData.findById(request.params.id);
+    worker = request.body;
 
+    const editWorker = new workerData(worker);
+    try{
+        await workerData.updateOne({_id: request.params.id}, editWorker);
+        response.status(201).json(editWorker);
+    } catch (error){
+        response.status(409).json({ message: error.message});     
+    }
+})
+*/
+
+/*
+router.route('/update/:id').post((req,res) => {
+    workerData.findById(req.params.id)
+        .then(worker => {
+            worker.name = req.body.name;
+            worker.id = req.body.id;
+            worker.location = req.body.location;
+            worker.phoneNumber = req.body.phoneNumber;
+            worker.email = req.body.email;
+            worker.companyName = req.body.companyName;
+            
+
+            worker.save()
+                .then(() => res.json('worker updated !'))
+                .catch(err => res.status(400).json('Error: '+err));
+        })
+        .catch(err => res.status(400).json('Error: '+err));
+});
+*/
 
 module.exports = router;

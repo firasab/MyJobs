@@ -73,7 +73,7 @@ export default function ShowWorker() {
               <TableCell align="right">  
                                          <Link  aria-label="delete" onClick={() => deleteWorker(worker._id)} 
                                          style={{ marginLeft: "5px" }} > <DeleteIcon /> </Link>
-                                         <Link to={{pathname: `/editWorker`,state: worker._id,}}  onClick={() => handleClick(worker._id)} 
+                                         <Link to={{pathname: `/workerEdition`,state: worker._id,}}  onClick={() => handleClick(worker._id)} 
                                          style={{ marginLeft: "5px" }} ><EditIcon /> </Link>
                                          <Link to={{pathname: `/profileWorker/`,state: worker._id,}}  onClick={() => handleClick(worker._id)} 
                                          style={{ marginLeft: "5px" }} ><AccountCircleIcon /> </Link>

@@ -3,14 +3,14 @@ import Job from './showJob/showJobForms';
 import React from 'react'
 import makeStyles from '../styles'
 
-//design of putting creating job and the jobs list in the samme page
+//design of jobs forms list 
 const jobForm = () => {
     const classes = makeStyles();
     return (
         <div >
             <Container maxWidth="lg">
                 <AppBar className={classes.appBar} position="static" color="inherit">
-                    <Typography className={classes.heading} variant="h2" align="center"> Job Form Show </Typography>
+                    <Typography className={classes.heading} variant="h2" align="center"> Job's Form's List </Typography>
                 </AppBar>
                 <Grow in>
                     <Container>

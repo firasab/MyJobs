@@ -33,7 +33,7 @@ export default function ShowJob() {
     //the design of the table of the jobs list 
   return (
     <>
-    <h2> Jobs's Forms list </h2>
+    <h2> Form's list </h2>
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
@@ -43,7 +43,7 @@ export default function ShowJob() {
             <TableCell align="right">ID</TableCell>
             <TableCell align="right">Phone Number</TableCell>
             <TableCell align="right">Address</TableCell>
-            <TableCell align="right">Description</TableCell>
+            <TableCell align="right">Note</TableCell>
             <TableCell align="right" >Action</TableCell>
           </TableRow>
         </TableHead>

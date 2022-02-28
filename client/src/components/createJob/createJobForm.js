@@ -38,7 +38,7 @@ export default function CreateJobForm() {
     <Box sx={{ '& > :not(style)': { m: 1 } }}>
       <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
         <PersonIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-        <TextField id="input-with-sx" className="firstName" label="First Name" variant="standard" value={jobForm.name} onChange={(event) => {
+        <TextField id="input-with-sx" className="Full Name" label="Full Name" variant="standard" value={jobForm.name} onChange={(event) => {
           setJobForm({ ...jobForm, name:event.target.value })
         }} />
       </Box>
@@ -68,7 +68,7 @@ export default function CreateJobForm() {
       </Box>
       <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
         <DescriptionIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-        <TextField id="input-with-sx" label="description" variant="standard" value={jobForm.description}  onChange={(event) => {
+        <TextField id="input-with-sx" label="Note" variant="standard" value={jobForm.description}  onChange={(event) => {
           setJobForm({ ...jobForm, description:event.target.value })
         }}/>
       </Box>

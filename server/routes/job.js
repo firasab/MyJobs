@@ -40,4 +40,22 @@ router.delete('/:id', async (req,res) => {
 
 
 
+router.route('/update/:id').post((req,res) => {
+    jobData.findById(req.params.id)
+        .then(job => {
+            job.name = req.body.name;
+            job.discription = req.body.discription;
+            job.position = req.body.position;
+            job.payPerHour = req.body.payPerHour;
+            job.address = req.body.address;
+            
+
+            job.save()
+                .then(() => res.json('job updated !'))
+                .catch(err => res.status(400).json('Error: '+err));
+        })
+        .catch(err => res.status(400).json('Error: '+err));
+});
+
+
 module.exports = router;

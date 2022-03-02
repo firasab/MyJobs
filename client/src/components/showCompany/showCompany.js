@@ -15,6 +15,7 @@ import { Link} from 'react-router-dom'
 
 export default function ShowCompany() {
   const [companiesList, setCompaniesList] = useState([])
+
 //delete method to delete company from database
   const deleteCompany = (id) => {
     axios.delete(`http://localhost:9000/companies/${id}`).then (() => {
@@ -22,13 +23,7 @@ export default function ShowCompany() {
       window.location.reload(false);
     })
   }
-//edit method to edit company from database
-  // const editCompany = (id) => {
-  //   axios.put(`http://localhost:9000/companies/${id}`).then (() => {
-  //     alert('Company has beed updated!');
-  //     window.location.reload(false);
-  //   })
-  // }
+
 //get method to get company from database
   useEffect(() => {
     axios.get('http://localhost:9000/companies').then( (allCompanies) => {
@@ -69,7 +64,7 @@ export default function ShowCompany() {
               <TableCell align="right">{company.address}</TableCell>
               <TableCell align="right">  
               <Link aria-label="delete" onClick={() => deleteCompany(company._id)} style={{ marginLeft: "5px" }} > <DeleteIcon /> </Link> 
-              <Link to={{pathname: `/editCompany/`,state: company._id,}}  onClick={() => handleClick(company._id)} style={{ marginLeft: "5px" }} ><EditIcon /> </Link> 
+              <Link to={{pathname: `/companyEdition`,state: company}} style={{ marginLeft: "5px" }} ><EditIcon /> </Link> 
               <Link to={{pathname: `/profileCompany/`,state: company._id,}}  onClick={() => handleClick(company._id)} style={{ marginLeft: "5px" }} ><AccountCircleIcon /> </Link> 
               
               

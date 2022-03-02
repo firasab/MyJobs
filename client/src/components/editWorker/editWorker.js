@@ -30,7 +30,6 @@ export default function EditWorker() {
 
       //post method to update worker to database
   const editWorker = () => {
-    console.log(worker)
     axios.post(`http://localhost:9000/workers/update/${x._id}`, worker).then(() => {
       
       alert('Worker has beed Updated!');

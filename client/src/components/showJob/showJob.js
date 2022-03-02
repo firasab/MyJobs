@@ -64,7 +64,7 @@ export default function ShowJob() {
               <TableCell align="right">{job.address}</TableCell>
               <TableCell align="right"> 
               <Link aria-label="delete" onClick={() => deleteJob(job._id)} style={{ marginLeft: "5px" }} ><DeleteIcon />  </Link> 
-              <Link to={{pathname: `/editJob/`,state: job._id,}}  onClick={() => handleClick(job._id)} style={{ marginLeft: "5px" }} ><EditIcon />  </Link> 
+              <Link to={{pathname: `/jobEdition`,state: job}}  style={{ marginLeft: "5px" }} ><EditIcon />  </Link> 
               <Link to={{pathname: `/profileJob/`,state: job._id,}}  onClick={() => handleClick(job._id)} style={{ marginLeft: "5px" }} ><AccountCircleIcon /> </Link> 
               
                </TableCell>

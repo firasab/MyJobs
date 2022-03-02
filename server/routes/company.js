@@ -40,4 +40,23 @@ router.delete('/:id', async (req,res) => {
 
 
 
+
+router.route('/update/:id').post((req,res) => {
+    companyData.findById(req.params.id)
+        .then(company => {
+            company.name = req.body.name;
+            company.field = req.body.field;
+            company.numberOfWorker = req.body.numberOfWorker;
+            company.address = req.body.address;
+            
+
+            company.save()
+                .then(() => res.json('company updated !'))
+                .catch(err => res.status(400).json('Error: '+err));
+        })
+        .catch(err => res.status(400).json('Error: '+err));
+});
+
+
+
 module.exports = router;

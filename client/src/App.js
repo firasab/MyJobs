@@ -21,6 +21,8 @@ import jobCreation from "./components/createJob/jobCreation";
 import workerEdition from "./components/editWorker/workerEdition";
 import jobFormCreation from "./components/createJob/jobFormCreation";
 import jobForm from "./components/jobForm";
+import companyEdition from "./components/editCompany/companyEdittion";
+import jobEdition from "./components/editJob/jobEdition";
 
 function App() {
   return (
@@ -44,6 +46,8 @@ function App() {
           <AuthRoute path="/workerEdition" component={workerEdition} />
           <GuestRoute path="/jobFormCreation" component={jobFormCreation} />
           <AuthRoute path="/jobForm" component={jobForm} />
+          <AuthRoute path="/companyEdition" component={companyEdition} />
+          <AuthRoute path="/jobEdition" component={jobEdition} />
         </div>
         <Route path="/" exact component={Home} />
       </Layout>

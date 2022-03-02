@@ -49,19 +49,6 @@ router.get('/:id', async (request, response) => {
         response.status(404).json({ message: error.message })
     }
 });
-// update worker after edit 
-router.put('/:id', async (request, response) => {
-    let worker = await workerData.findById(request.params.id);
-    worker = request.body;
-
-    const editWorker = new workerData(worker);
-    try{
-        await workerData.updateOne({_id: request.params.id}, editWorker);
-        response.status(201).json(editWorker);
-    } catch (error){
-        response.status(409).json({ message: error.message});     
-    }
-})
 */
 
 

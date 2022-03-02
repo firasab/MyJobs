@@ -28,8 +28,7 @@ export default function EditWorker() {
   });
   
 
-  //////////////////////////////////////////////////////////////////////////////////////////////////
-      //post method to add worker to database
+      //post method to update worker to database
   const editWorker = () => {
     console.log(worker)
     axios.post(`http://localhost:9000/workers/update/${x._id}`, worker).then(() => {
@@ -38,7 +37,7 @@ export default function EditWorker() {
       window.location.replace('/worker')
     })
   }
-///////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 
   //the design of the create worker funtion

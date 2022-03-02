@@ -26,14 +26,7 @@ export default function ShowWorker() {
     })
   }
 
-  // const editWorker = (_id) => {
-    
-  //   axios.post(`http://localhost:9000/workers/update/${_id}`).then (() => {
 
-  //     alert('Worker has beed updated!');
-  //     window.location.reload(false);
-  //   })
-  // }
 //get method to get worker from database
   useEffect(() => {
     axios.get('http://localhost:9000/workers').then( (allWorkers) => {

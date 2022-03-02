@@ -10,22 +10,31 @@ import ApartmentIcon from '@mui/icons-material/Apartment';
 import Button from '@mui/material/Button';
 import { useState } from 'react';
 import axios from 'axios';
+import { useLocation } from 'react-router-dom';
+
 
 
 //set the worker featuers
 export default function EditWorker() {
+  const location = useLocation()
+  const x = location.state;
   const [worker, setWorker] = useState({
-    name: '',
-    id: '',
-    location: '',
-    phoneNumber: '',
-    email: ''
+    name:x.name,
+    id: x.id,
+    location: x.location,
+    phoneNumber: x.phoneNumber,
+    email: x.email,
+    companyName: x.companyName
   });
+  
+
   //////////////////////////////////////////////////////////////////////////////////////////////////
       //post method to add worker to database
   const editWorker = () => {
-    axios.post('http://localhost:9000/workers', worker).then(() => {
-      alert('Worker has beed added!');
+    console.log(worker)
+    axios.post(`http://localhost:9000/workers/update/${x._id}`, worker).then(() => {
+      
+      alert('Worker has beed Updated!');
       window.location.replace('/worker')
     })
   }
@@ -73,7 +82,7 @@ export default function EditWorker() {
           setWorker({ ...worker, companyName:event.target.value })
         }}/>
       </Box>
-      <Button variant="contained" color="success"  style= {{ marginLeft: '50px'}} onClick={editWorker}> Update Worker </Button>
+      <Button variant="contained" color="success"  style= {{ marginLeft: '50px'}}  onClick={() => editWorker()}> Update Worker </Button>
     </Box>
     </>
   );

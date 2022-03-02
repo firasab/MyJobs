@@ -13,8 +13,11 @@ import EditIcon from '@mui/icons-material/Edit';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Link} from 'react-router-dom'
 
+
 export default function ShowWorker() {
   const [workersList, setWorkerList] = useState([])
+
+
 //delete method to delete worker from database
   const deleteWorker = (id) => {
     axios.delete(`http://localhost:9000/workers/${id}`).then (() => {
@@ -22,9 +25,11 @@ export default function ShowWorker() {
       window.location.reload(false);
     })
   }
-//edit method to edit worker from database
-  // const editWorker = (id) => {
-  //   axios.put(`http://localhost:9000/workers/${id}`).then (() => {
+
+  // const editWorker = (_id) => {
+    
+  //   axios.post(`http://localhost:9000/workers/update/${_id}`).then (() => {
+
   //     alert('Worker has beed updated!');
   //     window.location.reload(false);
   //   })
@@ -71,11 +76,11 @@ export default function ShowWorker() {
               <TableCell align="right">{worker.email}</TableCell>
               <TableCell align="right">{worker.companyName}</TableCell>
               <TableCell align="right">  
-                                         <Link  aria-label="delete" onClick={() => deleteWorker(worker._id)} 
-                                         style={{ marginLeft: "5px" }} > <DeleteIcon /> </Link>
-                                         <Link to={{pathname: `/workerEdition`,state: worker._id,}}  onClick={() => handleClick(worker._id)} 
+                                         <button  aria-label="delete" onClick={() => deleteWorker(worker._id)} 
+                                         style={{ marginLeft: "5px" }} > <DeleteIcon /> </button>
+                                         <Link to={{pathname: `/workerEdition`,state: worker}} 
                                          style={{ marginLeft: "5px" }} ><EditIcon /> </Link>
-                                         <Link to={{pathname: `/profileWorker/`,state: worker._id,}}  onClick={() => handleClick(worker._id)} 
+                                         <Link to={{pathname: `/profileWorker/`,state: {worker} }}  onClick={() => handleClick(worker._id)} 
                                          style={{ marginLeft: "5px" }} ><AccountCircleIcon /> </Link>
 
                                          </TableCell>

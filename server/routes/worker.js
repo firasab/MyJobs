@@ -64,7 +64,7 @@ router.put('/:id', async (request, response) => {
 })
 */
 
-/*
+
 router.route('/update/:id').post((req,res) => {
     workerData.findById(req.params.id)
         .then(worker => {
@@ -82,6 +82,6 @@ router.route('/update/:id').post((req,res) => {
         })
         .catch(err => res.status(400).json('Error: '+err));
 });
-*/
+
 
 module.exports = router;

@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/ManageWorkers/MyJobs/build/static/css/main.bf57e93a.chunk.css",
+    "main.js": "/ManageWorkers/MyJobs/build/static/js/main.451d597e.chunk.js",
+    "main.js.map": "/ManageWorkers/MyJobs/build/static/js/main.451d597e.chunk.js.map",
+    "runtime-main.js": "/ManageWorkers/MyJobs/build/static/js/runtime-main.91bc1696.js",
+    "runtime-main.js.map": "/ManageWorkers/MyJobs/build/static/js/runtime-main.91bc1696.js.map",
+    "static/css/2.7bfada36.chunk.css": "/ManageWorkers/MyJobs/build/static/css/2.7bfada36.chunk.css",
+    "static/js/2.93dda1bc.chunk.js": "/ManageWorkers/MyJobs/build/static/js/2.93dda1bc.chunk.js",
+    "static/js/2.93dda1bc.chunk.js.map": "/ManageWorkers/MyJobs/build/static/js/2.93dda1bc.chunk.js.map",
+    "index.html": "/ManageWorkers/MyJobs/build/index.html",
+    "precache-manifest.4dec7a8e96b88e74c5f1926fdbe872aa.js": "/ManageWorkers/MyJobs/build/precache-manifest.4dec7a8e96b88e74c5f1926fdbe872aa.js",
+    "service-worker.js": "/ManageWorkers/MyJobs/build/service-worker.js",
+    "static/css/2.7bfada36.chunk.css.map": "/ManageWorkers/MyJobs/build/static/css/2.7bfada36.chunk.css.map",
+    "static/css/main.bf57e93a.chunk.css.map": "/ManageWorkers/MyJobs/build/static/css/main.bf57e93a.chunk.css.map",
+    "static/js/2.93dda1bc.chunk.js.LICENSE.txt": "/ManageWorkers/MyJobs/build/static/js/2.93dda1bc.chunk.js.LICENSE.txt",
+    "static/media/notifications.css": "/ManageWorkers/MyJobs/build/static/media/notification.c0d3c94c.eot"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.91bc1696.js",
+    "static/css/2.7bfada36.chunk.css",
+    "static/js/2.93dda1bc.chunk.js",
+    "static/css/main.bf57e93a.chunk.css",
+    "static/js/main.451d597e.chunk.js"
+  ]
+}

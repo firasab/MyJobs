@@ -18,7 +18,7 @@ export default function ShowCompany() {
 
 //delete method to delete company from database
   const deleteCompany = (id) => {
-    axios.delete(`https://myjobs-finalproject.herokuapp.com//companies/${id}`).then (() => {
+    axios.delete(`https://myjobss.herokuapp.com/companies/${id}`).then (() => {
       alert('Company has beed deleted!');
       window.location.reload(false);
     })
@@ -26,7 +26,7 @@ export default function ShowCompany() {
 
 //get method to get company from database
   useEffect(() => {
-    axios.get('https://myjobs-finalproject.herokuapp.com//companies').then( (allCompanies) => {
+    axios.get('https://myjobss.herokuapp.com/companies').then( (allCompanies) => {
         setCompaniesList(allCompanies.data);
 
     } )

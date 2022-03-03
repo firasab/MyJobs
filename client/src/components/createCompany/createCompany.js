@@ -19,7 +19,7 @@ export default function CreateCompany() {
   });
   //post method to add company to database
   const createCompany = () => {
-    axios.post('https://myjobs-finalproject.herokuapp.com//companies', company).then(() => {
+    axios.post('https://myjobss.herokuapp.com/companies', company).then(() => {
       alert('Company has beed added!');
       window.location.replace('/company')
     })

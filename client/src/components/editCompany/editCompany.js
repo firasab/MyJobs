@@ -25,7 +25,7 @@ export default function EditCompany() {
       //post method to update worker to database
   const editCompany = () => {
     console.log(company)
-    axios.post(`https://myjobs-finalproject.herokuapp.com//companies/update/${x._id}`, company).then(() => {
+    axios.post(`https://myjobss.herokuapp.com/companies/update/${x._id}`, company).then(() => {
       
       alert('Worker has beed Updated!');
       window.location.replace('/company')

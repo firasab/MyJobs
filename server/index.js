@@ -8,6 +8,7 @@ const workerRoutes = require('./routes/worker.js');
 const jobRoutes = require('./routes/job.js');
 const companyRoutes = require('./routes/company.js');
 const jobFormRoutes = require('./routes/jobForm.js');
+require("dotenv").config();
 
 const app = express();
 
@@ -48,9 +49,9 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/index.html'));
 })
 
-const PORT = process.env.PORT || 9000;
+const PORT = 9000;
 
-app.listen(PORT, () => {
+app.listen( process.env.PORT || PORT, () => {
     console.log(`Server started on port ${PORT}`);
 })
 

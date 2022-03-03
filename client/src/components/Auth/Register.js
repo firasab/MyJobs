@@ -38,7 +38,7 @@ class Register extends Component {
     };
     //post method to send the admin infromation to database
     axios
-    .post("https://myjobs-finalproject.herokuapp.com//api/users/register", data)
+    .post("https://myjobss.herokuapp.com/api/users/register", data)
     .then(result => {
        //if the register is success move me to login page
       alert('your regustion is success!')

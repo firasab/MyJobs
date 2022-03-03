@@ -39,9 +39,9 @@ router.delete('/:id', async (req,res) => {
 })
 
 
-/*
+
 //get worker by id 
-router.get('/:id', async (request, response) => {
+router.get('/view/:id', async (request, response) => {
     try{
         const worker = await workerData.findById(request.params.id);
         response.status(200).json(worker);
@@ -49,7 +49,7 @@ router.get('/:id', async (request, response) => {
         response.status(404).json({ message: error.message })
     }
 });
-*/
+
 
 
 router.route('/update/:id').post((req,res) => {

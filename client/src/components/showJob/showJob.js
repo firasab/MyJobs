@@ -17,7 +17,7 @@ export default function ShowJob() {
   const [jobsList, setJobsList] = useState([])
   //delete job method
   const deleteJob = (id) => {
-    axios.delete(`https://myjobs-finalproject.herokuapp.com//jobs/${id}`).then (() => {
+    axios.delete(`https://myjobss.herokuapp.com/jobs/${id}`).then (() => {
       alert('Job has beed deleted!');
       window.location.reload(false);
     })
@@ -25,7 +25,7 @@ export default function ShowJob() {
 
 //get all jobs method
   useEffect(() => {
-    axios.get('https://myjobs-finalproject.herokuapp.com//jobs').then( (allJobs) => {
+    axios.get('https://myjobss.herokuapp.com/jobs').then( (allJobs) => {
       setJobsList(allJobs.data);
 
     } )

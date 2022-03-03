@@ -20,7 +20,7 @@ export default function ShowWorker() {
 
 //delete method to delete worker from database
   const deleteWorker = (id) => {
-    axios.delete(`https://myjobs-finalproject.herokuapp.com//workers/${id}`).then (() => {
+    axios.delete(`https://myjobss.herokuapp.com/workers/${id}`).then (() => {
       alert('Worker has beed deleted!');
       window.location.reload(false);
     })
@@ -29,7 +29,7 @@ export default function ShowWorker() {
 
 //get method to get worker from database
   useEffect(() => {
-    axios.get('https://myjobs-finalproject.herokuapp.com//workers').then( (allWorkers) => {
+    axios.get('https://myjobss.herokuapp.com/workers').then( (allWorkers) => {
       setWorkerList(allWorkers.data);
 
     } )

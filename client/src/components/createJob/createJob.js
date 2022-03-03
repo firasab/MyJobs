@@ -21,7 +21,7 @@ export default function CreateJob() {
   });
     //post method to add job to database
   const createJob = () => {
-    axios.post('https://myjobs-finalproject.herokuapp.com//jobs', job).then(() => {
+    axios.post('https://myjobss.herokuapp.com/jobs', job).then(() => {
       alert('Job has beed added!');
       window.location.replace('/job')
     })

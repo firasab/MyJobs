@@ -17,7 +17,7 @@ class Login extends Component {
     //post method to get the admin information from the database
     const data = { email: this.state.email, password: this.state.password };
     axios
-      .post("https://myjobs-finalproject.herokuapp.com//api/users/login", data)
+      .post("https://myjobss.herokuapp.com/api/users/login", data)
       .then(result => {
         localStorage.setItem("token", result.data.token);
         localStorage.setItem("user", JSON.stringify(result.data.user));

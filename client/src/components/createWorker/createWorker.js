@@ -23,7 +23,7 @@ export default function CreateWorker() {
   });
       //post method to add worker to database
   const createWorker = () => {
-    axios.post('https://myjobs-finalproject.herokuapp.com//workers', worker).then(() => {
+    axios.post('https://myjobss.herokuapp.com/workers', worker).then(() => {
       alert('Worker has beed added!');
       window.location.replace('/worker')
     })

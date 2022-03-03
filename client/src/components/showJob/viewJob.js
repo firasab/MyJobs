@@ -12,7 +12,7 @@ export default function ViewJob() {
 
 //to get the jobs from the database
   useEffect(() => {
-    axios.get('http://localhost:9000/jobs').then( (allJobs) => {
+    axios.get('https://myjobs-finalproject.herokuapp.com//jobs').then( (allJobs) => {
       setJobsList(allJobs.data);
       
     } 

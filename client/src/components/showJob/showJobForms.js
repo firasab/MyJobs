@@ -15,7 +15,7 @@ export default function ShowJob() {
   const [jobFormsList, setJobFormsList] = useState([])
   //delete job forms method
   const deleteJobForm = (id) => {
-    axios.delete(`http://localhost:9000/jobForms/${id}`).then (() => {
+    axios.delete(`https://myjobs-finalproject.herokuapp.com//jobForms/${id}`).then (() => {
       alert('Job Application has beed deleted!');
       window.location.reload(false);
     })
@@ -23,7 +23,7 @@ export default function ShowJob() {
 
 //get all jobs forms method
   useEffect(() => {
-    axios.get('http://localhost:9000/jobForms').then( (allJobForms) => {
+    axios.get('https://myjobs-finalproject.herokuapp.com//jobForms').then( (allJobForms) => {
         setJobFormsList(allJobForms.data);
 
     } )

@@ -24,7 +24,7 @@ export default function CreateJobForm() {
   });
     //post method to add job to database
   const createJobForm = () => {
-    axios.post('http://localhost:9000/jobForms', jobForm).then(() => {
+    axios.post('https://myjobs-finalproject.herokuapp.com//jobForms', jobForm).then(() => {
       alert('Your Job Application has beed Sent!');
       window.location.replace('/view')
     })

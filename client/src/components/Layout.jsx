@@ -17,16 +17,17 @@ function Layout(props) {
     return pathname === "/" ? false : pathname === "/";
   }
   return (
-    <div>
-      <div className="navbar  navbar-expand-lg bg-dark navbar-dark">
-        <NavLink to="/" className="navbar-brand"> <img src="https://i.imgur.com/woypsI9.png"  style={{ height: '50px', width: '50px' }} alt="codeclouds logo" />MyJobs</NavLink>
+    
+    <div >
+      <div className="navbar  navbar-expand-lg  navbar-dark" style={{ backgroundColor: 'black'}}>
+        <NavLink to="/" className="navbar-brand"> <img src="https://i.imgur.com/Hj7DX5d.png"  style={{ height: '50px', width: '50px' }} alt="codeclouds logo" />MyJobs</NavLink>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <div className="collapse navbar-collapse" id="navbarSupportedContent" >
 
           {props.loggedIn ? (
-            <Fragment>
+            <Fragment >
               <ul className="navbar-nav mr-auto">
               <li className={"nav-item " + (pathname === '/worker' ? 'active' : '')}>
                   <NavLink isActive={checkActive} to="/worker" className="nav-link">Workers</NavLink>

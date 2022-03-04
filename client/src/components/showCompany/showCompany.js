@@ -12,6 +12,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Link} from 'react-router-dom'
+import {Button  } from 'react-bootstrap'
 
 export default function ShowCompany() {
   const [companiesList, setCompaniesList] = useState([])
@@ -63,9 +64,9 @@ export default function ShowCompany() {
               <TableCell align="right">{company.numberOfWorker}</TableCell>
               <TableCell align="right">{company.address}</TableCell>
               <TableCell align="right">  
-              <Link aria-label="delete" onClick={() => deleteCompany(company._id)} style={{ marginLeft: "5px" }} > <DeleteIcon /> </Link> 
-              <Link to={{pathname: `/companyEdition`,state: company}} style={{ marginLeft: "5px" }} ><EditIcon /> </Link> 
-              <Link to={{pathname: `/profileCompany/`,state: company._id,}}  onClick={() => handleClick(company._id)} style={{ marginLeft: "5px" }} ><AccountCircleIcon /> </Link> 
+              <Button aria-label="delete" onClick={() => deleteCompany(company._id)} style={{ marginLeft: "5px" }} > <DeleteIcon /> </Button> 
+              <Button  as={Link} to={{pathname: `/companyEdition`,state: company}} style={{ marginLeft: "5px" }} ><EditIcon /> </Button> 
+              <Button  as={Link} to={{pathname: `/profileCompany/`,state: company._id,}}  onClick={() => handleClick(company._id)} style={{ marginLeft: "5px" }} ><AccountCircleIcon /> </Button> 
               
               
               </TableCell>

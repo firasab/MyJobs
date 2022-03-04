@@ -15,14 +15,14 @@ import { Link} from 'react-router-dom'
 import {Button  } from 'react-bootstrap'
 
 
-export default function ShowWorker() {
-  const [workersList, setWorkerList] = useState([])
+export default function ShowAdmin() {
+  const [adminsList, setAdminList] = useState([])
 
 
 //delete method to delete worker from database
-  const deleteWorker = (id) => {
-    axios.delete(`https://myjobss.herokuapp.com/workers/${id}`).then (() => {
-      alert('Worker has beed deleted!');
+  const deleteAdmin = (id) => {
+    axios.delete(`https://myjobss.herokuapp.com/users/${id}`).then (() => {
+      alert('Admin has beed deleted!');
       window.location.reload(false);
     })
   }
@@ -30,53 +30,43 @@ export default function ShowWorker() {
 
 //get method to get worker from database
   useEffect(() => {
-    axios.get('https://myjobss.herokuapp.com/workers').then( (allWorkers) => {
-      setWorkerList(allWorkers.data);
+    axios.get('https://myjobss.herokuapp.com/users').then( (allAdmins) => {
+        setAdminList(allAdmins.data);
 
     } )
   }, [])
 
-  const handleClick = (() => {
-
-  })
+ 
   //the design of workers list
   return (
     <>
-    <h2> Worker's list </h2>
+    <h2> Admins's list </h2>
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
             <TableCell>Name</TableCell>
-            <TableCell align="right">ID</TableCell>
-            <TableCell align="right">Location</TableCell>
-            <TableCell align="right">Phone Number</TableCell>
+            <TableCell align="right">name</TableCell>
             <TableCell align="right">Email</TableCell>
-            <TableCell align="right">Company</TableCell>
-            <TableCell align="right">Action</TableCell>
+            <TableCell align="right">Password</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {workersList.map((worker, key) => (
+          {adminsList.map((admin, key) => (
             <TableRow key={key}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                {worker.name}
+                {admin.name}
               </TableCell>
-              <TableCell align="right">{worker.id}</TableCell>
-              <TableCell align="right">{worker.location}</TableCell>
-              <TableCell align="right">{worker.phoneNumber}</TableCell>
-              <TableCell align="right">{worker.email}</TableCell>
-              <TableCell align="right">{worker.companyName}</TableCell>
-              <TableCell align="right">  
-                                         <Button  variant="primary" aria-label="delete" onClick={() => deleteWorker(worker._id)} 
-                                         style={{ marginLeft: "5px" }} > <DeleteIcon /> </Button>
-                                         <Button  as={Link} to={{pathname: `/workerEdition`,state: worker}} 
-                                         style={{ marginLeft: "5px" }} ><EditIcon /> </Button>
-                                         <Button as={Link} to={{pathname: `/profileWorker/`,state: {worker} }}  onClick={() => handleClick(worker._id)} 
-                                         style={{ marginLeft: "5px" }} ><AccountCircleIcon /> </Button>
+              <TableCell align="right">{admin.email}</TableCell>
+              <TableCell align="right">{admin.password}</TableCell>
 
+              <TableCell align="right">  
+                                         <Button  variant="primary" aria-label="delete" onClick={() => deleteWorker(admin._id)} 
+                                         style={{ marginLeft: "5px" }} > <DeleteIcon /> </Button>
+                                         <Button  as={Link} to={{pathname: `/workerEdition`,state: admin}} 
+                                         style={{ marginLeft: "5px" }} ><EditIcon /> </Button>
                                          </TableCell>
                                          
                                          

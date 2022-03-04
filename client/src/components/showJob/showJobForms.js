@@ -9,7 +9,7 @@ import Paper from '@mui/material/Paper';
 import axios from 'axios';
 import { useState , useEffect } from 'react';
 import DeleteIcon from '@material-ui/icons/Delete';
-import { Link} from 'react-router-dom'
+import {Button  } from 'react-bootstrap'
 
 export default function ShowJob() {
   const [jobFormsList, setJobFormsList] = useState([])
@@ -61,7 +61,7 @@ export default function ShowJob() {
               <TableCell align="right">{jobForm.address}</TableCell>
               <TableCell align="right">{jobForm.description}</TableCell>
               <TableCell align="right"> 
-              <Link aria-label="delete" onClick={() => deleteJobForm(jobForm._id)} style={{ marginLeft: "5px" }} ><DeleteIcon />  </Link>  
+              <Button aria-label="delete" onClick={() => deleteJobForm(jobForm._id)} style={{ marginLeft: "5px" }} ><DeleteIcon />  </Button>  
                </TableCell>
             </TableRow>
           ))}

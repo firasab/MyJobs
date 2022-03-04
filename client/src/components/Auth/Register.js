@@ -42,7 +42,7 @@ class Register extends Component {
     .then(result => {
        //if the register is success move me to login page
       alert('your regustion is success!')
-      
+      window.location.replace('/home')
     })
     .catch(err => {
       if (err.response && err.response.status === 400){

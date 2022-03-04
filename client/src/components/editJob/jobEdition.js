@@ -3,22 +3,22 @@ import Update from './editJob';
 import React from 'react'
 import makeStyles from '../../styles'
 
-//design of putting updating worker 
+
+//design of putting creating company and the companies list in the samme page
 const jobEd = () => {
     const classes = makeStyles();
     return (
         <div >
             <Container maxWidth="lg">
                 <AppBar className={classes.appBar} position="static" color="inherit">
-                    <Typography className={classes.heading} variant="h2" align="center">Update Job </Typography>
+                    <Typography className={classes.heading} variant="h2" align="center"> Job Show and update </Typography>
                 </AppBar>
 
                 <Grow in>
                     <Container>
                         <Grid container justifyContent="space-between" alignItems="stretch">
-                            <Grid style= {{ marginLeft: '400px'}} item xs={12} sm={4}>
+                            <Grid style= {{ marginLeft: '400px'}}  item xs={12} sm={4}>
                             <AppBar className={classes.appBar} position="static" color="inherit">
-                            
                                     <Update />
                                 </AppBar>
                             </Grid>

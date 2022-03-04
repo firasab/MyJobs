@@ -24,6 +24,7 @@ import jobForm from "./components/jobForm";
 import companyEdition from "./components/editCompany/companyEdittion";
 import jobEdition from "./components/editJob/jobEdition";
 
+
 function App() {
   return (
     <Router>

@@ -54,7 +54,7 @@ export default function ShowJob() {
         <TableBody>
           {jobsList.map((job, key) => (
             <TableRow key={key}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+              sx={{ '&:last-child td, &:last-child th': { border: 0  } }}
             >
               <TableCell component="th" scope="row">
                 {job.name}
@@ -63,7 +63,7 @@ export default function ShowJob() {
               <TableCell align="right">{job.position}</TableCell>
               <TableCell align="right">{job.payPerHour}</TableCell>
               <TableCell align="right">{job.address}</TableCell>
-              <TableCell align="right"> 
+              <TableCell align="right"  sx={{ minWidth: 200}}  > 
               <Button aria-label="delete" onClick={() => deleteJob(job._id)} style={{ marginLeft: "5px" }} ><DeleteIcon />  </Button> 
               <Button  as={Link} o={{pathname: `/jobEdition`,state: job}}  style={{ marginLeft: "5px" }} ><EditIcon />  </Button> 
               <Button  as={Link} to={{pathname: `/profileJob/`,state: job._id,}}  onClick={() => handleClick(job._id)} style={{ marginLeft: "5px" }} ><AccountCircleIcon /> </Button> 

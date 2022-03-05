@@ -38,6 +38,16 @@ router.delete('/:id', async (req,res) => {
     }
 })
 
+//get job by id 
+router.get('/view/:id', async (request, response) => {
+    try{
+        const job = await jobData.findById(request.params.id);
+        response.status(200).json(job);
+    }catch( error ){
+        response.status(404).json({ message: error.message })
+    }
+});
+
 
 
 router.route('/update/:id').post((req,res) => {

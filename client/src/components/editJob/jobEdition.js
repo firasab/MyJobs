@@ -4,7 +4,7 @@ import React from 'react'
 import makeStyles from '../../styles'
 
 
-//design of putting creating company and the companies list in the samme page
+//design of putting creating jobs and the jobs list in the samme page
 const jobEd = () => {
     const classes = makeStyles();
     return (

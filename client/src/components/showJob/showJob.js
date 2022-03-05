@@ -31,9 +31,7 @@ export default function ShowJob() {
 
     } )
   }, [])
-  const handleClick = (() => {
-
-  })
+  
 
     //the design of the table of the jobs list 
   return (
@@ -66,7 +64,7 @@ export default function ShowJob() {
               <TableCell align="right"  sx={{ minWidth: 200}}  > 
               <Button aria-label="delete" onClick={() => deleteJob(job._id)} style={{ marginLeft: "5px" }} ><DeleteIcon />  </Button> 
               <Button  as={Link} o={{pathname: `/jobEdition`,state: job}}  style={{ marginLeft: "5px" }} ><EditIcon />  </Button> 
-              <Button  as={Link} to={{pathname: `/profileJob/`,state: job._id,}}  onClick={() => handleClick(job._id)} style={{ marginLeft: "5px" }} ><AccountCircleIcon /> </Button> 
+              <Button  as={Link} to={{pathname: `/profileJob`,state: job._id,}}   style={{ marginLeft: "5px" }} ><AccountCircleIcon /> </Button> 
               
                </TableCell>
             </TableRow>

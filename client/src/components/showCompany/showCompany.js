@@ -33,9 +33,7 @@ export default function ShowCompany() {
     } )
   }, [])
 
-  const handleClick = (() => {
-
-  })
+ 
 
   //the design of the table of the companies list 
   return (
@@ -66,7 +64,7 @@ export default function ShowCompany() {
               <TableCell align="right">  
               <Button aria-label="delete" onClick={() => deleteCompany(company._id)} style={{ marginLeft: "5px" }} > <DeleteIcon /> </Button> 
               <Button  as={Link} to={{pathname: `/companyEdition`,state: company}} style={{ marginLeft: "5px" }} ><EditIcon /> </Button> 
-              <Button  as={Link} to={{pathname: `/profileCompany/`,state: company._id,}}  onClick={() => handleClick(company._id)} style={{ marginLeft: "5px" }} ><AccountCircleIcon /> </Button> 
+              <Button  as={Link} to={{pathname: `/profileCompany`,state: company}} style={{ marginLeft: "5px" }} ><AccountCircleIcon /> </Button> 
               
               
               </TableCell>

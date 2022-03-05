@@ -10,7 +10,7 @@ import ApartmentIcon from '@mui/icons-material/Apartment';
 import NfcIcon from '@mui/icons-material/Nfc';
 import FormatListNumberedIcon from '@mui/icons-material/FormatListNumbered';
 
-//set the worker featuers
+
 export default function EditJob() {
   const location = useLocation()
   const edt = location.state;
@@ -23,7 +23,7 @@ export default function EditJob() {
   });
   
 
-      //post method to update worker to database
+     
   const editJob = () => {
     axios.post(`https://myjobss.herokuapp.com/jobs/update/${edt._id}`, job).then(() => {
       
@@ -34,7 +34,7 @@ export default function EditJob() {
 
 
 
-  //the design of the create worker funtion
+ 
   return (
     <>
     <h2>Edit job</h2>
@@ -70,7 +70,7 @@ export default function EditJob() {
         }}/>
       </Box>
      
-      <Button variant="contained" color="success"  style= {{ marginLeft: '50px'}}  onClick={() => editJob()}> Update Company </Button>
+      <Button variant="contained" color="success"  style= {{ marginLeft: '50px'}}  onClick={() => editJob()}> Update Job </Button>
     </Box>
     </>
   );

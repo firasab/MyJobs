@@ -12,7 +12,7 @@ class Home extends Component {
   render() {
     if (this.props.loggedIn) {
       return (
-        <div className="container">
+        <div className="container" >
           <div className="card" >
             <div className="card-body" >
               <h5 className="card-title">Welcome {this.props.name}</h5> {/* get the admin name from database and put it in the props place*/ }

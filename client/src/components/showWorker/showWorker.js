@@ -72,7 +72,7 @@ export default function ShowWorker() {
                                          style={{ marginLeft: "5px" }} > <DeleteIcon /> </Button>
                                          <Button  as={Link} to={{pathname: `/workerEdition`,state: worker}} 
                                          style={{ marginLeft: "5px" }} ><EditIcon /> </Button>
-                                         <Button as={Link} to={{pathname: `/profileWorker`,state: {worker} }}  
+                                         <Button as={Link} to={{pathname: `/workerProfile`,state: worker }}  
                                          style={{ marginLeft: "5px" }} ><AccountCircleIcon /> </Button>
 
                                          </TableCell>

@@ -40,16 +40,33 @@ router.delete('/:id', async (req,res) => {
 
 
 
-//get worker by id 
-router.get('/view/:id', async (request, response) => {
-    try{
-        const worker = await workerData.findById(request.params.id);
-        response.status(200).json(worker);
-    }catch( error ){
-        response.status(404).json({ message: error.message })
-    }
-});
+// //get worker by id 
+// router.get('/view/:id', async (request, response) => {
+//     try{
+//         const worker = await workerData.findById(request.params.id);
+//         response.status(200).json(worker);
+//     }catch( error ){
+//         response.status(404).json({ message: error.message })
+//     }
+// });
 
+router.route('/view/:id').get((req,res) => {
+    workerData.findById(req.params.id)
+        .then(worker => {
+            worker.name = req.body.name;
+            worker.id = req.body.id;
+            worker.location = req.body.location;
+            worker.phoneNumber = req.body.phoneNumber;
+            worker.email = req.body.email;
+            worker.companyName = req.body.companyName;
+
+            try{
+                response.status(200).json(worker);
+            }catch( error ){
+                response.status(404).json({ message: error.message })
+            }
+        })
+});
 
 
 router.route('/update/:id').post((req,res) => {

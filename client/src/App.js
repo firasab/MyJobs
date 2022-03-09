@@ -12,9 +12,9 @@ import worker from "./components/worker";
 import job from "./components/job";
 import view from "./components/view";
 import company from "./components/company";
-import profileCompany from "./components/showCompany/profileCompany";
+import companyProfile from "./components/showCompany/companyProfile";
 import workSchedule from "./components/workSchedule";
-import profileWorker from "./components/showWorker/profileWorker";
+import workerProfile from "./components/showWorker/workerProfile";
 import workerCreation from "./components/createWorker/workerCreation";
 import companyCreation from "./components/createCompany/companyCreation";
 import jobCreation from "./components/createJob/jobCreation";
@@ -23,6 +23,7 @@ import jobFormCreation from "./components/createJob/jobFormCreation";
 import jobForm from "./components/jobForm";
 import companyEdition from "./components/editCompany/companyEdittion";
 import jobEdition from "./components/editJob/jobEdition";
+import jobProfile from "./components/showJob/jobProfile";
 
 
 function App() {
@@ -38,9 +39,9 @@ function App() {
           <AuthRoute path="/job" component={job} />
           <GuestRoute path="/view" component={view} />
           <AuthRoute path="/company" component={company} />
-          <AuthRoute path="/profileCompany" component={profileCompany} />
+          <AuthRoute path="/companyProfile" component={companyProfile} />
           <AuthRoute path="/workSchedule" component={workSchedule} />
-          <AuthRoute path="/profileWorker" component={profileWorker} />
+          <AuthRoute path="/workerProfile" component={workerProfile} />
           <AuthRoute path="/workerCreation" component={workerCreation} />
           <AuthRoute path="/companyCreation" component={companyCreation} />
           <AuthRoute path="/jobCreation" component={jobCreation} />
@@ -49,6 +50,7 @@ function App() {
           <AuthRoute path="/jobForm" component={jobForm} />
           <AuthRoute path="/companyEdition" component={companyEdition} />
           <AuthRoute path="/jobEdition" component={jobEdition} />
+          <AuthRoute path="/jobProfile" component={jobProfile} />
         </div>
         <Route path="/" exact component={Home} />
       </Layout>

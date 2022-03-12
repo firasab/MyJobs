@@ -10,6 +10,8 @@ import PersonIcon from '@mui/icons-material/Person';
 import WorkIcon from '@mui/icons-material/Work';
 import ThirtyFpsSelectIcon from '@mui/icons-material/ThirtyFpsSelect';
 import DescriptionIcon from '@mui/icons-material/Description';
+import InsertPhotoIcon from '@mui/icons-material/InsertPhoto';
+import AttachFileIcon from '@mui/icons-material/AttachFile';
 
 //set the job featuers
 export default function CreateJobForm() {
@@ -19,7 +21,8 @@ export default function CreateJobForm() {
     id: '',
     phone: '',
     address: '',
-    description: ''
+    description: '',
+    formImg: ''
    
   });
     //post method to add job to database
@@ -31,6 +34,36 @@ export default function CreateJobForm() {
     
 
   }
+
+  const handleChange = async (e) => {
+    const file = e.target.files[0];
+    const base64 = await convertBase64(file);
+    setJobForm( jobForm => ({
+      ...jobForm,
+      formImg: base64
+    }));
+  
+   console.log(base64)
+  
+  };
+
+  const convertBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
+
+      fileReader.onload = () => {
+        resolve(fileReader.result);
+      };
+
+      fileReader.onerror = (error) => {
+        reject(error);
+      };
+    });
+  };
+
+
+
   //the design of the create job application
   return (
     <>
@@ -71,6 +104,11 @@ export default function CreateJobForm() {
         <TextField id="input-with-sx" label="Note" variant="standard" value={jobForm.description}  onChange={(event) => {
           setJobForm({ ...jobForm, description:event.target.value })
         }}/>
+      </Box>
+      <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+        <AttachFileIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+        <input type="file" accept="image/*"   onChange= {handleChange} />
+        
       </Box>
       <Button variant="contained" color="success"  style= {{ marginLeft: '45px'}} onClick={createJobForm}> Apply for the Job </Button>
     </Box>

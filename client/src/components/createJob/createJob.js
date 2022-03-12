@@ -9,6 +9,7 @@ import ApartmentIcon from '@mui/icons-material/Apartment';
 import PointOfSaleIcon from '@mui/icons-material/PointOfSale';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import FeedIcon from '@mui/icons-material/Feed';
+import InsertPhotoIcon from '@mui/icons-material/InsertPhoto';
 
 //set the job featuers
 export default function CreateJob() {
@@ -17,7 +18,8 @@ export default function CreateJob() {
     discription: '',
     position: '',
     payPerHour: '',
-    address: ''
+    address: '',
+    jobImg: ''
   });
     //post method to add job to database
   const createJob = () => {
@@ -25,9 +27,36 @@ export default function CreateJob() {
       alert('Job has beed added!');
       window.location.replace('/job')
     })
-    
-
   }
+
+  
+  const handleChange = async (e) => {
+    const file = e.target.files[0];
+    const base64 = await convertBase64(file);
+    setJob( job => ({
+      ...job,
+      jobImg: base64
+    }));
+  
+   console.log(base64)
+  
+  };
+
+  const convertBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
+
+      fileReader.onload = () => {
+        resolve(fileReader.result);
+      };
+
+      fileReader.onerror = (error) => {
+        reject(error);
+      };
+    });
+  };
+
   //the design of the create job funtion
   return (
     <>
@@ -59,9 +88,13 @@ export default function CreateJob() {
       </Box>
       <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
         <LocationOnIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-        <TextField id="input-with-sx" label="Address" variant="standard" value={job.address}  onChange={(event) => {
+        <TextField id="input-with-sx" label="Address" variant="standard" value={job.address} onChange={(event) => {
           setJob({ ...job, address:event.target.value })
         }}/>
+      </Box>
+      <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+        <InsertPhotoIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+        <input type="file" accept="image/*"   onChange= {handleChange} />
       </Box>
       <Button variant="contained" color="success"  style= {{ marginLeft: '90px'}} onClick={createJob}> Create </Button>
     </Box>

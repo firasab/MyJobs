@@ -21,7 +21,8 @@ export default function ProfileWorker() {
     location: x.location,
     phoneNumber: x.phoneNumber,
     email: x.email,
-    companyName: x.companyName
+    companyName: x.companyName,
+    workerImg: x.workerImg
   });
   
 
@@ -30,6 +31,7 @@ export default function ProfileWorker() {
  
  return (
     <>
+   
     <AppBar className={classes.appBar} position="static" color="inherit">
     <AccountCircle sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
         <TextField  id="outlined-read-only-input" className="name" label="Name" variant="standard" InputProps={{ readOnly: true }} value={worker.name} onChange={(event) => {
@@ -65,11 +67,13 @@ export default function ProfileWorker() {
         <TextField id="outlined-read-only-input" label="Company name" variant="standard" InputProps={{ readOnly: true }} value={worker.companyName}  onChange={(event) => {
           setWorker({ ...worker, companyName:event.target.value })
         }}/>
+
+     
         
         
       </AppBar>
+      <div className="pic"> <img  style= {{  marginLeft:"-750px",marginTop:"-600px", height: '500px', width: '500px',display:"flex" }} src={worker.workerImg}></img></div>
      
-      <input type="file" accept="image/*" /> 
     </>
   );
 }

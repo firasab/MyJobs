@@ -26,7 +26,7 @@ export default function ViewComponent (props)  {
         
       <TableHead>
           <TableRow>
-            <TableCell>Name</TableCell>
+            <TableCell>Company</TableCell>
             <TableCell align="right">Discription</TableCell>
             <TableCell align="right">Position</TableCell>
             <TableCell align="right">PayPerHour</TableCell>

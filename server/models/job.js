@@ -21,6 +21,10 @@ const jobSchema = new Schema({
     address: {
         type: String,
         
-    }
+    },
+    jobImg:{
+        type: String,
+        default: "AA"
+    },
 });
 module.exports = job = mongoose.model('job', jobSchema);

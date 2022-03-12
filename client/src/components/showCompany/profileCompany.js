@@ -18,7 +18,8 @@ export default function ProfileCompany() {
     name:x.name,
     field: x.field,
     numberOfWorker: x.numberOfWorker,
-    address: x.address
+    address: x.address,
+    companyImg: x.companyImg,
   });
   
   const classes = makeStyles();
@@ -50,7 +51,7 @@ export default function ProfileCompany() {
           setCompany({ ...company, address:event.target.value })
         }}/>
     </AppBar>
-    
+    <div className="pic"> <img  style= {{  marginLeft:"-800px",marginTop:"-450px", height: '500px', width: '500px',display:"flex" }} src={company.companyImg}></img></div>
     
     
     </>

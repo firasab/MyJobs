@@ -17,6 +17,9 @@ const companySchema = new Schema({
     address: {
         type: String,
         
+    },
+    companyImg: {
+        type: String,
     }
 });
 module.exports = company = mongoose.model('company', companySchema);

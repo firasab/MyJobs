@@ -9,6 +9,7 @@ import { useLocation } from 'react-router-dom';
 import ApartmentIcon from '@mui/icons-material/Apartment';
 import NfcIcon from '@mui/icons-material/Nfc';
 import FormatListNumberedIcon from '@mui/icons-material/FormatListNumbered';
+import InsertPhotoIcon from '@mui/icons-material/InsertPhoto';
 
 //set the worker featuers
 export default function EditCompany() {
@@ -31,6 +32,35 @@ export default function EditCompany() {
       window.location.replace('/company')
     })
   }
+
+  
+  const handleChange = async (e) => {
+    const file = e.target.files[0];
+    const base64 = await convertBase64(file);
+    setCompany( company => ({
+      ...company,
+      companyImg: base64
+    }));
+  
+   console.log(base64)
+  
+  };
+
+  const convertBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
+
+      fileReader.onload = () => {
+        resolve(fileReader.result);
+      };
+
+      fileReader.onerror = (error) => {
+        reject(error);
+      };
+    });
+  };
+
 
 
 
@@ -62,6 +92,11 @@ export default function EditCompany() {
         <TextField id="input-with-sx" label="Address" variant="standard" value={company.address} onChange={(event) => {
           setCompany({ ...company, address:event.target.value })
         }}/>
+      </Box>
+      <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+        <InsertPhotoIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+        <input type="file" accept="image/*"   onChange= {handleChange} />
+        
       </Box>
      
       <Button variant="contained" color="success"  style= {{ marginLeft: '50px'}}  onClick={() => editCompany()}> Update Company </Button>

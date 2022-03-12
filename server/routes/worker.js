@@ -40,15 +40,6 @@ router.delete('/:id', async (req,res) => {
 
 
 
-// //get worker by id 
-// router.get('/view/:id', async (request, response) => {
-//     try{
-//         const worker = await workerData.findById(request.params.id);
-//         response.status(200).json(worker);
-//     }catch( error ){
-//         response.status(404).json({ message: error.message })
-//     }
-// });
 
 router.route('/view/:id').get((req,res) => {
     workerData.findById(req.params.id)
@@ -59,6 +50,7 @@ router.route('/view/:id').get((req,res) => {
             worker.phoneNumber = req.body.phoneNumber;
             worker.email = req.body.email;
             worker.companyName = req.body.companyName;
+            worker.workerImg = req.body.workerImg;
 
             try{
                 response.status(200).json(worker);
@@ -78,6 +70,7 @@ router.route('/update/:id').post((req,res) => {
             worker.phoneNumber = req.body.phoneNumber;
             worker.email = req.body.email;
             worker.companyName = req.body.companyName;
+            worker.workerImg = req.body.workerImg;
             
 
             worker.save()

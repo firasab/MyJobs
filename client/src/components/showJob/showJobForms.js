@@ -29,6 +29,8 @@ export default function ShowJob() {
     } )
   }, [])
 
+   
+
 
     //the design of the table of the jobs list 
   return (
@@ -44,6 +46,7 @@ export default function ShowJob() {
             <TableCell align="right">Phone Number</TableCell>
             <TableCell align="right">Address</TableCell>
             <TableCell align="right">Note</TableCell>
+            <TableCell align="right" >Files</TableCell>
             <TableCell align="right" >Action</TableCell>
           </TableRow>
         </TableHead>
@@ -59,7 +62,8 @@ export default function ShowJob() {
               <TableCell align="right">{jobForm.id}</TableCell>
               <TableCell align="right">{jobForm.phone}</TableCell>
               <TableCell align="right">{jobForm.address}</TableCell>
-              <TableCell align="right">{jobForm.description}</TableCell>
+              <TableCell align="right" >{jobForm.description}</TableCell>
+              <TableCell align="right">{jobForm.formImg}</TableCell>
               <TableCell align="right"> 
               <Button aria-label="delete" onClick={() => deleteJobForm(jobForm._id)} style={{ marginLeft: "5px" }} ><DeleteIcon />  </Button>  
                </TableCell>

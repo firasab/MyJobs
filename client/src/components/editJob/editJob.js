@@ -9,7 +9,7 @@ import { useLocation } from 'react-router-dom';
 import ApartmentIcon from '@mui/icons-material/Apartment';
 import NfcIcon from '@mui/icons-material/Nfc';
 import FormatListNumberedIcon from '@mui/icons-material/FormatListNumbered';
-
+import InsertPhotoIcon from '@mui/icons-material/InsertPhoto';
 
 export default function EditJob() {
   const location = useLocation()
@@ -32,6 +32,33 @@ export default function EditJob() {
     })
   }
 
+
+  const handleChange = async (e) => {
+    const file = e.target.files[0];
+    const base64 = await convertBase64(file);
+    setJob( job => ({
+      ...job,
+      jobImg: base64
+    }));
+  
+   console.log(base64)
+  
+  };
+
+  const convertBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
+
+      fileReader.onload = () => {
+        resolve(fileReader.result);
+      };
+
+      fileReader.onerror = (error) => {
+        reject(error);
+      };
+    });
+  };
 
 
  
@@ -69,7 +96,10 @@ export default function EditJob() {
           setJob({ ...job, address:event.target.value })
         }}/>
       </Box>
-     
+      <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+        <InsertPhotoIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+        <input type="file" accept="image/*"   onChange= {handleChange} />
+      </Box>
       <Button variant="contained" color="success"  style= {{ marginLeft: '50px'}}  onClick={() => editJob()}> Update Job </Button>
     </Box>
     </>

@@ -19,10 +19,6 @@ const jobPr = () => {
                             <Grid style= {{ marginLeft: '900px'}} item xs={12} sm={4}>
                                 <Show />
                             </Grid>
-                            <Grid style= {{ marginLeft: '0px'}} item xs={7} sm={3}>
-                            <img  style= {{ marginTop: '-900px' , height: '500px', width: '500px' }} src={"https://pic.onlinewebfonts.com/svg/img_364496.png"}></img>
-                            
-                            </Grid>
                         </Grid>
                     </Container>
                 </Grow>

@@ -12,7 +12,7 @@ const workerSchema = new Schema({
     },
     location: {
         type: String,
-        default: "Jerusalem"
+        default: "Jerusalem",
         
     },
     phoneNumber: {
@@ -25,6 +25,10 @@ const workerSchema = new Schema({
     },
     companyName: {
         type: String
-    }
+    },
+    workerImg:{
+        type: String,
+        default: "AA"
+    },
 });
 module.exports = worker = mongoose.model('worker', workerSchema);

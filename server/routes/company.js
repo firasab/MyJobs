@@ -48,6 +48,7 @@ router.route('/update/:id').post((req,res) => {
             company.field = req.body.field;
             company.numberOfWorker = req.body.numberOfWorker;
             company.address = req.body.address;
+            company.companyImg = req.body.companyImg;
             
 
             company.save()

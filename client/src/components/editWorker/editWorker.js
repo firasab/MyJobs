@@ -11,7 +11,7 @@ import Button from '@mui/material/Button';
 import { useState } from 'react';
 import axios from 'axios';
 import { useLocation } from 'react-router-dom';
-
+import InsertPhotoIcon from '@mui/icons-material/InsertPhoto';
 
 
 //set the worker featuers
@@ -24,7 +24,8 @@ export default function EditWorker() {
     location: x.location,
     phoneNumber: x.phoneNumber,
     email: x.email,
-    companyName: x.companyName
+    companyName: x.companyName,
+    workerImg: x.workerImg
   });
   
 
@@ -36,6 +37,34 @@ export default function EditWorker() {
       window.location.replace('/worker')
     })
   }
+
+  const handleChange = async (e) => {
+    const file = e.target.files[0];
+    const base64 = await convertBase64(file);
+    setWorker( worker => ({
+      ...worker,
+      workerImg: base64
+    }));
+  
+   console.log(base64)
+  
+  };
+
+  const convertBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
+
+      fileReader.onload = () => {
+        resolve(fileReader.result);
+      };
+
+      fileReader.onerror = (error) => {
+        reject(error);
+      };
+    });
+  };
+
 
 
 
@@ -79,6 +108,11 @@ export default function EditWorker() {
         <TextField id="input-with-sx" label="Company name" variant="standard" value={worker.companyName}  onChange={(event) => {
           setWorker({ ...worker, companyName:event.target.value })
         }}/>
+      </Box>
+      <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+        <InsertPhotoIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+        <input type="file" accept="image/*"   onChange= {handleChange} />
+        
       </Box>
       <Button variant="contained" color="success"  style= {{ marginLeft: '50px'}}  onClick={() => editWorker()}> Update Worker </Button>
     </Box>

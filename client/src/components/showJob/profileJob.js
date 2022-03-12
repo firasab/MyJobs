@@ -18,7 +18,8 @@ export default function EditJob() {
     discription: edt.discription,
     position: edt.position,
     payPerHour: edt.payPerHour,
-    address: edt.address
+    address: edt.address,
+    jobImg: edt.jobImg
   });
   
   const classes = makeStyles();
@@ -55,6 +56,7 @@ export default function EditJob() {
           setJob({ ...job, address:event.target.value })
         }}/>
       </AppBar>
+      <div className="pic"> <img  style= {{  marginLeft:"-700px",marginTop:"-550px", height: '500px', width: '500px',display:"flex" }} src={job.jobImg}></img></div>
     
     
 

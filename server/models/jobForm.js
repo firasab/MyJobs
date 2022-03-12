@@ -25,6 +25,9 @@ const jobFormSchema = new Schema({
     description: {
         type: String,
       
+    },
+    formImg: {
+        type: String,
     }
 });
 module.exports = jobForm = mongoose.model('jobForm', jobFormSchema);

@@ -58,6 +58,7 @@ router.route('/update/:id').post((req,res) => {
             job.position = req.body.position;
             job.payPerHour = req.body.payPerHour;
             job.address = req.body.address;
+            job.jobImg = req.body.jobImg;
             
 
             job.save()

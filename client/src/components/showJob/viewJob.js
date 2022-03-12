@@ -24,7 +24,7 @@ export default function ViewJob() {
           {jobsList.map((job, key) => (
               <>                 
                <AppBar className={classes.appBar} position="static" color="inherit">
-               <ViewComponent name={job.name} discription={job.discription} position={job.position} payPerHour={job.payPerHour} address={job.address} Image={job.jobImg} />
+               <ViewComponent name={job.name} discription={job.discription} position={job.position} payPerHour={job.payPerHour} address={job.address} jobImg={job.jobImg} />
                <p></p>
                </AppBar>              
               </> 

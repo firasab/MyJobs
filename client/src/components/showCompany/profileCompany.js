@@ -51,7 +51,7 @@ export default function ProfileCompany() {
           setCompany({ ...company, address:event.target.value })
         }}/>
     </AppBar>
-    <div className="pic"> <img  style= {{  marginLeft:"-800px",marginTop:"-450px", height: '500px', width: '500px',display:"flex" }} src={company.companyImg}></img></div>
+    <div className="pic"> <img  alt="profile Pic" style= {{  marginLeft:"-800px",marginTop:"-450px", height: '500px', width: '500px',display:"flex" }} src={company.companyImg}></img></div>
     
     
     </>

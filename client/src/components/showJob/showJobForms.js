@@ -63,7 +63,7 @@ export default function ShowJob() {
               <TableCell align="right">{jobForm.phone}</TableCell>
               <TableCell align="right">{jobForm.address}</TableCell>
               <TableCell align="right" >{jobForm.description}</TableCell>
-              <TableCell align="right">{jobForm.formImg}</TableCell>
+              <TableCell align="right">{<img type="file" alt="profile Pic" class='img-40 rounded-circle' onclick="window.open(this.jobForm.formImg, '_blank')" style= {{height: '100px', width: '100px',display:"flex" }} src={jobForm.formImg}></img>}</TableCell>
               <TableCell align="right"> 
               <Button aria-label="delete" onClick={() => deleteJobForm(jobForm._id)} style={{ marginLeft: "5px" }} ><DeleteIcon />  </Button>  
                </TableCell>

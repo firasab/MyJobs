@@ -10,7 +10,6 @@ import PersonIcon from '@mui/icons-material/Person';
 import WorkIcon from '@mui/icons-material/Work';
 import ThirtyFpsSelectIcon from '@mui/icons-material/ThirtyFpsSelect';
 import DescriptionIcon from '@mui/icons-material/Description';
-import InsertPhotoIcon from '@mui/icons-material/InsertPhoto';
 import AttachFileIcon from '@mui/icons-material/AttachFile';
 
 //set the job featuers

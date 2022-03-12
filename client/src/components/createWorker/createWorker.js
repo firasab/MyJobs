@@ -44,7 +44,7 @@ export default function CreateWorker() {
       workerImg: base64
     }));
   
-   console.log(base64)
+
   
   };
 

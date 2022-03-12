@@ -34,7 +34,7 @@ export default function CreateCompany() {
       companyImg: base64
     }));
   
-   console.log(base64)
+
   
   };
 

@@ -8,6 +8,7 @@ import makeStyles from '../../styles'
 export default function ViewJob() {
   const classes = makeStyles();
   const [jobsList, setJobsList] = useState([])
+ 
 
 
 //to get the jobs from the database
@@ -18,13 +19,17 @@ export default function ViewJob() {
     } 
     )
   }, [])
+
+
+
   //to fill the information of each job 
   return (
     <>
           {jobsList.map((job, key) => (
+            
               <>                 
                <AppBar className={classes.appBar} position="static" color="inherit">
-               <ViewComponent name={job.name} discription={job.discription} position={job.position} payPerHour={job.payPerHour} address={job.address} jobImg={job.jobImg} />
+               <ViewComponent name={job.name} discription={job.discription} position={job.position} payPerHour={job.payPerHour} address={job.address} jobImg= { <img type="file" alt="profile Pic" class='img-40 rounded-circle' style= {{height: '100px', width: '100px',display:"flex" }} src={job.jobImg}></img>} />
                <p></p>
                </AppBar>              
               </> 

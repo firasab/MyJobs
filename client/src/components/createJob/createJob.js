@@ -38,7 +38,7 @@ export default function CreateJob() {
       jobImg: base64
     }));
   
-   console.log(base64)
+
   
   };
 

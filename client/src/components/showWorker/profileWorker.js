@@ -72,7 +72,7 @@ export default function ProfileWorker() {
         
         
       </AppBar>
-      <div className="pic"> <img  style= {{  marginLeft:"-750px",marginTop:"-600px", height: '500px', width: '500px',display:"flex" }} src={worker.workerImg}></img></div>
+      <div className="pic"> <img  alt="profile Pic" style= {{  marginLeft:"-750px",marginTop:"-600px", height: '500px', width: '500px',display:"flex" }} src={worker.workerImg}></img></div>
      
     </>
   );

@@ -25,7 +25,14 @@ export default function EditWorker() {
     phoneNumber: x.phoneNumber,
     email: x.email,
     companyName: x.companyName,
-    workerImg: x.workerImg
+    workerImg: x.workerImg,
+    isWorkingSun: x.isWorkingSun,
+    isWorkingMon: x.isWorkingMon,
+    isWorkingTues: x.isWorkingTues,
+    isWorkingWed: x.isWorkingWed,
+    isWorkingThur: x.isWorkingThur,
+    isWorkingFri: x.isWorkingFri,
+    isWorkingSat: x.isWorkingSat
   });
   
 

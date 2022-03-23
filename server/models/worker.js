@@ -12,7 +12,6 @@ const workerSchema = new Schema({
     },
     location: {
         type: String,
-        default: "Jerusalem",
         
     },
     phoneNumber: {
@@ -30,5 +29,26 @@ const workerSchema = new Schema({
         type: String,
         default: "AA"
     },
+    isWorkingSun:{
+        type: String
+    },
+    isWorkingMon:{
+        type: String
+    },
+    isWorkingTues:{
+        type: String
+    },
+    isWorkingWed:{
+        type: String
+    },
+    isWorkingThur:{
+        type: String
+    },
+    isWorkingFri:{
+        type: String
+    },
+    isWorkingSat:{
+        type: String
+    }
 });
 module.exports = worker = mongoose.model('worker', workerSchema);

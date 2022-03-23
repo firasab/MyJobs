@@ -71,6 +71,13 @@ router.route('/update/:id').post((req,res) => {
             worker.email = req.body.email;
             worker.companyName = req.body.companyName;
             worker.workerImg = req.body.workerImg;
+            worker.isWorkingSun = req.body.isWorkingSun;
+            worker.isWorkingMon = req.body.isWorkingMon;
+            worker.isWorkingTues = req.body.isWorkingTues;
+            worker.isWorkingWed = req.body.isWorkingWed;
+            worker.isWorkingThur = req.body.isWorkingThur;
+            worker.isWorkingFri = req.body.isWorkingFri;
+            worker.isWorkingSat = req.body.isWorkingSat;
             
 
             worker.save()

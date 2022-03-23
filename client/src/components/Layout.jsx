@@ -38,8 +38,8 @@ function Layout(props) {
                 <li className={"nav-item " + (pathname === '/company' ? 'active' : '')}>
                   <NavLink isActive={checkActive} to="/company" className="nav-link">Companies</NavLink>
                 </li>
-                <li className={"nav-item " + (pathname === '/workSchedule' ? 'active' : '')}>
-                  <NavLink isActive={checkActive} to="/workSchedule" className="nav-link">Create Weekly Schedule</NavLink>
+                <li className={"nav-item " + (pathname === '/schedule' ? 'active' : '')}>
+                  <NavLink isActive={checkActive} to="/schedule" className="nav-link">Create Weekly Schedule</NavLink>
                 </li>
                 <li className={"nav-item " + (pathname === '/jobForm' ? 'active' : '')}>
                   <NavLink isActive={checkActive} to="/jobForm" className="nav-link">Check Jobs Forms</NavLink>

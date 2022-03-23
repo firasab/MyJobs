@@ -13,7 +13,6 @@ import job from "./components/job";
 import view from "./components/view";
 import company from "./components/company";
 import companyProfile from "./components/showCompany/companyProfile";
-import workSchedule from "./components/workSchedule";
 import workerProfile from "./components/showWorker/workerProfile";
 import workerCreation from "./components/createWorker/workerCreation";
 import companyCreation from "./components/createCompany/companyCreation";
@@ -24,6 +23,8 @@ import jobForm from "./components/jobForm";
 import companyEdition from "./components/editCompany/companyEdittion";
 import jobEdition from "./components/editJob/jobEdition";
 import jobProfile from "./components/showJob/jobProfile";
+import schedule from "./components/schedule";
+import scheduleEdition from "./components/schedule/scheduleEdition";
 
 
 function App() {
@@ -40,7 +41,6 @@ function App() {
           <GuestRoute path="/view" component={view} />
           <AuthRoute path="/company" component={company} />
           <AuthRoute path="/companyProfile" component={companyProfile} />
-          <AuthRoute path="/workSchedule" component={workSchedule} />
           <AuthRoute path="/workerProfile" component={workerProfile} />
           <AuthRoute path="/workerCreation" component={workerCreation} />
           <AuthRoute path="/companyCreation" component={companyCreation} />
@@ -51,6 +51,8 @@ function App() {
           <AuthRoute path="/companyEdition" component={companyEdition} />
           <AuthRoute path="/jobEdition" component={jobEdition} />
           <AuthRoute path="/jobProfile" component={jobProfile} />
+          <AuthRoute path="/schedule" component={schedule} />
+          <AuthRoute path="/scheduleEdition" component={scheduleEdition} />
         </div>
         <Route path="/" exact component={Home} />
       </Layout>

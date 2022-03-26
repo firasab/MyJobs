@@ -8,7 +8,6 @@ import { useLocation } from 'react-router-dom';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 
 
-
 //set the worker featuers
 export default function EditSchedule() {
   const location = useLocation()
@@ -29,7 +28,7 @@ export default function EditSchedule() {
     isWorkingFri: x.isWorkingFri,
     isWorkingSat: x.isWorkingSat
   });
-  
+ 
 
       //post method to update worker to database
   const editSchedule = () => {

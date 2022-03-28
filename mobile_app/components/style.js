@@ -128,7 +128,62 @@ export const StyledButton = styled.TouchableOpacity`
        
 `;
 
+export const StyledProfileButton = styled.TouchableOpacity`
+    padding: 15px;
+    background-color: ${brand};
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    margin-vertical: 5px;
+    height: 60px; 
+    right: 15px;
+       
+`;
+
+export const StyledHoursReportButton = styled.TouchableOpacity`
+    padding: 15px;
+    background-color: ${brand};
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    margin-vertical: 5px;
+    height: 60px; 
+    right: 15px;
+   
+       
+`;
+
+export const StyledScheduleButton = styled.TouchableOpacity`
+    padding: 15px;
+    background-color: ${brand};
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    margin-vertical: 5px;
+    height: 60px; 
+    left: 15px;
+`;
+
+export const StyledSignInOutButton = styled.TouchableOpacity`
+    padding: 15px;
+    background-color: ${brand};
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    margin-vertical: 5px;
+    height: 60px; 
+    left: 15px;
+ 
+`;
+
 export const Buttontext = styled.Text`
     color: ${primary};
     font-size: 16px;
+`;
+
+export const DivStyled = styled.TouchableOpacity`
+flex: 1;
+flexDirection: row;
+justifyContent: space-between;
+   
 `;

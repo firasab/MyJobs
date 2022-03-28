@@ -4,7 +4,7 @@ import { StatusBar } from 'expo-status-bar';
 
  
 
-import { WelcomeContainer, InnerContainer,  PageTitle, SubTitle, StyledFormArea, StyledButton, Buttontext,  Avatar } from './../components/style';
+import { WelcomeContainer, InnerContainer,  PageTitle, SubTitle, StyledFormArea, StyledButton, Buttontext,  Avatar,StyledProfileButton, StyledScheduleButton, DivStyled, StyledSignInOutButton, StyledHoursReportButton } from './../components/style';
 
 
 //colors 
@@ -22,12 +22,30 @@ const Welcome = () => {
                 <PageTitle Welcome={true} > Welcome Back! </PageTitle>
                 <Avatar resizeMode="cover" source={require('./../assets/img/logo2.png')}/>  
                 <SubTitle Welcome={true} >Worker name</SubTitle>
-                
-                <StyledButton onPress={() => {}}>
+                <DivStyled>
+                <StyledProfileButton onPress={() => {}}>
                         <Buttontext>
-                            Profile
+                            Worker Profile
                         </Buttontext>
-                    </StyledButton>
+                    </StyledProfileButton>
+                    <StyledScheduleButton onPress={() => {}}>
+                        <Buttontext>
+                            Work Schedule
+                        </Buttontext>
+                    </StyledScheduleButton>
+                    </DivStyled>
+                    <DivStyled>
+                <StyledHoursReportButton onPress={() => {}}>
+                        <Buttontext>
+                            Hours Report
+                        </Buttontext>
+                    </StyledHoursReportButton>
+                    <StyledSignInOutButton onPress={() => {}}>
+                        <Buttontext>
+                            SignIn/SignOut
+                        </Buttontext>
+                    </StyledSignInOutButton>
+                    </DivStyled>
                 <StyledFormArea>
                      <StyledButton onPress={() => {}}>
                         <Buttontext>

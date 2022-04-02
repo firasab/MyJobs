@@ -1,13 +1,12 @@
 import {Image, Text, View } from 'react-native';
 import Container from '../../components/common/Container';
-import {  TextInput } from "react-native";
 import Input from '../../components/common/Input';
 import CustomButton from '../../components/common/CustomButton';
 import styles from './styles';
-import envs from '../../config/env';
 import Message from '../common/Message';
 
-const LoginComponent = ({ error,
+const LoginComponent = ({ 
+  error,
   form,
   onChange,
   loading,
@@ -23,21 +22,19 @@ const LoginComponent = ({ error,
         style={styles.logoImage}
     />
       <View>
+
           <Text style={styles.title}>Welcome to MyJobs</Text>
           <Text style={styles.subTitle}>Please Login here</Text>
        
-      <View style={styles.form}>
-      { error && !error.error && ( 
-         <Message 
-         danger 
-         onDismiss={() => {}}
-         message="invalid credentials"/> 
-         )}
-      {error?.error && <Message danger onDismiss message={error?.error} /> }
+          <View style={styles.form}>
 
-    
-
-
+          { error && !error.error && ( 
+            <Message 
+            danger 
+            onDismiss={() => {}}
+            message="invalid credentials"/> 
+            )}
+          {error?.error && <Message danger onDismiss message={error?.error} /> }
 
             <Input 
             label="Username"
@@ -55,17 +52,12 @@ const LoginComponent = ({ error,
             icon={<Text>Show</Text>}
             iconPosition="right"
             onChangeText={(value) => {
-              onChange({name: 'id', value});
+              onChange({name: 'password', value});
             }}
-          />
-      </View>
+           />
+            </View>
 
-      <CustomButton  
-            disabled={loading}
-            onPress={onSubmit}
-            loading={loading} 
-            primary 
-            title="Login"  />
+      <CustomButton disabled={loading} onPress={onSubmit} loading={loading}  primary  title="Login"  />
       </View>
       </Container>
 

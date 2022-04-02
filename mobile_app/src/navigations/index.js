@@ -8,7 +8,7 @@ import { GlobalContext } from '../context/Provider';
 
 
 const AppNavContainer = () => {
-    
+  
 
     const {
       authState :{isLoggedIn},
@@ -18,12 +18,13 @@ const AppNavContainer = () => {
 
     console.log('isLoggedIn :>>', isLoggedIn);
 
-
-
     return (   
       <NavigationContainer>
         { isLoggedIn ? <DrawerNavigator/> : <AuthNavigator/>} 
-      </NavigationContainer>)
+      </NavigationContainer>
+      )
+      
+     
 }
 
 export default AppNavContainer;

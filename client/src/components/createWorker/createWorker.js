@@ -23,12 +23,14 @@ export default function CreateWorker() {
     email: '',
     companyName: '',
     workerImg:'',
+    password: '',
    
   });
 
       //post method to add worker to database
   const createWorker = () => {
     console.log(worker)
+    worker.password = worker.id;
   
     axios.post('https://myjobss.herokuapp.com/workers', worker).then(() => {
       alert('Worker has beed added!');

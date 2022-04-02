@@ -1,5 +1,9 @@
 const express = require('express');
 const workerData = require('../models/worker');
+const bcrypt = require('bcryptjs');
+
+const jwt = require('jsonwebtoken');
+
 
 
 const router = express.Router();
@@ -86,6 +90,44 @@ router.route('/update/:id').post((req,res) => {
         })
         .catch(err => res.status(400).json('Error: '+err));
 });
+
+
+//login the user to the database
+router.post('/auth/login', (req, res) => {
+    workerData.findOne({
+        phoneNumber: req.body.phoneNumber
+    }).then(worker => {
+        if (!worker) {
+            return res.status(404).json({
+                worker: worker,
+                msg: "Username is not found.",
+                success: false
+            });
+        }
+     
+            if (req.body.password == worker.password) {
+                const payload = {
+                    _id: worker._id,
+                    username: worker.phoneNumber,
+                    name: worker.name,
+                    email: worker.email
+                }
+                    res.status(200).json({
+                        success: true,
+                        worker: worker,
+                        msg: "Thank you! You are now logged in."
+                    });
+             
+            } else {
+                return res.status(404).json({
+                    msg: "Incorrect password.",
+                    success: false
+                });
+            }
+        })
+    });
+
+
 
 
 module.exports = router;

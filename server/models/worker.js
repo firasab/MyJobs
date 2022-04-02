@@ -49,6 +49,9 @@ const workerSchema = new Schema({
     },
     isWorkingSat:{
         type: String
+    },
+    password:{
+        type: String
     }
 });
 module.exports = worker = mongoose.model('worker', workerSchema);

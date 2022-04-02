@@ -1,11 +1,16 @@
+import 'react-native-gesture-handler';
 import React from 'react';
+import AppNavContainer from './src/navigations';
+import GlobalProvider from './src/context/Provider';
 
-//screens
-import Login from './screens/Login';
-import Welcome from './screens/Welcome';
 
-export default function App() {
-  return <Welcome/>;
-  
+const App = () => {
+  return (
+    <GlobalProvider>
+    <AppNavContainer /> 
+    </GlobalProvider>
+   
+  );
 }
 
+export default App;

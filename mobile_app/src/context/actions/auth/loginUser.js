@@ -6,7 +6,7 @@ import {
 } from '../../../constants/actionTypes';
 import axiosInstance from '../../../helpers/axiosInstance';
 
-export default ({id, phoneNumber: phonenumber}) => (dispatch) => {
+export default ({password, phoneNumber: phonenumber}) => (dispatch) => {
   
   dispatch({
     type: LOGIN_LOADING,
@@ -14,10 +14,10 @@ export default ({id, phoneNumber: phonenumber}) => (dispatch) => {
   axiosInstance
     .post('auth/login', {
       phonenumber,
-      id,
+      password,
     })
     .then((res) => {
-        // console.log('54',54);
+        
       AsyncStorage.setItem('token', res.data.token);
       AsyncStorage.setItem('worker', JSON.stringify(res.data.worker));
       dispatch({

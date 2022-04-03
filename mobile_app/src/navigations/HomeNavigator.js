@@ -20,7 +20,9 @@ const HomeNavigator = () => {
           <HomeStack.Screen name={SETTINGS} component={Settings} /> 
 
     
-      </HomeStack.Navigator>)
+      </HomeStack.Navigator>
+      
+      )
 }
 
 export default HomeNavigator;

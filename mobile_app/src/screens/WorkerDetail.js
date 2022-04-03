@@ -10,6 +10,7 @@ const WorkerDetail = () => {
        
         </Container>
         );
+        
 };
 
 export default WorkerDetail;

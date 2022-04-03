@@ -20,7 +20,7 @@ const AppNavContainer = () => {
 
     return (   
       <NavigationContainer>
-         <DrawerNavigator/>
+        { isLoggedIn ? <DrawerNavigator/> : <AuthNavigator/>}
       </NavigationContainer>
       )
       

@@ -4,6 +4,11 @@ import LoginComponent from '../components/Login';
 import loginUser from '../context/actions/auth/loginUser';
 import {GlobalContext} from '../context/Provider';
 import axios from 'axios';
+import {
+  LOGIN_FAIL,
+  LOGIN_LOADING,
+  LOGIN_SUCCESS,
+} from '../constants/actionTypes';
 
 
 
@@ -21,6 +26,7 @@ const Login = ({navigation}) => {
   } = useContext(GlobalContext);
 
   const onSubmit = async () => {
+    
     if (form.phoneNumber && form.password) {
       user.phoneNumber = form.phoneNumber;
       user.password = form.password;
@@ -32,8 +38,9 @@ const Login = ({navigation}) => {
 
       .then((res) => {
        
-        navigation.navigate('WorkerDetail');
-       //alert("welcome to your acount!") 
+        // navigation.navigate('DrawerNavigator', { type: LOGIN_SUCCESS,
+        //   payload: res.data });
+       alert("welcome to your acount!") 
       })
 
       .catch((err) => alert("Username or password is incorrect"));

@@ -12,14 +12,12 @@ const HomeNavigator = () => {
     const HomeStack = createStackNavigator();
 
     return (   
-      <HomeStack.Navigator initialRouteName={WORKER_DETAIL} >
+      <HomeStack.Navigator screenOptions={{headerShown: false}} initialRouteName={WORKER_DETAIL} >
           <HomeStack.Screen name={WORKER_DETAIL} component={WorkerDetail} /> 
           <HomeStack.Screen name={WORKER_HOUR_REPORT} component={WorkerHoursReport} /> 
           <HomeStack.Screen name={WORKER_SCHEDULE} component={WorkerSchedule} /> 
           <HomeStack.Screen name={WORKER_IN_OUT} component={WorkerStartOrOutOfWork} /> 
           <HomeStack.Screen name={SETTINGS} component={Settings} /> 
-
-    
       </HomeStack.Navigator>
       
       )

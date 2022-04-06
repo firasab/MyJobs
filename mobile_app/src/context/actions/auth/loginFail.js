@@ -1,12 +1,12 @@
 import {
-  LOGIN_LOADING
+  LOGIN_FAIL
 } from '../../../constants/actionTypes';
 
 
 export default ({id, phoneNumber: phonenumber}) => (dispatch) => {
   
   dispatch({
-    type: LOGIN_LOADING,
+    type: LOGIN_FAIL,
   });
 
 };

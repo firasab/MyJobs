@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
       },
       title2: {
         fontSize: 20,
-        textAlign: 'center',
+        textAlign: 'left',
         paddingTop: 1,
         fontWeight: '500',
       },

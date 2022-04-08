@@ -34,7 +34,7 @@ const WorkerSchedule = ({ route }) => {
         Friday: <Text style={styles.details}> {worker.worker.worker.isWorkingFri}</Text>
       </Text>
       
-      <Text style={styles.description}>
+      <Text style={styles.description }>
         Saturday: <Text style={styles.details}> {worker.worker.worker.isWorkingSat}</Text>
       </Text>
     </SafeAreaView>
@@ -44,25 +44,31 @@ const WorkerSchedule = ({ route }) => {
 const styles = StyleSheet.create({
   bodyContent: {
     alignItems: "center",
-    marginVertical: 10,
+    marginVertical: 20,
   },
 
   details: {
     fontSize: 18,
     color: "blue",
+    
+    
   },
 
   description: {
     fontSize: 20,
     color: "black",
     marginVertical: 10,
+    paddingTop: 4,
+    
+
   },
 
   title: {
     fontSize: 30,
-    textAlign: 'center',
-    paddingTop: 1,
-    fontWeight: '500',
+    textAlign: "center",
+    paddingTop: 40,
+    fontWeight: "500",
+    
   },
 
 });

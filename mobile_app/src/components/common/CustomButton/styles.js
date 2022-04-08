@@ -4,9 +4,9 @@ import colors from '../../../assets/theme/colors';
 export default StyleSheet.create({
   wrapper: {
     height: 42,
-    paddingHorizontal: 5,
-    marginVertical: 5,
-    borderRadius: 4,
+    paddingHorizontal: 4,
+    marginVertical: 60,
+    borderRadius: 500,
     alignItems: 'center',
     justifyContent: 'space-evenly',
   },

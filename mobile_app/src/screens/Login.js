@@ -16,12 +16,7 @@ const Login = () => {
   const worker = {
     phoneNumber:"",
     password:"",
-    // name: "" ,
-    // id: "" ,
-    // location: "" ,
-    // email: "" ,
-    // ompanyName: "" ,
-    // workerImg: "" ,
+
   }
    const {
      authDispatch,

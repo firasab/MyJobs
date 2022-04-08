@@ -6,7 +6,6 @@ import { useNavigation } from '@react-navigation/native';
 import {
     StyleSheet,
     Image,
-    TouchableOpacity,
   } from "react-native";
   import CustomButton from '../components/common/CustomButton';
 

@@ -49,9 +49,7 @@ const styles = StyleSheet.create({
 
   details: {
     fontSize: 18,
-    color: "blue",
-    
-    
+    color: "blue", 
   },
 
   description: {
@@ -59,8 +57,6 @@ const styles = StyleSheet.create({
     color: "black",
     marginVertical: 10,
     paddingTop: 4,
-    
-
   },
 
   title: {
@@ -68,7 +64,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
     paddingTop: 40,
     fontWeight: "500",
-    
   },
 
 });

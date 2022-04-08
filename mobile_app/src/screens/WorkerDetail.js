@@ -7,7 +7,7 @@ import {
     StyleSheet,
     Image,
   } from "react-native";
-  import CustomButton from '../components/common/CustomButton';
+  import SubmitButton from '../components/common/SubmitButton';
 
 
 
@@ -40,7 +40,7 @@ const WorkerDetail = ({route}) => {
             <Text style={styles.title2}> Phone Number: <Text style={styles.subTitle}> {worker.worker.worker.phoneNumber}</Text> </Text>
             
         </Container>  
-             <CustomButton  primary   title="Edit Profile" onPress={goToEdit}/ >
+             <SubmitButton  primary   title="Edit Profile" onPress={goToEdit}/ >
            </>
         
         );

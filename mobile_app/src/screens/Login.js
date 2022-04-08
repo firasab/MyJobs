@@ -6,16 +6,22 @@ import {GlobalContext} from '../context/Provider';
 import axios from 'axios';
 import { useNavigation } from '@react-navigation/native';
 import loginFail from '../context/actions/auth/loginFail';
-
+import Message from '../components/common/Message';
 
 
 const Login = () => {
   const [form, setForm] = useState({});
   const navigation = useNavigation();
   
-  const user = {
+  const worker = {
     phoneNumber:"",
-    password:""
+    password:"",
+    // name: "" ,
+    // id: "" ,
+    // location: "" ,
+    // email: "" ,
+    // ompanyName: "" ,
+    // workerImg: "" ,
   }
    const {
      authDispatch,
@@ -23,20 +29,21 @@ const Login = () => {
    } = useContext(GlobalContext);
 
   const onSubmit = async () => {
-
     if (form.phoneNumber && form.password) {
       loginUser(form)(authDispatch);
-      user.phoneNumber = form.phoneNumber;
-      user.password = form.password;
+      worker.phoneNumber = form.phoneNumber;
+      worker.password = form.password;
+      
 
       await axios
-      .post("https://myjobss.herokuapp.com/workers/auth/login", user)
+      .post("https://myjobss.herokuapp.com/workers/auth/login", worker)
       
-     
-
       .then((res) => {
-        navigation.navigate('Home');      
-      }) .catch((err) =>   alert("Username or password is incorrect")), loginFail(form)(authDispatch) }};
+        console.log('worker' , worker);
+        navigation.navigate('Home' , { worker : res.data });      
+      }) .catch((err) =>   alert("Username or password is incorrect")), loginFail(form)(authDispatch) 
+    
+    }};
 
   const onChange = ({name, value}) => {
     setForm({...form, [name]: value});

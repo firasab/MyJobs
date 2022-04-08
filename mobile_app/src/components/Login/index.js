@@ -35,6 +35,7 @@ const LoginComponent = ({
             message="invalid credentials"/> 
             )}
           {error?.error && <Message danger onDismiss message={error?.error} /> }
+          
 
             <Input 
             label="Username"
@@ -44,6 +45,9 @@ const LoginComponent = ({
               onChange({name: 'phoneNumber', value});
             }}
           />
+          
+          
+            
 
           <Input
             label="Password"
@@ -57,7 +61,7 @@ const LoginComponent = ({
            />
             </View>
 
-      <CustomButton disabled={loading} onPress={onSubmit} loading={loading}  primary  title="Login"  />
+      <CustomButton disabled={loading} onPress={onSubmit } loading={loading}  primary  title="Login"  />
       </View>
       </Container>
 

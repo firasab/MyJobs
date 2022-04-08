@@ -64,18 +64,29 @@ const EditProfile = ({ route }) => {
   <>
     <Text style={{left: 70 , fontSize: 20}}>Edit your information please!</Text>
     <SafeAreaView >
-        <Text style={{left: 100}} >Name</Text>
-      <TextInput style={{backgroundColor: "white", width: "50%", height: 30, borderRadius: 5, paddingHorizontal: 1, marginVertical: 10 , alignItems: 'center', left: 100}} placeholder={"Enter Your name"} value={worker.worker.worker.name} name="name" />
+      <Text style={{left: 100}} >Name</Text>
+      <TextInput style={{backgroundColor: "white", width: "50%", height: 30, borderRadius: 5, paddingHorizontal: 1, marginVertical: 10 , alignItems: 'center', left: 100}}
+       placeholder={"Enter Your name"} value={worker.worker.worker.name} name="name" />
+
       <Text style={{left: 100}}>Email</Text>
-      <TextInput style={{backgroundColor: "white", width: "50%", height: 30, borderRadius: 5, paddingHorizontal: 1, marginVertical: 10 , alignItems: 'center', left: 100}} placeholder={"Enter Your Email"} value={worker.worker.worker.email} name="email" />
-      <Text style={{backgroundColor: "white", width: "50%", height: 30, borderRadius: 5, paddingHorizontal: 1, marginVertical: 10 , alignItems: 'center', left: 100}}>ID</Text>
-      <TextInput  style={{backgroundColor: "white", width: "50%", height: 30, borderRadius: 5, paddingHorizontal: 1, marginVertical: 10 , alignItems: 'center', left: 100}} placeholder={"Enter Your ID"}  value={worker.worker.worker.id} name="id" />
+      <TextInput style={{backgroundColor: "white", width: "50%", height: 30, borderRadius: 5, paddingHorizontal: 1, marginVertical: 10 , alignItems: 'center', left: 100}}
+       placeholder={"Enter Your Email"} value={worker.worker.worker.email} name="email" />
+
+      <Text style={{left: 100}} >ID</Text>
+      <TextInput  style={{backgroundColor: "white", width: "50%", height: 30, borderRadius: 5, paddingHorizontal: 1, marginVertical: 10 , alignItems: 'center', left: 100}} 
+      placeholder={"Enter Your ID"}  value={worker.worker.worker.id} name="id" />
+
       <Text style={{left: 100}}>Location</Text>
-      <TextInput  style={{backgroundColor: "white", width: "50%", height: 30, borderRadius: 5, paddingHorizontal: 1, marginVertical: 10 , alignItems: 'center', left: 100}} placeholder={"Enter Your Location"}  value={worker.worker.worker.location} name="location" />
+      <TextInput  style={{backgroundColor: "white", width: "50%", height: 30, borderRadius: 5, paddingHorizontal: 1, marginVertical: 10 , alignItems: 'center', left: 100}}
+       placeholder={"Enter Your Location"}  value={worker.worker.worker.location} name="location" />
+
       <Text style={{left: 100}}>Company Name</Text>
-      <TextInput style={{backgroundColor: "white", width: "50%", height: 30, borderRadius: 5, paddingHorizontal: 1, marginVertical: 10 , alignItems: 'center', left: 100}} placeholder={"Enter Your Company Name"}  value={worker.worker.worker.companyName}  name="companyName" />
+      <TextInput style={{backgroundColor: "white", width: "50%", height: 30, borderRadius: 5, paddingHorizontal: 1, marginVertical: 10 , alignItems: 'center', left: 100}} 
+      placeholder={"Enter Your Company Name"}  value={worker.worker.worker.companyName}  name="companyName" />
+
       <Text style={{left: 100}}>Phone Number</Text>
-      <TextInput style={{backgroundColor: "white", width: "50%", height: 30, borderRadius: 5, paddingHorizontal: 1, marginVertical: 10 , alignItems: 'center', left: 100}} placeholder={"Enter Your Phone Number"} value={worker.worker.worker.phoneNumber} name="phoneNumber" /> 
+      <TextInput style={{backgroundColor: "white", width: "50%", height: 30, borderRadius: 5, paddingHorizontal: 1, marginVertical: 10 , alignItems: 'center', left: 100}} 
+      placeholder={"Enter Your Phone Number"} value={worker.worker.worker.phoneNumber} name="phoneNumber" /> 
 
       <SubmitButton primary title="Update" onPress={onEditPress} type="FORTH" ></SubmitButton>
       

@@ -128,33 +128,6 @@ router.post('/auth/login', (req, res) => {
     });
 
 
-    router.route('/update').post((req,res) => {
-        workerData.findById(req.params.id)
-            .then(worker => {
-                worker.name = req.body.name;
-                worker.id = req.body.id;
-                worker.location = req.body.location;
-                worker.phoneNumber = req.body.phoneNumber;
-                worker.email = req.body.email;
-                worker.companyName = req.body.companyName;
-                worker.workerImg = req.body.workerImg;
-                worker.isWorkingSun = req.body.isWorkingSun;
-                worker.isWorkingMon = req.body.isWorkingMon;
-                worker.isWorkingTues = req.body.isWorkingTues;
-                worker.isWorkingWed = req.body.isWorkingWed;
-                worker.isWorkingThur = req.body.isWorkingThur;
-                worker.isWorkingFri = req.body.isWorkingFri;
-                worker.isWorkingSat = req.body.isWorkingSat;
-                
-    
-                worker.save()
-                    .then(() => res.json('worker updated !'))
-                    .catch(err => res.status(400).json('Error: '+err));
-            })
-            .catch(err => res.status(400).json('Error: '+err));
-    });
-    
-
 
 
 module.exports = router;

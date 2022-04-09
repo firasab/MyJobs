@@ -1,14 +1,28 @@
 import React from 'react';
-import { Text, View } from 'react-native';
-import Container from '../components/common/Container';
+
+import { useNavigation } from '@react-navigation/native';
+
+  import SubmitButton from '../components/common/SubmitButton';
 
 
-const Settings = () => {
+
+const Settings = ({route}) => {
+    const navigation = useNavigation();
+  
+
+    const goToEdit = () => {
+      alert("Your Profile has been Loged out! ");
+        navigation.navigate('Login' ); 
+      };
+
     return (
-        <Container>
-            <Text> Hi from Settings </Text>
-        </Container>
+        <>  
+             <SubmitButton  primary   title="LogOut" onPress={goToEdit}/ >
+           </>
+        
         );
+        
 };
+
 
 export default Settings;

@@ -34,7 +34,6 @@ const Login = () => {
       .post("https://myjobss.herokuapp.com/workers/auth/login", worker)
       
       .then((res) => {
-        console.log('worker' , worker);
         navigation.navigate('Home' , { worker : res.data });      
       }) .catch((err) =>   alert("Username or password is incorrect")), loginFail(form)(authDispatch) 
     

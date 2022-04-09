@@ -38,7 +38,7 @@ export default function EditWorker() {
 
       //post method to update worker to database
   const editWorker = () => {
-    axios.post(`https://myjobss.herokuapp.com/workers/update/${x._id}`, worker).then(() => {
+    axios.put(`https://myjobss.herokuapp.com/workers/update/${x._id}`, worker).then(() => {
       
       alert('Worker has beed Updated!');
       window.location.replace('/worker')

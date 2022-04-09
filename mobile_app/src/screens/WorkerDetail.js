@@ -14,7 +14,7 @@ import {
 const WorkerDetail = ({route}) => {
     const worker = React.useContext(NetworkContext);
     const navigation = useNavigation();
-    console.log(worker.worker.worker.id)
+  
 
     const goToEdit = () => {
         navigation.navigate('Edit' , { worker : worker }); 

@@ -65,7 +65,7 @@ router.route('/view/:id').get((req,res) => {
 });
 
 
-router.route('/update/:id').post((req,res) => {
+router.route('/update/:id').put((req,res) => {
     workerData.findById(req.params.id)
         .then(worker => {
             worker.name = req.body.name;
@@ -74,6 +74,7 @@ router.route('/update/:id').post((req,res) => {
             worker.phoneNumber = req.body.phoneNumber;
             worker.email = req.body.email;
             worker.companyName = req.body.companyName;
+            worker.password = req.body.password;
             worker.workerImg = req.body.workerImg;
             worker.isWorkingSun = req.body.isWorkingSun;
             worker.isWorkingMon = req.body.isWorkingMon;
@@ -128,6 +129,8 @@ router.post('/auth/login', (req, res) => {
     });
 
 
+    
 
+    
 
 module.exports = router;

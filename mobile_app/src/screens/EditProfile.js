@@ -19,13 +19,21 @@ const EditProfile = ({ route }) => {
      password:worker.worker.worker.password,
      email: worker.worker.worker.email,
      companyName: worker.worker.worker.companyName,
+     isWorkingSun: worker.worker.worker.isWorkingSun,
+     isWorkingMon: worker.worker.worker.isWorkingMon,
+     isWorkingTues: worker.worker.worker.isWorkingTues,
+     isWorkingWed: worker.worker.worker.isWorkingWed,
+     isWorkingThur: worker.worker.worker.isWorkingThur,
+     isWorkingFri: worker.worker.worker.isWorkingFri,
+     isWorkingSat: worker.worker.worker.isWorkingSat,
      workerImg: worker.worker.worker.workerImg,
+     
   });
 
     
   
   const onEditPress = () => { 
-   axios.put(`https://myjobss.herokuapp.com/workers/update/${worker.worker.worker._id}`,user)
+   axios.post(`https://myjobss.herokuapp.com/workers/update/${worker.worker.worker._id}`,user)
       .then(() => {  
         alert("Your Profile has been updated! ");
         navigation.navigate('Profile'); 

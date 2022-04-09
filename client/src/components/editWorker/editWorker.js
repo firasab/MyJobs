@@ -32,13 +32,14 @@ export default function EditWorker() {
     isWorkingWed: x.isWorkingWed,
     isWorkingThur: x.isWorkingThur,
     isWorkingFri: x.isWorkingFri,
-    isWorkingSat: x.isWorkingSat
+    isWorkingSat: x.isWorkingSat,
+    password: x.password,
   });
   
 
       //post method to update worker to database
   const editWorker = () => {
-    axios.put(`https://myjobss.herokuapp.com/workers/update/${x._id}`, worker).then(() => {
+    axios.post(`https://myjobss.herokuapp.com/workers/update/${x._id}`, worker).then(() => {
       
       alert('Worker has beed Updated!');
       window.location.replace('/worker')

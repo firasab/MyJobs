@@ -26,7 +26,8 @@ export default function EditSchedule() {
     isWorkingWed: x.isWorkingWed,
     isWorkingThur: x.isWorkingThur,
     isWorkingFri: x.isWorkingFri,
-    isWorkingSat: x.isWorkingSat
+    isWorkingSat: x.isWorkingSat,
+    password: x.password,
   });
  
 

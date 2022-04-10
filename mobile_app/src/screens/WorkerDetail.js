@@ -41,6 +41,7 @@ const WorkerDetail = ({route}) => {
             
         </Container>  
              <SubmitButton  primary   title="Edit Profile" onPress={goToEdit}/ >
+               
            </>
         
         );

@@ -106,7 +106,8 @@ export default function CreateJobForm() {
       </Box>
       <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
         <AttachFileIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-        <input type="file" accept="image/*"   onChange= {handleChange} />
+        <input type="file"  id="input"   onChange= {handleChange} multiple />
+       
         
       </Box>
       <Button variant="contained" color="success"  style= {{ marginLeft: '45px'}} onClick={createJobForm}> Apply for the Job </Button>

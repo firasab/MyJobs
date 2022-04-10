@@ -56,7 +56,7 @@ export default function EditJob() {
           setJob({ ...job, address:event.target.value })
         }}/>
       </AppBar>
-      <div className="pic"> <img  alt="profile Pic" style= {{  marginLeft:"-700px",marginTop:"-550px", height: '500px', width: '500px',display:"flex" }} src={job.jobImg}></img></div>
+      <div className="pic"> <img  alt="job Pic" style= {{  marginLeft:"-700px",marginTop:"-550px", height: '500px', width: '500px',display:"flex" }} src={job.jobImg}></img></div>
     
     
 

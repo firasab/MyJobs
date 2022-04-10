@@ -94,7 +94,8 @@ export default function CreateJob() {
       </Box>
       <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
         <InsertPhotoIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-        <input type="file" accept="image/*"   onChange= {handleChange} />
+        <input type="file" id="input"   onChange= {handleChange} multiple/>
+        {/* <input type="file" accept="image/*"  /> */}
       </Box>
       <Button variant="contained" color="success"  style= {{ marginLeft: '90px'}} onClick={createJob}> Create </Button>
     </Box>

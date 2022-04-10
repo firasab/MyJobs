@@ -5,8 +5,10 @@ import axios from "axios";
 import { NetworkContext } from '../context/NetworkContext';
 import { useNavigation } from '@react-navigation/native';
 import SubmitButton from '../components/common/SubmitButton';
-import { TextInput } from "react-native";
-
+import CustomButton from '../components/common/CustomButton';
+import { TextInput , ButtonContainer } from "react-native";
+import * as ImagePicker from "expo-image-picker";
+import Container from '../components/common/Container';
 
 const EditProfile = ({ route }) => {
     const worker = React.useContext(NetworkContext);
@@ -41,6 +43,52 @@ const EditProfile = ({ route }) => {
       .catch((err) => alert("check your server"));
    
   };
+
+
+  const uploadPic = async (data) => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1,
+      base64: true,
+    });
+
+
+ 
+   const pico = "data:image/png;base64," + result.base64;
+
+ 
+
+     const profileImg = { workerImg: "" , email: "" , name: "" ,  id: "" , location: " " , phoneNumber: "" , 
+     password: "" , companyName: "" ,isWorkingSun: "" , isWorkingMon: "" ,isWorkingTues: "" ,isWorkingThur: "" ,
+     isWorkingSat: "" };
+     profileImg.workerImg = pico;
+     profileImg.email = worker.worker.worker.email;
+     profileImg.name = worker.worker.worker.name,
+     profileImg.id = worker.worker.worker.id,
+     profileImg.location = worker.worker.worker.location,
+     profileImg.phoneNumber = worker.worker.worker.phoneNumber,
+     profileImg.password = worker.worker.worker.password,
+     profileImg.companyName = worker.worker.worker.companyName,
+     profileImg.isWorkingSun = worker.worker.worker.isWorkingSun,
+     profileImg.isWorkingMon = worker.worker.worker.isWorkingMon,
+     profileImg.isWorkingTues = worker.worker.worker.isWorkingTues,
+     profileImg.isWorkingWed = worker.worker.worker.isWorkingWed,
+     profileImg.isWorkingThur = worker.worker.worker.isWorkingThur,
+     profileImg.isWorkingFri = worker.worker.worker.isWorkingFri,
+     profileImg.isWorkingSat = worker.worker.worker.isWorkingSat,
+    
+   
+
+    await axios.post(`https://myjobss.herokuapp.com/workers/update/${worker.worker.worker._id}`, profileImg)
+
+      .then((resp) => {
+        alert("Profile picture has Updated ");
+      })
+      .catch((err) => alert("check your connection!"));
+   
+  };
   
 
   
@@ -48,6 +96,7 @@ const EditProfile = ({ route }) => {
   <>
     <Text style={{left: 70 , fontSize: 20}}>Edit your information please!</Text>
     <SafeAreaView >
+      
       <Text style={{left: 100}} >Name</Text>
       <TextInput style={{backgroundColor: "white", width: "50%", height: 30, borderRadius: 5, paddingHorizontal: 1, marginVertical: 10 , alignItems: 'center', left: 100}}
        placeholder={"Enter Your name"} value={user.name} onChangeText={(text) => { setUser({ ...user, name:text }) }}  name="name" />
@@ -71,10 +120,12 @@ const EditProfile = ({ route }) => {
       <Text style={{left: 100}}>App Password</Text>
       <TextInput style={{backgroundColor: "white", width: "50%", height: 30, borderRadius: 5, paddingHorizontal: 1, marginVertical: 10 , alignItems: 'center', left: 100}} 
       placeholder={"Enter Your Password"} value={user.password} onChangeText={(text) => { setUser({ ...user, password:text }) }} name="phoneNumber" /> 
-
-      <SubmitButton style={{top: -50}} primary title="Update" onPress={onEditPress} type="FORTH" ></SubmitButton>
       
     </SafeAreaView>
+    <Container style={{flexDirection: "row" ,marginTop: 30, marginLeft: 30,  justifyContent: 'center', height: 130}}>
+      <SubmitButton  style={{width: 150 , left: -10}} secondary  title="Pick Profile picture" onPress={uploadPic} ></SubmitButton>
+      <SubmitButton  style={{width: 150 , left: -5}} secondary title="Update" onPress={onEditPress} type="FORTH" ></SubmitButton>
+      </Container>
     </>
   );
 };

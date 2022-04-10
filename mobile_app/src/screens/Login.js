@@ -24,6 +24,11 @@ const Login = () => {
    } = useContext(GlobalContext);
 
   const onSubmit = async () => {
+    if (!form.phoneNumber || !form.password) {
+      alert("please fill the required fields!")      
+    }
+
+
     if (form.phoneNumber && form.password) {
       loginUser(form)(authDispatch);
       worker.phoneNumber = form.phoneNumber;

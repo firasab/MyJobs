@@ -5,7 +5,6 @@ import axios from "axios";
 import { NetworkContext } from '../context/NetworkContext';
 import { useNavigation } from '@react-navigation/native';
 import SubmitButton from '../components/common/SubmitButton';
-import CustomButton from '../components/common/CustomButton';
 import { TextInput , ButtonContainer } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 import Container from '../components/common/Container';
@@ -46,7 +45,7 @@ const EditProfile = ({ route }) => {
 
 
   const uploadPic = async (data) => {
-    //console.log(worker.worker.worker.workerImg)
+   
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.All,
       allowsEditing: true,
@@ -102,7 +101,7 @@ const EditProfile = ({ route }) => {
     <Text style={{left: 70 , fontSize: 20}}>Edit your information please!</Text>
     <SafeAreaView >
       
-      <Text style={{left: 100}} >Name</Text>
+      <Text style={{left: 100}} >Full Name</Text>
       <TextInput style={{backgroundColor: "white", width: "50%", height: 30, borderRadius: 5, paddingHorizontal: 1, marginVertical: 10 , alignItems: 'center', left: 100}}
        placeholder={"Enter Your name"} value={user.name} onChangeText={(text) => { setUser({ ...user, name:text }) }}  name="name" />
 
@@ -110,24 +109,21 @@ const EditProfile = ({ route }) => {
       <TextInput style={{backgroundColor: "white", width: "50%", height: 30, borderRadius: 5, paddingHorizontal: 1, marginVertical: 10 , alignItems: 'center', left: 100}}
        placeholder={"Enter Your Email"} value={user.email} onChangeText={(text) => { setUser({ ...user, email:text }) }} name="email" />
 
-      <Text style={{left: 100}}>Location</Text>
+      <Text style={{left: 100}}>Address</Text>
       <TextInput  style={{backgroundColor: "white", width: "50%", height: 30, borderRadius: 5, paddingHorizontal: 1, marginVertical: 10 , alignItems: 'center', left: 100}}
-       placeh older={"Enter Your Location"} value={user.location} onChangeText={(text) => { setUser({ ...user, location:text }) }} name="location" />
+       placeholder={"Enter Your Address"}  value={user.location} onChangeText={(text) => { setUser({ ...user, location:text }) }} name="location" />
 
       <Text style={{left: 100}}>Company Name</Text>
       <TextInput style={{backgroundColor: "white", width: "50%", height: 30, borderRadius: 5, paddingHorizontal: 1, marginVertical: 10 , alignItems: 'center', left: 100}} 
       placeholder={"Enter Your Company Name"}  value={user.companyName} onChangeText={(text) => { setUser({ ...user, companyName:text }) }}  name="companyName" />
 
-      <Text style={{left: 100}}>Phone Number</Text>
-      <TextInput style={{backgroundColor: "white", width: "50%", height: 30, borderRadius: 5, paddingHorizontal: 1, marginVertical: 10 , alignItems: 'center', left: 100}} 
-      placeholder={"Enter Your Phone Number"} value={user.phoneNumber} onChangeText={(text) => { setUser({ ...user, phoneNumber:text }) }} name="phoneNumber" /> 
-
+      
       <Text style={{left: 100}}>App Password</Text>
       <TextInput style={{backgroundColor: "white", width: "50%", height: 30, borderRadius: 5, paddingHorizontal: 1, marginVertical: 10 , alignItems: 'center', left: 100}} 
       placeholder={"Enter Your Password"} value={user.password} onChangeText={(text) => { setUser({ ...user, password:text }) }} name="phoneNumber" /> 
       
     </SafeAreaView>
-    <Container style={{flexDirection: "row" ,marginTop: -40, marginLeft: 30,  justifyContent: 'center', height: 120}}>
+    <Container style={{flexDirection: "row" ,marginTop: 80, marginLeft: 30,  justifyContent: 'center', height: 120}}>
       <SubmitButton  style={{width: 150 , left: -10}} secondary  title="Pick Profile picture" onPress={uploadPic} ></SubmitButton>
       <SubmitButton  style={{width: 150 , left: -5}} secondary title="Update" onPress={onEditPress} type="FORTH" ></SubmitButton>
       </Container>

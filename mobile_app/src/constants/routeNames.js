@@ -6,6 +6,7 @@ export const LOGIN = 'Login';
 export const SETTINGS = 'Logout';
 export const HOME_NAVIGATOR = 'Home';
 export const EDIT_PROFILE = 'Edit';
+export const CHANGE_PHONE_NUMBER = 'Change Phone Number'
 
 
 

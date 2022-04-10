@@ -57,7 +57,7 @@ const EditProfile = ({ route }) => {
 
     if (result.cancelled) {
       //alert("Please pick a picture otherwise your profile pic will be deleted! ");
-      //if the user cancel the pic selector
+      //if the user cancel the pic selector  
     }
 
 

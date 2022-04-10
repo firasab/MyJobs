@@ -127,7 +127,7 @@ const EditProfile = ({ route }) => {
       placeholder={"Enter Your Password"} value={user.password} onChangeText={(text) => { setUser({ ...user, password:text }) }} name="phoneNumber" /> 
       
     </SafeAreaView>
-    <Container style={{flexDirection: "row" ,marginTop: 30, marginLeft: 30,  justifyContent: 'center', height: 130}}>
+    <Container style={{flexDirection: "row" ,marginTop: -40, marginLeft: 30,  justifyContent: 'center', height: 120}}>
       <SubmitButton  style={{width: 150 , left: -10}} secondary  title="Pick Profile picture" onPress={uploadPic} ></SubmitButton>
       <SubmitButton  style={{width: 150 , left: -5}} secondary title="Update" onPress={onEditPress} type="FORTH" ></SubmitButton>
       </Container>

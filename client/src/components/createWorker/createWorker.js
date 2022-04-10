@@ -73,13 +73,13 @@ export default function CreateWorker() {
     <Box sx={{ '& > :not(style)': { m: 1 } }}>
       <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
         <AccountCircle sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-        <TextField id="input-with-sx" className="name" label="Name" variant="standard" value={worker.name} onChange={(event) => {
+        <TextField  id="input-with-sx" className="name" label="Name" variant="standard" value={worker.name} onChange={(event) => {
           setWorker({ ...worker, name:event.target.value })
         }} />
       </Box>
       <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
         <PermIdentityIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-        <TextField id="input-with-sx"  className="id" label="ID" variant="standard" value={worker.id} onChange={(event) => {
+        <TextField id="input-with-sx"   className="id" label="ID" variant="standard" value={worker.id} onChange={(event) => {
           setWorker({ ...worker, id:event.target.value })
         }}/>
       </Box>

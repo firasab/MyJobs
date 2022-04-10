@@ -5,13 +5,14 @@ import axios from "axios";
 import { NetworkContext } from '../context/NetworkContext';
 import { useNavigation } from '@react-navigation/native';
 import SubmitButton from '../components/common/SubmitButton';
-import { TextInput , ButtonContainer } from "react-native";
+import { TextInput  } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 import Container from '../components/common/Container';
 
 const EditProfile = ({ route }) => {
     const worker = React.useContext(NetworkContext);
     const navigation = useNavigation();
+    
     const [user, setUser] = useState({
      name:worker.worker.worker.name,
      id: worker.worker.worker.id,
@@ -64,9 +65,22 @@ const EditProfile = ({ route }) => {
  
    const pico = "data:image/png;base64," + result.base64;
 
-     const profileImg = { workerImg: "" , email: "" , name: "" ,  id: "" , location: " " , phoneNumber: "" , 
-     password: "" , companyName: "" ,isWorkingSun: "" , isWorkingMon: "" ,isWorkingTues: "" ,isWorkingThur: "" ,
-     isWorkingSat: "" };
+     const profileImg = {
+        workerImg: "" ,
+        email: "" ,
+        name: "" , 
+        id: "" ,
+        location: " " ,
+        phoneNumber: "" , 
+        password: "" ,
+        companyName: "" ,
+        isWorkingSun: "" , 
+        isWorkingMon: "" ,
+        isWorkingTues: "" ,
+        isWorkingThur: "" ,
+        isWorkingSat: ""
+       };
+
      profileImg.workerImg = pico;
      profileImg.email = worker.worker.worker.email;
      profileImg.name = worker.worker.worker.name,
@@ -123,7 +137,7 @@ const EditProfile = ({ route }) => {
       placeholder={"Enter Your Password"} value={user.password} onChangeText={(text) => { setUser({ ...user, password:text }) }} name="phoneNumber" /> 
       
     </SafeAreaView>
-    <Container style={{flexDirection: "row" ,marginTop: 80, marginLeft: 30,  justifyContent: 'center', height: 120}}>
+    <Container style={{flexDirection: "row" , marginLeft: 30,  justifyContent: 'center', height: 120 ,paddingHorizontal: 4, marginVertical: 120,  borderRadius: 500,  alignItems: 'center', justifyContent: 'space-evenly'}}>
       <SubmitButton  style={{width: 150 , left: -10}} secondary  title="Pick Profile picture" onPress={uploadPic} ></SubmitButton>
       <SubmitButton  style={{width: 150 , left: -5}} secondary title="Update" onPress={onEditPress} type="FORTH" ></SubmitButton>
       </Container>

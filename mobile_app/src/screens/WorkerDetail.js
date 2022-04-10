@@ -20,6 +20,12 @@ const WorkerDetail = ({route}) => {
         navigation.navigate('Edit' , { worker : worker }); 
       };
 
+      const goToLogOut = () => {
+        alert("Your Profile has been Loged out! ");
+          navigation.navigate('Login' ); 
+         
+      }
+
    
       let profilePic = worker.worker.worker.workerImg;
     return (
@@ -40,7 +46,12 @@ const WorkerDetail = ({route}) => {
             <Text style={styles.title2}> Phone Number: <Text style={styles.subTitle}> {worker.worker.worker.phoneNumber}</Text> </Text>
             
         </Container>  
-             <SubmitButton  primary   title="Edit Profile" onPress={goToEdit}/ >
+           
+
+             <Container style={{flexDirection: "row" , marginLeft: 30,  justifyContent: 'center', paddingHorizontal: 4, marginVertical: -50,  borderRadius: 500,  alignItems: 'center', justifyContent: 'space-evenly'}}>
+             <SubmitButton  style={{width: 150 , left: -5}} danger title="LogOut" onPress={goToLogOut} type="FORTH" ></SubmitButton>
+             <SubmitButton  primary style={{width: 150 , left: -10}}   title="Edit Profile" onPress={goToEdit} />
+             </Container>
                
            </>
         

@@ -25,8 +25,8 @@ const DrawerNavigator = ({route}) => {
         <Drawer.Navigator  screenOptions={{headerShown: true}}>
           <Drawer.Screen  name={HOME_NAVIGATOR} component={HomeNavigator}  /> 
           <Drawer.Screen name={WORKER_SCHEDULE} component={WorkerSchedule} />
-          <Drawer.Screen name={WORKER_HOUR_REPORT} component={WorkerHoursReport} />
           <Drawer.Screen name={WORKER_IN_OUT} component={WorkerStartOrOutOfWork} />
+          <Drawer.Screen name={WORKER_HOUR_REPORT} component={WorkerHoursReport} />
           <Drawer.Screen name={CHANGE_PHONE_NUMBER} component={ChangePhoneNumber} />
           <Drawer.Screen  name={SETTINGS} component={Settings} />
         </Drawer.Navigator>

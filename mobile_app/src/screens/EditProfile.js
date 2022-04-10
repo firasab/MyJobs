@@ -46,6 +46,7 @@ const EditProfile = ({ route }) => {
 
 
   const uploadPic = async (data) => {
+    //console.log(worker.worker.worker.workerImg)
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.All,
       allowsEditing: true,
@@ -53,12 +54,16 @@ const EditProfile = ({ route }) => {
       quality: 1,
       base64: true,
     });
+    
+
+    if (result.cancelled) {
+      //alert("Please pick a picture otherwise your profile pic will be deleted! ");
+      //if the user cancel the pic selector
+    }
 
 
  
    const pico = "data:image/png;base64," + result.base64;
-
- 
 
      const profileImg = { workerImg: "" , email: "" , name: "" ,  id: "" , location: " " , phoneNumber: "" , 
      password: "" , companyName: "" ,isWorkingSun: "" , isWorkingMon: "" ,isWorkingTues: "" ,isWorkingThur: "" ,
@@ -131,5 +136,3 @@ const EditProfile = ({ route }) => {
 };
 
 export default EditProfile;
-
-

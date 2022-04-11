@@ -39,7 +39,7 @@
   
     return (<>
       <SafeAreaView >
-      <Text style={{ textAlign: "center", fontSize: 20,  fontWeight: "bold", padding: 20,}}> Check your hours for this month </Text>
+      <Text style={{ textAlign: "center", fontSize: 20,  fontWeight: "bold", padding: 20,}}> Monthly hours report</Text>
 
       <FlatList
         data={arr}

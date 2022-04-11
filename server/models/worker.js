@@ -27,7 +27,6 @@ const workerSchema = new Schema({
     },
     workerImg:{
         type: String,
-        default: "AA"
     },
     isWorkingSun:{
         type: String
@@ -52,6 +51,13 @@ const workerSchema = new Schema({
     },
     password:{
         type: String
-    }
+    },
+    shifts: [
+        {
+         hourS: String,
+         hourE:String ,
+         date:String,
+           
+        }]
 });
 module.exports = worker = mongoose.model('worker', workerSchema);

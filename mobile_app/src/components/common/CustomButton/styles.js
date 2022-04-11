@@ -9,6 +9,7 @@ export default StyleSheet.create({
     borderRadius: 500,
     alignItems: 'center',
     justifyContent: 'space-evenly',
+    
   },
 
   loaderSection: {

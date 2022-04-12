@@ -1,7 +1,6 @@
 import { SafeAreaView, Text, View, } from "react-native";
   import axios from "axios";
   import React from "react";
-  import { useEffect } from "react";
   import { useState } from "react";
   import { NetworkContext } from '../context/NetworkContext';
   import SubmitButton from '../components/common/SubmitButton';
@@ -14,7 +13,7 @@ import { SafeAreaView, Text, View, } from "react-native";
     const [disablestart,setDiss]=useState(false);
     const [disableend,setDise]=useState(false);
     const d = new Date();
-    let h = d.getHours() -21;
+    let h = d.getHours() +3;
     let m = d.getMinutes();
     let s = d.getSeconds();
     let time = h + ":" + m + ":" + s;

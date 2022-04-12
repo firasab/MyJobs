@@ -47,7 +47,7 @@
           <SafeAreaView >
               <Text > <Text style={{ fontSize: 14,  fontWeight: "bold"}}>Date: </Text> {item.date} , {" "}
               <Text > <Text style={{ fontSize: 14,  fontWeight: "bold"}}>Started at: </Text>{item.hourS} , {" "}</Text>
-              <Text > <Text style={{ fontSize: 14,  fontWeight: "bold"}}>Finished at: </Text>{item.hourE} , {" "}</Text>
+              <Text > <Text style={{ fontSize: 14,  fontWeight: "bold"}}>Finished at: </Text>{item.hourE}  {" "}</Text>
               </Text>
               <Text></Text>
             

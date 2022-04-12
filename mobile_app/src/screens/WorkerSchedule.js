@@ -1,9 +1,7 @@
-import { Text, SafeAreaView } from "react-native";
+import { Text } from "react-native";
 import React from "react";
 import { NetworkContext } from '../context/NetworkContext';
 import { StyleSheet } from "react-native";
-import { View } from 'react-native';
-import { DataTable } from 'react-native-paper';
 import { Col, Row, Grid } from "react-native-easy-grid";
 
 const WorkerSchedule = ({ route }) => {

@@ -6,6 +6,7 @@
   import { NetworkContext } from '../context/NetworkContext';
   import { View, StyleSheet } from 'react-native';
   import { DataTable } from 'react-native-paper';
+  import { Col, Row, Grid } from "react-native-easy-grid";
  
   
   const WorkerHoursReport = ({ route  }) => {
@@ -47,27 +48,22 @@
         data={arr}
         renderItem={({ item }) => (
 
-          <SafeAreaView >
-                <View style={styles.container}>
-                  <DataTable>
-                  <DataTable.Header>
-                    <DataTable.Title >Date</DataTable.Title>
-                    <DataTable.Title>Started At</DataTable.Title>
-                    <DataTable.Title numeric>Finished At</DataTable.Title>
-                  </DataTable.Header>
+        <Grid style={styles.container}>
+          <Row>
+            <Col ><Text style={styles.time}>Date </Text></Col>
+            <Col ><Text style={styles.time}>Start At  </Text></Col>
+            <Col ><Text style={styles.time}>Finish At  </Text></Col>
+          </Row>
 
-                  <DataTable.Row>
-                    <DataTable.Cell> {item.date}</DataTable.Cell>
-                    <DataTable.Cell>{item.hourS}</DataTable.Cell>
-                    <DataTable.Cell numeric>{item.hourE} </DataTable.Cell>
-                  </DataTable.Row>
+          <Text>-----------------------------------------------------------------------------</Text>
 
+          <Row>
+            <Col><Row><Text style={styles.day}> {item.date}</Text></Row></Col>
+            <Col><Text style={styles.day}> {item.hourS}</Text></Col>
+            <Col><Text style={styles.day}> {item.hourE}</Text></Col>
+          </Row>
 
-
-                  </DataTable>
-                </View>
-            
-          </SafeAreaView>
+        </Grid> 
         )}
                 keyExtractor={(item, index) => index.toString()}
               />
@@ -82,6 +78,8 @@
             container: {
               paddingTop: 70,
               paddingHorizontal: 30,
+              left: 30,
+              top: -50
             },
           });
   
@@ -93,11 +91,10 @@
 
 
  
+ 
 
 
   
 
-
-  
 
 

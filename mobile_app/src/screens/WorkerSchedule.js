@@ -2,69 +2,79 @@ import { Text, SafeAreaView } from "react-native";
 import React from "react";
 import { NetworkContext } from '../context/NetworkContext';
 import { StyleSheet } from "react-native";
-
+import { View } from 'react-native';
+import { DataTable } from 'react-native-paper';
+import { Col, Row, Grid } from "react-native-easy-grid";
 
 const WorkerSchedule = ({ route }) => {
     const worker = React.useContext(NetworkContext);
+
+
   return (
       <>
-    <Text style={styles.title}> {worker.worker.worker.name}'s Work Schedule</Text>
-    <SafeAreaView style={styles.bodyContent}>
-      <Text style={styles.description}>
-        Sunday: <Text style={styles.details}> {worker.worker.worker.isWorkingSun}</Text>
-      </Text>
+        <Text style={styles.title}> {worker.worker.worker.name}'s Work Schedule</Text>
+        <Text style={styles.subTitle}>Your work schedule for the next week</Text>
+    
+          <Grid style={styles.container}>
+          <Row ><Text style={styles.time}>Sunday: 
+            <Col><Row><Text style={styles.day}> {worker.worker.worker.isWorkingSun}</Text></Row></Col> 
+          </Text></Row>
+          <Text>-------------------------------------------------------</Text>
+          <Row><Text style={styles.time}>Monday:
+            <Col><Row><Text style={styles.day}> {worker.worker.worker.isWorkingMon}</Text></Row></Col>
+          </Text></Row>
+          <Text>-------------------------------------------------------</Text>
+          <Row><Text style={styles.time}>Tuesday:
+            <Col><Row><Text style={styles.day}> {worker.worker.worker.isWorkingTues}</Text></Row></Col>
+          </Text></Row>
+          <Text>-------------------------------------------------------</Text>
+          <Row><Text style={styles.time}>Wednesday:
+            <Col><Row><Text style={styles.day}> {worker.worker.worker.isWorkingWed}</Text></Row></Col>
+          </Text></Row>
+          <Text>-------------------------------------------------------</Text>
+          <Row><Text style={styles.time}>Thursday:
+            <Col><Row><Text style={styles.day}> {worker.worker.worker.isWorkingThur}</Text></Row></Col>
+          </Text></Row>
+          <Text>-------------------------------------------------------</Text>
+          <Row><Text style={styles.time}>Friday:
+            <Col><Row><Text style={styles.day}> {worker.worker.worker.isWorkingFri}</Text></Row></Col>
+          </Text></Row>
+          <Text>-------------------------------------------------------</Text>
+          <Row><Text style={styles.time}>Saturday:
+            <Col><Row><Text style={styles.day}> {worker.worker.worker.isWorkingSat}</Text></Row></Col>
+          </Text></Row>
+          </Grid>   
+              </>
+            );
+          };
+          const styles = StyleSheet.create({
+            container: {
+              paddingTop: 10,
+              paddingHorizontal: 10,
+              left: 100
+              
+            },
+          
+            title: {
+              fontSize: 30,
+              textAlign: "center",
+              paddingTop: 10,
+            },
+            subTitle: {
+              fontSize: 20,
+              textAlign: "center",
+              paddingTop: 10,
+            },
+            day: {
+              fontSize: 18,
+              top: 6,
+            },
+            time: {
+              fontSize: 18,
+              paddingTop: 14,
+            },
+          });
+          export default WorkerSchedule;
 
-      <Text style={styles.description}>
-        Monday:  <Text style={styles.details}> {worker.worker.worker.isWorkingMon}</Text>
-      </Text>
-     
-      <Text style={styles.description}>
-        Tuesday: <Text style={styles.details}> {worker.worker.worker.isWorkingTues}</Text>
-      </Text>
-     
-      <Text style={styles.description}>
-        Wednesday: <Text style={styles.details}> {worker.worker.worker.isWorkingWed}</Text>
-      </Text>
-     
-      <Text style={styles.description}>
-        Thursday:  <Text style={styles.details}> {worker.worker.worker.isWorkingThur} </Text>
-      </Text>
-     
-      <Text style={styles.description}>
-        Friday: <Text style={styles.details}> {worker.worker.worker.isWorkingFri}</Text>
-      </Text>
-      
-      <Text style={styles.description }>
-        Saturday: <Text style={styles.details}> {worker.worker.worker.isWorkingSat}</Text>
-      </Text>
-    </SafeAreaView>
-    </>
-  );
-};
-const styles = StyleSheet.create({
-  bodyContent: {
-    alignItems: "center",
-    marginVertical: 20,
-  },
 
-  details: {
-    fontSize: 18,
-    color: "blue", 
-  },
 
-  description: {
-    fontSize: 20,
-    color: "black",
-    marginVertical: 10,
-    paddingTop: 4,
-  },
-
-  title: {
-    fontSize: 30,
-    textAlign: "center",
-    paddingTop: 40,
-    fontWeight: "500",
-  },
-
-});
-export default WorkerSchedule;

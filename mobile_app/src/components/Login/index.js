@@ -4,7 +4,10 @@ import Input from '../../components/common/Input';
 import CustomButton from '../../components/common/CustomButton';
 import styles from './styles';
 import Message from '../common/Message';
-
+import { Octicons, Ionicons} from '@expo/vector-icons';
+import {  LeftIcon, StyledInputLable, StyledTextInput, RightIcon } from '../components/style';
+  import  {useState} from "react";
+ 
 const LoginComponent = ({ 
   error,
   form,
@@ -12,7 +15,7 @@ const LoginComponent = ({
   loading,
   onSubmit,
 }) => {
-    
+  const [hidePassword, setHidePassword] = useState(true);
   return (
     <Container>
          <Image
@@ -37,27 +40,35 @@ const LoginComponent = ({
           {error?.error && <Message danger onDismiss message={error?.error} /> }
           
 
-            <Input 
+            <MyTextInput 
             label="Username"
             placeholder=" Enter your Username "
             value={form.phoneNumber || null}
             onChangeText={(value) => {
-              onChange({name: 'phoneNumber', value});
-            }}
+            onChange({name: 'phoneNumber', value});}}
+            icon="person"
+              
+            keyboardType="email-address"
+            
           />
           
           
             
 
-          <Input
+          <MyTextInput
             label="Password"
             placeholder="Enter Password"
-            secureTextEntry={true}
-            icon={<Text>Show</Text>}
+            icon="lock"
             iconPosition="right"
             onChangeText={(value) => {
               onChange({name: 'password', value});
             }}
+
+              secureTextEntry={hidePassword}
+              isPassword={true}
+              hidePassword={hidePassword}
+              setHidePassword = {setHidePassword}
+            
            />
             </View>
 
@@ -67,5 +78,24 @@ const LoginComponent = ({
 
     )
     }
+
+
+    const MyTextInput = ({label, icon, isPassword, hidePassword, setHidePassword, ...props}) => {
+      return (
+          <View>
+              <LeftIcon>
+                  <Octicons name={icon} size={30}  />
+              </LeftIcon>
+              <StyledInputLable> {label} </StyledInputLable>
+              <StyledTextInput {...props} />
+              {isPassword && (
+                  <RightIcon onPress={() => setHidePassword(!hidePassword)}>
+                      <Ionicons name={hidePassword ? 'md-eye-off' : 'md-eye' } size={30}  />
+                  </RightIcon>
+              )}
+          </View>
+          );
+  
+  }
 
 export default LoginComponent;

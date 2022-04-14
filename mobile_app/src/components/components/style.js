@@ -45,3 +45,4 @@ export const RightIcon = styled.TouchableOpacity`
     position: absolute;
     z-index: 1;
 `;
+

@@ -1,12 +1,11 @@
 import {Image, Text, View } from 'react-native';
 import Container from '../../components/common/Container';
-import Input from '../../components/common/Input';
 import CustomButton from '../../components/common/CustomButton';
 import styles from './styles';
 import Message from '../common/Message';
 import { Octicons, Ionicons} from '@expo/vector-icons';
 import {  LeftIcon, StyledInputLable, StyledTextInput, RightIcon } from '../components/style';
-  import  {useState} from "react";
+import  {useState} from "react";
  
 const LoginComponent = ({ 
   error,
@@ -55,7 +54,7 @@ const LoginComponent = ({
           
             
 
-          <MyTextInput
+          <MyTextInput 
             label="Password"
             placeholder="Enter Password"
             icon="lock"

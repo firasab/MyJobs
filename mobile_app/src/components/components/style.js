@@ -24,25 +24,28 @@ export const StyledTextInput = styled.TextInput`
     margin-vertical: 3px;
     margin-bottom: 20px;
     color: ${tertiary};
+    top: 50px;
 `;
 
 export const StyledInputLable = styled.Text`
     color: ${tertiary};
     font-size: 13px;
-    text-align: left;    
+    text-align: left;   
+    top: 50px;
 `;
 
 export const LeftIcon = styled.View`
     left: 15px;
-    top: 38px;
+    top: 80px;
     position: absolute;
     z-index: 1;
 `;
 
 export const RightIcon = styled.TouchableOpacity`
     right: 15px;
-    top: 38px;
+    top: 80px;
     position: absolute;
     z-index: 1;
 `;
+
 

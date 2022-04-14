@@ -50,9 +50,6 @@ const LoginComponent = ({
             keyboardType="email-address"
             
           />
-          
-          
-            
 
           <MyTextInput 
             label="Password"

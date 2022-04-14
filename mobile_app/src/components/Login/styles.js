@@ -15,6 +15,7 @@ export default StyleSheet.create({
     textAlign: 'center',
     paddingTop: 1,
     fontWeight: '500',
+    
   },
 
   subTitle: {

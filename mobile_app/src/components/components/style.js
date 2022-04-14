@@ -1,10 +1,6 @@
 import styled from 'styled-components';
-import {View , Text, Image, TextInput, TouchableOpacity} from 'react-native';
-import Constants from 'expo-constants';
 
 
-const StatusBarHeight = Constants.StatusBarHeight;
-//colors of the app 
 export const Colors = {
     primary: '#ffffff',
     secondary: '#E5E7EB',
@@ -15,13 +11,7 @@ export const Colors = {
     red: '#EF4444',
 };
 
-const { secondary, tertiary,red} = Colors;
-
-
-
-
-
-
+const { secondary, tertiary} = Colors;
 
 export const StyledTextInput = styled.TextInput`
     background-color: ${secondary};

@@ -38,12 +38,18 @@ const EditProfile = ({ route }) => {
    axios.post(`https://myjobss.herokuapp.com/workers/update/${worker.worker.worker._id}`,user)
       .then(() => {  
         alert("Your Profile has been updated! ");
-        navigation.navigate('Profile'); 
+        alert("Please Refresh app to see changes");
+       
+        
       })
       .catch((err) => alert("check your server"));
    
   };
 
+  const goToRefresh = () => {
+    //refresh app after shange pic or edit profile
+    DevSettings.reload()
+  };
 
   const uploadPic = async (data) => {
    
@@ -102,7 +108,9 @@ const EditProfile = ({ route }) => {
     await axios.post(`https://myjobss.herokuapp.com/workers/update/${worker.worker.worker._id}`, profileImg)
 
       .then((resp) => {
-        alert("Profile picture has Updated ");
+        alert("Please Refresh app to see changes");
+        alert("Profile picture has Updated!");
+        
       })
       .catch((err) => alert("check your connection!"));
    
@@ -138,9 +146,11 @@ const EditProfile = ({ route }) => {
       
     </SafeAreaView>
     <Container style={{flexDirection: "row" , marginLeft: 30,  justifyContent: 'center', height: 120 ,paddingHorizontal: 4, marginVertical: 120,  borderRadius: 500,  alignItems: 'center', justifyContent: 'space-evenly'}}>
-      <SubmitButton  style={{width: 150 , left: -10}} secondary  title="Pick Profile picture" onPress={uploadPic} ></SubmitButton>
-      <SubmitButton  style={{width: 150 , left: -5}} secondary title="Update" onPress={onEditPress} type="FORTH" ></SubmitButton>
+      <SubmitButton  style={{width: 100 , left: -10}} secondary  title="Pick Profile picture" onPress={uploadPic} ></SubmitButton>
+      <SubmitButton  style={{width: 100 , left: -5}} secondary title="Update" onPress={onEditPress} type="FORTH" ></SubmitButton>
+      <SubmitButton  primary style={{width: 100 , left: -10}}   title="Refresh App" onPress={goToRefresh} />
       </Container>
+      
     </>
   );
 };

@@ -6,6 +6,7 @@ import Message from '../common/Message';
 import { Octicons, Ionicons} from '@expo/vector-icons';
 import {  LeftIcon, StyledInputLable, StyledTextInput, RightIcon } from '../components/style';
 import  {useState} from "react";
+
  
 const LoginComponent = ({ 
   error,
@@ -59,7 +60,6 @@ const LoginComponent = ({
             onChangeText={(value) => {
               onChange({name: 'password', value});
             }}
-
               secureTextEntry={hidePassword}
               isPassword={true}
               hidePassword={hidePassword}
@@ -67,8 +67,9 @@ const LoginComponent = ({
             
            />
             </View>
-
+     
       <CustomButton disabled={loading} onPress={onSubmit } loading={loading}  primary  title="Login"  />
+    
       </View>
       </Container>
 

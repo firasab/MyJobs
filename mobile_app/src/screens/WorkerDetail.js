@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Text } from 'react-native';
 import Container from '../components/common/Container';
 import { NetworkContext } from '../context/NetworkContext';
@@ -8,20 +8,28 @@ import {
     Image,
   } from "react-native";
   import SubmitButton from '../components/common/SubmitButton';
+  import {DevSettings} from 'react-native';
 
 
 
 const WorkerDetail = ({route}) => {
     const worker = React.useContext(NetworkContext);
     const navigation = useNavigation();
+
+
   
 
     const goToEdit = () => {
         navigation.navigate('Edit' , { worker : worker }); 
       };
 
+      
+
+
+
       const goToLogOut = () => {
         alert("Your Profile has been Loged out! ");
+
           navigation.navigate('Login' ); 
          
       }
@@ -49,8 +57,9 @@ const WorkerDetail = ({route}) => {
            
 
              <Container style={{flexDirection: "row" , marginLeft: 30,  justifyContent: 'center', paddingHorizontal: 4, marginVertical: -50,  borderRadius: 500,  alignItems: 'center', justifyContent: 'space-evenly'}}>
-             <SubmitButton  style={{width: 150 , left: -5}} danger title="LogOut" onPress={goToLogOut} type="FORTH" ></SubmitButton>
-             <SubmitButton  primary style={{width: 150 , left: -10}}   title="Edit Profile" onPress={goToEdit} />
+             <SubmitButton  style={{width: 100 , left: -5}} danger title="LogOut" onPress={goToLogOut} type="FORTH" ></SubmitButton>
+             <SubmitButton  primary style={{width: 100 , left: -10}}   title="Edit Profile" onPress={goToEdit} />
+            
              </Container>
                
            </>

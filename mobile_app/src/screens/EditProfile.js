@@ -111,6 +111,7 @@ const EditProfile = ({ route }) => {
         alert("Please Refresh app to see changes");
         alert("Profile picture has Updated!");
         
+        
       })
       .catch((err) => alert("check your connection!"));
    
@@ -120,35 +121,35 @@ const EditProfile = ({ route }) => {
   
   return (
   <>
-    <Text style={{left: 70 , fontSize: 20}}>Edit your information please!</Text>
+    <Text style={{left: 70 , fontSize: 20 , top : 20}}>Change your information please!</Text>
     <SafeAreaView >
       
-      <Text style={{left: 100}} >Full Name</Text>
-      <TextInput style={{backgroundColor: "white", width: "50%", height: 30, borderRadius: 5, paddingHorizontal: 1, marginVertical: 10 , alignItems: 'center', left: 100}}
+      <Text style={{left: 100, top : 20}} >Full Name</Text>
+      <TextInput style={{backgroundColor: "white", top : 20, width: "50%", height: 30, borderRadius: 5, paddingHorizontal: 1, marginVertical: 10 , alignItems: 'center', left: 100}}
        placeholder={"Enter Your name"} value={user.name} onChangeText={(text) => { setUser({ ...user, name:text }) }}  name="name" />
 
-      <Text style={{left: 100}}>Email</Text>
-      <TextInput style={{backgroundColor: "white", width: "50%", height: 30, borderRadius: 5, paddingHorizontal: 1, marginVertical: 10 , alignItems: 'center', left: 100}}
+      <Text style={{left: 100, top : 20}}>Email</Text>
+      <TextInput style={{backgroundColor: "white", top : 20, width: "50%", height: 30, borderRadius: 5, paddingHorizontal: 1, marginVertical: 10 , alignItems: 'center', left: 100}}
        placeholder={"Enter Your Email"} value={user.email} onChangeText={(text) => { setUser({ ...user, email:text }) }} name="email" />
 
-      <Text style={{left: 100}}>Address</Text>
-      <TextInput  style={{backgroundColor: "white", width: "50%", height: 30, borderRadius: 5, paddingHorizontal: 1, marginVertical: 10 , alignItems: 'center', left: 100}}
+      <Text style={{left: 100, top : 20}}>Address</Text>
+      <TextInput  style={{backgroundColor: "white", top : 20, width: "50%", height: 30, borderRadius: 5, paddingHorizontal: 1, marginVertical: 10 , alignItems: 'center', left: 100}}
        placeholder={"Enter Your Address"}  value={user.location} onChangeText={(text) => { setUser({ ...user, location:text }) }} name="location" />
 
-      <Text style={{left: 100}}>Company Name</Text>
-      <TextInput style={{backgroundColor: "white", width: "50%", height: 30, borderRadius: 5, paddingHorizontal: 1, marginVertical: 10 , alignItems: 'center', left: 100}} 
+      <Text style={{left: 100, top : 20}}>Company Name</Text>
+      <TextInput style={{backgroundColor: "white", top : 20, width: "50%", height: 30, borderRadius: 5, paddingHorizontal: 1, marginVertical: 10 , alignItems: 'center', left: 100}} 
       placeholder={"Enter Your Company Name"}  value={user.companyName} onChangeText={(text) => { setUser({ ...user, companyName:text }) }}  name="companyName" />
 
       
-      <Text style={{left: 100}}>App Password</Text>
-      <TextInput style={{backgroundColor: "white", width: "50%", height: 30, borderRadius: 5, paddingHorizontal: 1, marginVertical: 10 , alignItems: 'center', left: 100}} 
+      <Text style={{left: 100, top : 20}}>App Password</Text>
+      <TextInput style={{backgroundColor: "white", top : 20, width: "50%", height: 30, borderRadius: 5, paddingHorizontal: 1, marginVertical: 10 , alignItems: 'center', left: 100}} 
       placeholder={"Enter Your Password"} value={user.password} onChangeText={(text) => { setUser({ ...user, password:text }) }} name="phoneNumber" /> 
       
     </SafeAreaView>
     <Container style={{flexDirection: "row" , marginLeft: 30,  justifyContent: 'center', height: 120 ,paddingHorizontal: 4, marginVertical: 120,  borderRadius: 500,  alignItems: 'center', justifyContent: 'space-evenly'}}>
-      <SubmitButton  style={{width: 100 , left: -10}} secondary  title="Pick Profile picture" onPress={uploadPic} ></SubmitButton>
-      <SubmitButton  style={{width: 100 , left: -5}} secondary title="Update" onPress={onEditPress} type="FORTH" ></SubmitButton>
-      <SubmitButton  primary style={{width: 100 , left: -10}}   title="Refresh App" onPress={goToRefresh} />
+      <SubmitButton  style={{width: 160 , left: -10}} primary  title="Change Profile picture" onPress={uploadPic} ></SubmitButton>
+      <SubmitButton  style={{width: 90 , left: -8}} primary title="Update" onPress={onEditPress} type="FORTH" ></SubmitButton>
+      <SubmitButton  primary style={{width: 90 , left: -7}}   title="Refresh" onPress={goToRefresh} />
       </Container>
       
     </>

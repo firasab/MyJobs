@@ -11,6 +11,7 @@ export default StyleSheet.create({
     left: 100,
     alignItems: 'center',
     justifyContent: 'space-evenly',
+    top: -20
   },
 
   loaderSection: {

@@ -5,9 +5,10 @@ import axios from "axios";
 import { NetworkContext } from '../context/NetworkContext';
 import { useNavigation } from '@react-navigation/native';
 import SubmitButton from '../components/common/SubmitButton';
-import { TextInput  } from "react-native";
+import { TextInput ,Alert  } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 import Container from '../components/common/Container';
+import {DevSettings} from 'react-native';
 
 const EditProfile = ({ route }) => {
     const worker = React.useContext(NetworkContext);
@@ -37,8 +38,13 @@ const EditProfile = ({ route }) => {
   const onEditPress = () => { 
    axios.post(`https://myjobss.herokuapp.com/workers/update/${worker.worker.worker._id}`,user)
       .then(() => {  
-        alert("Your Profile has been updated! ");
-        alert("Please Refresh app to see changes");
+       
+        DevSettings.reload()
+        Alert.alert(
+          "Your Profile has been updated!",
+          "please, Login to see the changes!",
+
+        );
        
         
       })
@@ -46,10 +52,6 @@ const EditProfile = ({ route }) => {
    
   };
 
-  const goToRefresh = () => {
-    //refresh app after shange pic or edit profile
-    DevSettings.reload()
-  };
 
   const uploadPic = async (data) => {
    
@@ -108,8 +110,12 @@ const EditProfile = ({ route }) => {
     await axios.post(`https://myjobss.herokuapp.com/workers/update/${worker.worker.worker._id}`, profileImg)
 
       .then((resp) => {
-        alert("Please Refresh app to see changes");
-        alert("Profile picture has Updated!");
+        DevSettings.reload()
+        Alert.alert(
+          "Profile picture has been Updated!",
+          "please, Login to see the changes! ",
+
+        );
         
         
       })
@@ -149,7 +155,7 @@ const EditProfile = ({ route }) => {
     <Container style={{flexDirection: "row" , marginLeft: 30,  justifyContent: 'center', height: 120 ,paddingHorizontal: 4, marginVertical: 120,  borderRadius: 500,  alignItems: 'center', justifyContent: 'space-evenly'}}>
       <SubmitButton  style={{width: 160 , left: -10}} primary  title="Change Profile picture" onPress={uploadPic} ></SubmitButton>
       <SubmitButton  style={{width: 90 , left: -8}} primary title="Update" onPress={onEditPress} type="FORTH" ></SubmitButton>
-      <SubmitButton  primary style={{width: 90 , left: -7}}   title="Refresh" onPress={goToRefresh} />
+     
       </Container>
       
     </>

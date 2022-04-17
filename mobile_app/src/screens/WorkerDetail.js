@@ -19,9 +19,9 @@ const WorkerDetail = ({route}) => {
 
   
 
-    const goToEdit = () => {
+      const goToEdit = () => {
         navigation.navigate('Edit' , { worker : worker }); 
-      };
+        };
 
       
 
@@ -30,7 +30,7 @@ const WorkerDetail = ({route}) => {
       const goToLogOut = () => {
         alert("Your Profile has been Loged out! ");
 
-          navigation.navigate('Login' ); 
+        DevSettings.reload()
          
       }
 

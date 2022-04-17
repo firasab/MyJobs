@@ -5,7 +5,6 @@ import WorkerDetail from '../screens/WorkerDetail';
 import WorkerHoursReport from '../screens/WorkerHoursReport';
 import WorkerSchedule from '../screens/WorkerSchedule';
 import WorkerStartOrOutOfWork from '../screens/WorkerStartOrOutOfWork';
-
 import EditProfile from '../screens/EditProfile';
 import ChangePhoneNumber from '../screens/ChangePhoneNumber';
 

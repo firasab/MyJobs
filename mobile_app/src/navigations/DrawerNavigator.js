@@ -13,6 +13,9 @@ import ChangePhoneNumber from '../screens/ChangePhoneNumber';
 import { NetworkContext } from "../context/NetworkContext";
 
 
+import {  WORKER_DETAIL } from '../constants/routeNames';
+import WorkerDetail from '../screens/WorkerDetail';
+
 
 
 

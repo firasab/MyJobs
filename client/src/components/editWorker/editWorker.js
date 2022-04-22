@@ -34,6 +34,14 @@ export default function EditWorker() {
     isWorkingFri: x.isWorkingFri,
     isWorkingSat: x.isWorkingSat,
     password: x.password,
+
+    timeWorkingSun :x.timeWorkingSun,
+    timeWorkingMon :x.timeWorkingMon,
+    timeWorkingTues :x.timeWorkingTues,
+    timeWorkingWed : x.timeWorkingWed,
+    timeWorkingThur :x.timeWorkingThur,
+    timeWorkingFri :x.timeWorkingFri,
+    timeWorkingSat : x.timeWorkingSat,
   });
   
 

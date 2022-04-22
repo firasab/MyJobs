@@ -31,22 +31,43 @@ const workerSchema = new Schema({
     isWorkingSun:{
         type: String
     },
+    timeWorkingSun:{
+        type: String
+    },
     isWorkingMon:{
+        type: String
+    },
+    timeWorkingMon:{
         type: String
     },
     isWorkingTues:{
         type: String
     },
+    timeWorkingTues:{
+        type: String
+    },
     isWorkingWed:{
+        type: String
+    },
+    timeWorkingWed:{
         type: String
     },
     isWorkingThur:{
         type: String
     },
+    timeWorkingThur:{
+        type: String
+    },
     isWorkingFri:{
         type: String
     },
+    timeWorkingFri:{
+        type: String
+    },
     isWorkingSat:{
+        type: String
+    },
+    timeWorkingSat:{
         type: String
     },
     password:{

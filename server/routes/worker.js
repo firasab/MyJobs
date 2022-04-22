@@ -63,6 +63,14 @@ router.route('/update/:id').post((req,res) => {
             worker.isWorkingFri = req.body.isWorkingFri;
             worker.isWorkingSat = req.body.isWorkingSat;
             
+            worker.timeWorkingSun = req.body.timeWorkingSun;
+            worker.timeWorkingMon = req.body.timeWorkingMon;
+            worker.timeWorkingTues = req.body.timeWorkingTues;
+            worker.timeWorkingWed = req.body.timeWorkingWed;
+            worker.timeWorkingThur = req.body.timeWorkingThur;
+            worker.timeWorkingFri = req.body.timeWorkingFri;
+            worker.timeWorkingSat = req.body.timeWorkingSat;
+            
 
             worker.save()
                 .then(() => res.json('worker updated !'))
@@ -126,6 +134,14 @@ router.post('/auth/login', (req, res) => {
                 worker.isWorkingThur = req.body.isWorkingThur;
                 worker.isWorkingFri = req.body.isWorkingFri;
                 worker.isWorkingSat = req.body.isWorkingSat;
+
+                worker.timeWorkingSun = req.body.timeWorkingSun;
+                worker.timeWorkingMon = req.body.timeWorkingMon;
+                worker.timeWorkingTues = req.body.timeWorkingTues;
+                worker.timeWorkingWed = req.body.timeWorkingWed;
+                worker.timeWorkingThur = req.body.timeWorkingThur;
+                worker.timeWorkingFri = req.body.timeWorkingFri;
+                worker.timeWorkingSat = req.body.timeWorkingSat;
                 
     
                 worker.save()

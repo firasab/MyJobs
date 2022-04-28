@@ -41,23 +41,22 @@ export default function ShowWorker() {
 
   const requestSearch = (searchedVal) => {
     console.log(searchedVal);
-    
-    const filteredRows = workersList.filter((worker) => {
-      return worker.name.toLowerCase().includes(searchedVal.toLowerCase()); 
-    });
-    console.log(filteredRows);
-    setWorkerList(filteredRows);
 
     if (searchedVal === "") {
-      setWorkerList(rows);
+    setWorkerList(rows);
     }
-  
+    else {
+      const filteredRows = rows.filter((worker) => {
+        return worker.name.toLowerCase().includes(searchedVal.toLowerCase()); 
+      });
+      setWorkerList(filteredRows);
+    }
+    
   };
 
   const cancelSearch = () => {
     setSearched("");
-    setWorkerList(rows);
-    //requestSearch(searched);
+    requestSearch(searched);
   };
 
  

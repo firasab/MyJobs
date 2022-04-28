@@ -34,25 +34,30 @@ export default function ShowWorker() {
     axios.get('https://myjobss.herokuapp.com/workers').then( (allWorkers) => {
       setWorkerList(allWorkers.data);
       setRows(allWorkers.data);
-
-
     } )
   }, [])
 
 
 
   const requestSearch = (searchedVal) => {
+    console.log(searchedVal);
+    
     const filteredRows = workersList.filter((worker) => {
       return worker.name.toLowerCase().includes(searchedVal.toLowerCase()); 
     });
+    console.log(filteredRows);
     setWorkerList(filteredRows);
+
+    if (searchedVal === "") {
+      setWorkerList(rows);
+    }
+  
   };
 
   const cancelSearch = () => {
     setSearched("");
     setWorkerList(rows);
     //requestSearch(searched);
-
   };
 
  

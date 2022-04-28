@@ -14,6 +14,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Link} from 'react-router-dom'
 import {Button  } from 'react-bootstrap'
 import SearchBar from "material-ui-search-bar";
+import ReactHTMLTableToExcel from "react-html-table-to-excel";
 
 export default function ShowCompany() {
   const [companiesList, setCompaniesList] = useState([])
@@ -69,6 +70,17 @@ export default function ShowCompany() {
   return (
     <>
     <h2> Companies's list </h2>
+    <div style={{marginLeft: '-1000px' , marginTop: '-20px'  }}>
+    <ReactHTMLTableToExcel   
+        id="test-table-xls-button"
+        className="download-table-xls-button"
+        table="table-to-xls"
+        filename="Companies"
+        sheet="tablexls"
+        buttonText="Download as Execl"  
+        
+      />
+      </div>
     
     <SearchBar
     style={{marginLeft: '900px' , borderRadius:'300px' , marginTop: '-40px' , backgroundColor:"#DADADA"}}
@@ -77,7 +89,7 @@ export default function ShowCompany() {
           onCancelSearch={() => cancelSearch()}
         />
     <TableContainer  style={{ marginTop: '10px'}} component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+      <Table id="table-to-xls" sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
             <TableCell>Name</TableCell>

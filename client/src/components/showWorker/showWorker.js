@@ -13,11 +13,12 @@ import EditIcon from '@mui/icons-material/Edit';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Link} from 'react-router-dom'
 import {Button  } from 'react-bootstrap'
-
+import SearchBar from "material-ui-search-bar";
 
 export default function ShowWorker() {
   const [workersList, setWorkerList] = useState([])
-
+  const [rows, setRows] = useState(workersList);
+  const [searched, setSearched] = useState("");
 
 //delete method to delete worker from database
   const deleteWorker = (id) => {
@@ -32,16 +33,42 @@ export default function ShowWorker() {
   useEffect(() => {
     axios.get('https://myjobss.herokuapp.com/workers').then( (allWorkers) => {
       setWorkerList(allWorkers.data);
+      setRows(allWorkers.data);
+
 
     } )
   }, [])
+
+
+
+  const requestSearch = (searchedVal) => {
+    const filteredRows = workersList.filter((worker) => {
+      return worker.name.toLowerCase().includes(searchedVal.toLowerCase()); 
+    });
+    setWorkerList(filteredRows);
+  };
+
+  const cancelSearch = () => {
+    setSearched("");
+    setWorkerList(rows);
+    //requestSearch(searched);
+
+  };
 
  
   //the design of workers list
   return (
     <>
-    <h2> Worker's list </h2>
-    <TableContainer component={Paper}>
+    <h2 style={{ marginTop: '20px'}}> Worker's list </h2>
+
+    <SearchBar
+    style={{marginLeft: '900px' , borderRadius:'300px' , marginTop: '-60px'}}
+          value={searched}
+          onChange={(searchVal) => requestSearch(searchVal)}
+          onCancelSearch={() => cancelSearch()}
+        />
+
+    <TableContainer  style={{ marginTop: '10px'}} component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>

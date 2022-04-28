@@ -4,7 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import axios from "axios";
 import { NetworkContext } from '../context/NetworkContext';
 import { useNavigation } from '@react-navigation/native';
-import SubmitButton from '../components/common/SubmitButton';
+import SubmitButton from '../components/common/CustomButton';
 import { TextInput ,Alert  } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 import Container from '../components/common/Container';
@@ -154,7 +154,7 @@ const EditProfile = ({ route }) => {
     </SafeAreaView>
     <Container style={{flexDirection: "row" , marginLeft: 30,  justifyContent: 'center', height: 120 ,paddingHorizontal: 4, marginVertical: 120,  borderRadius: 500,  alignItems: 'center', justifyContent: 'space-evenly'}}>
       <SubmitButton  style={{width: 160 , left: -10}} primary  title="Change Profile picture" onPress={uploadPic} ></SubmitButton>
-      <SubmitButton  style={{width: 90 , left: -8}} primary title="Update" onPress={onEditPress} type="FORTH" ></SubmitButton>
+      <SubmitButton  style={{width: 160 , left: -8}} primary title="Update" onPress={onEditPress} type="FORTH" ></SubmitButton>
      
       </Container>
       

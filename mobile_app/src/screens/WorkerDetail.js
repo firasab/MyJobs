@@ -7,8 +7,8 @@ import {
     StyleSheet,
     Image,
   } from "react-native";
-  import SubmitButton from '../components/common/SubmitButton';
   import {DevSettings} from 'react-native';
+  import CustomButton from '../components/common/CustomButton';
 
 
 
@@ -57,9 +57,8 @@ const WorkerDetail = ({route}) => {
            
 
              <Container style={{flexDirection: "row" , marginLeft: 30,  justifyContent: 'center', paddingHorizontal: 4, marginVertical: -50,  borderRadius: 500,  alignItems: 'center', justifyContent: 'space-evenly'}}>
-             <SubmitButton  style={{width: 100 , left: -5}} danger title="LogOut" onPress={goToLogOut} type="FORTH" ></SubmitButton>
-             <SubmitButton  primary style={{width: 100 , left: -10}}   title="Edit Profile" onPress={goToEdit} />
-            
+             <CustomButton  style={{width: 150 , left: -5}} danger title="Logout" onPress={goToLogOut} type="FORTH" />
+             <CustomButton  primary style={{width: 150 , left: -10}}   title="Edit Profile" onPress={goToEdit} />
              </Container>
                
            </>

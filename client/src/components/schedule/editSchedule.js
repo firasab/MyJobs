@@ -7,7 +7,7 @@ import axios from 'axios';
 import { useLocation } from 'react-router-dom';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import EventIcon from '@mui/icons-material/Event';
-import Select from 'react-select';
+//import Select from 'react-select';
 
 //set the worker featuers
 export default function EditSchedule() {
@@ -39,12 +39,12 @@ export default function EditSchedule() {
     timeWorkingSat : x.timeWorkingSat,
   });
 
-  const timePicker = [
-    { label: '6:00 - 15:00', value: 'morning' },
-    { label: '12:00 - 20:00', value: 'late-morning' },
-    { label: '14:00 - 22:00', value: 'afternon' },
-    { label: '15:00 - 24:00', value: 'night' },
-  ];
+  // const timePicker = [
+  //   { label: '6:00 - 15:00', value: 'morning' },
+  //   { label: '12:00 - 20:00', value: 'late-morning' },
+  //   { label: '14:00 - 22:00', value: 'afternon' },
+  //   { label: '15:00 - 24:00', value: 'night' },
+  // ];
 
  
  

@@ -13,9 +13,12 @@ import EditIcon from '@mui/icons-material/Edit';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Link} from 'react-router-dom'
 import {Button  } from 'react-bootstrap'
+import SearchBar from "material-ui-search-bar";
 
 export default function ShowCompany() {
   const [companiesList, setCompaniesList] = useState([])
+  const [rows, setRows] = useState(companiesList);
+  const [searched, setSearched] = useState("");
 
 //delete method to delete company from database
   const deleteCompany = (id) => {
@@ -29,9 +32,26 @@ export default function ShowCompany() {
   useEffect(() => {
     axios.get('https://myjobss.herokuapp.com/companies').then( (allCompanies) => {
         setCompaniesList(allCompanies.data);
+        setRows(allCompanies.data);
 
     } )
   }, [])
+
+  
+  const requestSearch = (searchedVal) => {
+    const filteredRows = companiesList.filter((company) => {
+      return company.name.toLowerCase().includes(searchedVal.toLowerCase()); 
+    });
+    setCompaniesList(filteredRows);
+  };
+
+  const cancelSearch = () => {
+    setSearched("");
+    setCompaniesList(rows);
+    //requestSearch(searched);
+
+  };
+
 
  
 
@@ -39,7 +59,14 @@ export default function ShowCompany() {
   return (
     <>
     <h2> Companies's list </h2>
-    <TableContainer component={Paper}>
+    
+    <SearchBar
+    style={{marginLeft: '900px' , borderRadius:'300px' , marginTop: '-40px'}}
+          value={searched}
+          onChange={(searchVal) => requestSearch(searchVal)}
+          onCancelSearch={() => cancelSearch()}
+        />
+    <TableContainer  style={{ marginTop: '10px'}} component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>

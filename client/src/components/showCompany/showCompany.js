@@ -45,8 +45,11 @@ export default function ShowCompany() {
     }
     else {
       const filteredRows = rows.filter((company) => {
-        return ( company.name.toLowerCase().includes(searchedVal.toLowerCase()) ||company.field.toLowerCase().includes(searchedVal.toLowerCase()) ||
-        company.numberOfWorker.toLowerCase().includes(searchedVal.toLowerCase()) || company.address.toLowerCase().includes(searchedVal.toLowerCase()) ); 
+        return ( 
+          company.name.toLowerCase().includes(searchedVal.toLowerCase()) 
+        ||company.field.toLowerCase().includes(searchedVal.toLowerCase()) 
+        ||company.numberOfWorker.toLowerCase().includes(searchedVal.toLowerCase())
+        || company.address.toLowerCase().includes(searchedVal.toLowerCase()) ); 
       });
       setCompaniesList(filteredRows);
     }

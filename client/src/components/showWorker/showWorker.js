@@ -47,9 +47,12 @@ export default function ShowWorker() {
     else {
       const filteredRows = rows.filter((worker) => {
         return ( 
-         worker.name.toLowerCase().includes(searchedVal.toLowerCase()) || worker.id.toLowerCase().includes(searchedVal.toLowerCase()) || 
-         worker.location.toLowerCase().includes(searchedVal.toLowerCase()) || worker.phoneNumber.toLowerCase().includes(searchedVal.toLowerCase()) || 
-         worker.email.toLowerCase().includes(searchedVal.toLowerCase()) || worker.companyName.toLowerCase().includes(searchedVal.toLowerCase())  ) ; 
+         worker.name.toLowerCase().includes(searchedVal.toLowerCase()) 
+         || worker.id.toLowerCase().includes(searchedVal.toLowerCase()) 
+         || worker.location.toLowerCase().includes(searchedVal.toLowerCase()) 
+         || worker.phoneNumber.toLowerCase().includes(searchedVal.toLowerCase()) 
+         || worker.email.toLowerCase().includes(searchedVal.toLowerCase()) 
+         || worker.companyName.toLowerCase().includes(searchedVal.toLowerCase())  ) ; 
         
       });
       setWorkerList(filteredRows);

@@ -46,7 +46,9 @@ export default function ShowJob() {
     }
     else {
       const filteredRows = rows.filter((job) => {
-        return job.name.toLowerCase().includes(searchedVal.toLowerCase()); 
+        return ( job.name.toLowerCase().includes(searchedVal.toLowerCase()) || job.discription.toLowerCase().includes(searchedVal.toLowerCase())
+        || job.position.toLowerCase().includes(searchedVal.toLowerCase()) || job.payPerHour.toLowerCase().includes(searchedVal.toLowerCase()) ||
+        job.address.toLowerCase().includes(searchedVal.toLowerCase()) ); 
       });
       setJobsList(filteredRows);
     }

@@ -7,7 +7,10 @@ import axios from 'axios';
 import { useLocation } from 'react-router-dom';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import EventIcon from '@mui/icons-material/Event';
-//import Select from 'react-select';
+import Select from 'react-select';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 
 //set the worker featuers
 export default function EditSchedule() {
@@ -39,14 +42,16 @@ export default function EditSchedule() {
     timeWorkingSat : x.timeWorkingSat,
   });
 
-  // const timePicker = [
-  //   { label: '6:00 - 15:00', value: 'morning' },
-  //   { label: '12:00 - 20:00', value: 'late-morning' },
-  //   { label: '14:00 - 22:00', value: 'afternon' },
-  //   { label: '15:00 - 24:00', value: 'night' },
-  // ];
+  const timePicker = [
+    { label: 'OFF', value: 'OFF' },
+    { label: '6:00 - 15:00', value: 'morning' },
+    { label: '12:00 - 20:00', value: 'late-morning' },
+    { label: '14:00 - 22:00', value: 'afternon' },
+    { label: '15:00 - 24:00', value: 'night' },
+    { label: 'All Day', value: 'Allday' },
+    
+  ];
 
- 
  
   
       //post method to update worker to database
@@ -58,6 +63,9 @@ export default function EditSchedule() {
     })
   }
 
+  
+ 
+
 
   
 
@@ -67,108 +75,240 @@ export default function EditSchedule() {
     <h2>Worker Schedule</h2>
     <Box sx={{ '& > :not(style)': { m: 1 } }}>
 
-    {/* <Select
-        options={timePicker} 
-        defaultValue={worker.isWorkingSun}
-         onChange={(event) => {  setWorker({ ...worker, isWorkingSun:event.target.value })  }} 
-        
-      /> */}
 
+    {/* <LocalizationProvider dateAdapter={AdapterDateFns}>
+    <DatePicker
+    label="Pick a Date"
+    value={worker.isWorkingFri}
+    onChange={(event) => {
+     let x = JSON.stringify(event)
+     
+     let y = x[9]+x[10]+x[8]+x[6]+x[7]+x[5]+x[1]+x[2]+x[3]+x[4]
+     console.log(y)
+      setWorker({ ...worker, isWorkingSun:y })
+    }}
+    renderInput={(params) => <TextField {...params} />}
+   
+  />
+</LocalizationProvider> */}
  
       <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
         <EventIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-        <TextField id="input-with-sx" className="isWorkingSun" label="Sunday" variant="standard" value={worker.isWorkingSun} onChange={(event) => {
-          setWorker({ ...worker, isWorkingSun:event.target.value })
-        }} />
+        <LocalizationProvider dateAdapter={AdapterDateFns}>
+          <DatePicker
+          label="Pick a Date"
+          value={worker.isWorkingSun}
+          onChange={(event) => {
+          let x = JSON.stringify(event)
+          let z = parseInt(x[10])+1
+          let k = parseInt(x[9]);
+          if(z===10){
+            z= 0;
+            k=k+1;
+          }
+          let y = x[6]+x[7]+x[8]+k+z+x[5]+x[1]+x[2]+x[3]+x[4]
+            setWorker({ ...worker, isWorkingSun:y })
+          }}
+          renderInput={(params) => <TextField {...params} />}
+        
+        />
+      </LocalizationProvider>
       </Box>
       <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
         <AccessTimeIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-        <TextField id="input-with-sx" className="isWorkingSun" label="Working hours in sunday" variant="standard" value={worker.timeWorkingSun} 
-        onChange={(event) => { setWorker({ ...worker, timeWorkingSun:event.target.value }) }} />
+          <Select
+          options={timePicker} 
+          defaultValue={worker.timeWorkingSun}
+          onChange={(event) => { setWorker({ ...worker, timeWorkingSun:event.label }) }}  />
       </Box>
 
 
       <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
         <EventIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-        <TextField id="input-with-sx"  className="isWorkingMon" label="Monday" variant="standard" value={worker.isWorkingMon} onChange={(event) => {
-          setWorker({ ...worker, isWorkingMon:event.target.value })
-        }}/>
+        <LocalizationProvider dateAdapter={AdapterDateFns}>
+          <DatePicker
+          label="Pick a Date"
+          value={worker.isWorkingMon}
+          onChange={(event) => {
+            let x = JSON.stringify(event)
+            let z = parseInt(x[10])+1
+            let k = parseInt(x[9]);
+            if(z===10){
+              z= 0;
+              k=k+1;
+            }
+            let y = x[6]+x[7]+x[8]+k+z+x[5]+x[1]+x[2]+x[3]+x[4]
+          
+          console.log(y)
+            setWorker({ ...worker, isWorkingMon:y })
+          }}
+          renderInput={(params) => <TextField {...params} />}
+        
+        />
+      </LocalizationProvider>
       </Box>
       <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
         <AccessTimeIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-        <TextField id="input-with-sx"  className="isWorkingMon" label="Working hours in Monday" variant="standard" value={worker.timeWorkingMon} onChange={(event) => {
-          setWorker({ ...worker, timeWorkingMon:event.target.value })
-        }}/>
+        <Select
+          options={timePicker} 
+          defaultValue={worker.timeWorkingMon}
+          onChange={(event) => { setWorker({ ...worker, timeWorkingMon:event.label }) }}  />
       </Box>
 
 
       <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
         <EventIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-        <TextField id="input-with-sx" label="Tuesday" variant="standard" value={worker.isWorkingTues} onChange={(event) => {
-          setWorker({ ...worker, isWorkingTues:event.target.value })
-        }}/>
+        <LocalizationProvider dateAdapter={AdapterDateFns}>
+          <DatePicker
+          label="Pick a Date"
+          value={worker.isWorkingTues}
+          onChange={(event) => {
+            let x = JSON.stringify(event)
+            let z = parseInt(x[10])+1
+            let k = parseInt(x[9]);
+            if(z===10){
+              z= 0;
+              k=k+1;
+            }
+            let y = x[6]+x[7]+x[8]+k+z+x[5]+x[1]+x[2]+x[3]+x[4]
+        
+            setWorker({ ...worker, isWorkingTues:y })
+          }}
+          renderInput={(params) => <TextField {...params} />}
+        
+        />
+      </LocalizationProvider>
       </Box>
       <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
         <AccessTimeIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-        <TextField id="input-with-sx" label="Working hours in Tuesday" variant="standard" value={worker.timeWorkingTues} onChange={(event) => {
-          setWorker({ ...worker, timeWorkingTues:event.target.value })
-        }}/>
+        <Select
+          options={timePicker} 
+          defaultValue={worker.timeWorkingTues}
+          onChange={(event) => { setWorker({ ...worker, timeWorkingTues:event.label }) }}  />
       </Box>
 
 
       <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
         <EventIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-        <TextField id="input-with-sx" label="Wednesday" variant="standard" value={worker.isWorkingWed} onChange={(event) => {
-          setWorker({ ...worker, isWorkingWed:event.target.value })
-        }}/>
+        <LocalizationProvider dateAdapter={AdapterDateFns}>
+          <DatePicker
+          label="Pick a Date"
+          value={worker.isWorkingWed}
+          onChange={(event) => {
+            let x = JSON.stringify(event)
+            let z = parseInt(x[10])+1
+            let k = parseInt(x[9]);
+            if(z===10){
+              z= 0;
+              k=k+1;
+            }
+            let y = x[6]+x[7]+x[8]+k+z+x[5]+x[1]+x[2]+x[3]+x[4]
+            setWorker({ ...worker, isWorkingWed:y })
+          }}
+          renderInput={(params) => <TextField {...params} />}
+        
+        />
+      </LocalizationProvider>
       </Box>
       <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
         <AccessTimeIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-        <TextField id="input-with-sx" label="Working hours in Wednesday" variant="standard" value={worker.timeWorkingWed} onChange={(event) => {
-          setWorker({ ...worker, timeWorkingWed:event.target.value })
-        }}/>
+        <Select
+          options={timePicker} 
+          defaultValue={worker.timeWorkingWed}
+          onChange={(event) => { setWorker({ ...worker, timeWorkingWed:event.label }) }}  />
       </Box>
 
 
       <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
         <EventIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-        <TextField id="input-with-sx" label="Thursday" variant="standard" value={worker.isWorkingThur}  onChange={(event) => {
-          setWorker({ ...worker, isWorkingThur:event.target.value })
-        }}/>
+        <LocalizationProvider dateAdapter={AdapterDateFns}>
+          <DatePicker
+          label="Pick a Date"
+          value={worker.isWorkingThur}
+          onChange={(event) => {
+            let x = JSON.stringify(event)
+            let z = parseInt(x[10])+1
+            let k = parseInt(x[9]);
+            if(z===10){
+              z= 0;
+              k=k+1;
+            }
+            let y = x[6]+x[7]+x[8]+k+z+x[5]+x[1]+x[2]+x[3]+x[4]
+            setWorker({ ...worker, isWorkingThur:y })
+          }}
+          renderInput={(params) => <TextField {...params} />}
+        
+        />
+      </LocalizationProvider>
       </Box>
       <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
         <AccessTimeIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-        <TextField id="input-with-sx" label="Working hours in Thursday" variant="standard" value={worker.timeWorkingThur}  onChange={(event) => {
-          setWorker({ ...worker, timeWorkingThur:event.target.value })
-        }}/>
+        <Select
+          options={timePicker} 
+          defaultValue={worker.timeWorkingThur}
+          onChange={(event) => { setWorker({ ...worker, timeWorkingThur:event.label }) }}  />
       </Box>
 
 
       <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
         <EventIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-        <TextField id="input-with-sx" label="Friday" variant="standard" value={worker.isWorkingFri}  onChange={(event) => {
-          setWorker({ ...worker, isWorkingFri:event.target.value })
-        }}/>
+        <LocalizationProvider dateAdapter={AdapterDateFns}>
+          <DatePicker
+          label="Pick a Date"
+          value={worker.isWorkingFri}
+          onChange={(event) => {
+            let x = JSON.stringify(event)
+            let z = parseInt(x[10])+1
+            let k = parseInt(x[9]);
+            if(z===10){
+              z= 0;
+              k=k+1;
+            }
+            let y = x[6]+x[7]+x[8]+k+z+x[5]+x[1]+x[2]+x[3]+x[4]
+            setWorker({ ...worker, isWorkingFri:y })
+          }}
+          renderInput={(params) => <TextField {...params} />}
+        
+        />
+      </LocalizationProvider>
       </Box>
       <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
         <AccessTimeIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-        <TextField id="input-with-sx" label="Working hours in Friday" variant="standard" value={worker.timeWorkingFri}  onChange={(event) => {
-          setWorker({ ...worker, timeWorkingFri:event.target.value })
-        }}/>
+        <Select
+          options={timePicker} 
+          defaultValue={worker.timeWorkingFri}
+          onChange={(event) => { setWorker({ ...worker, timeWorkingFri:event.label }) }}  />
       </Box>
 
 
       <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
         <EventIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-        <TextField id="input-with-sx" label="Saturday" variant="standard" value={worker.isWorkingSat}  onChange={(event) => {
-          setWorker({ ...worker, isWorkingSat:event.target.value })
-        }}/>
+        <LocalizationProvider dateAdapter={AdapterDateFns}>
+          <DatePicker
+          label="Pick a Date"
+          value={worker.isWorkingSat}
+          onChange={(event) => {
+            let x = JSON.stringify(event)
+            let z = parseInt(x[10])+1
+            let k = parseInt(x[9]);
+            if(z===10){
+              z= 0;
+              k=k+1;
+            }
+            let y = x[6]+x[7]+x[8]+k+z+x[5]+x[1]+x[2]+x[3]+x[4]
+            setWorker({ ...worker, isWorkingSat:y })
+          }}
+          renderInput={(params) => <TextField {...params} />}
+        
+        />
+      </LocalizationProvider>
       </Box>
       <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
         <AccessTimeIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-        <TextField id="input-with-sx" label="Working hours in Saturday" variant="standard" value={worker.timeWorkingSat}  onChange={(event) => {
-          setWorker({ ...worker, timeWorkingSat:event.target.value })
-        }}/>
+        <Select
+          options={timePicker} 
+          defaultValue={worker.timeWorkingSat}
+          onChange={(event) => { setWorker({ ...worker, timeWorkingSat:event.label }) }}  />
       </Box>
 
 

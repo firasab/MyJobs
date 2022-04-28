@@ -29,9 +29,7 @@ const WorkerDetail = ({route}) => {
 
       const goToLogOut = () => {
         alert("Your Profile has been Loged out! ");
-
         DevSettings.reload()
-         
       }
 
    

@@ -53,13 +53,13 @@ export default function ShowWorker() {
               <TableCell component="th" scope="row">
                 {worker.name}
               </TableCell>
-              <TableCell align="right">{worker.isWorkingSun} {worker.timeWorkingSun}</TableCell>
-              <TableCell align="right">{worker.isWorkingMon} {worker.timeWorkingMon}</TableCell>
-              <TableCell align="right">{worker.isWorkingTues} {worker.timeWorkingTues}</TableCell>
-              <TableCell align="right">{worker.isWorkingWed} {worker.timeWorkingWed}</TableCell>
-              <TableCell align="right">{worker.isWorkingThur} {worker.timeWorkingThur}</TableCell>
-              <TableCell align="right">{worker.isWorkingFri} {worker.timeWorkingFri}</TableCell>
-              <TableCell align="right">{worker.isWorkingSat} {worker.timeWorkingSat}</TableCell>
+              <TableCell align="right">{worker.isWorkingSun} <br></br> {worker.timeWorkingSun}</TableCell>
+              <TableCell align="right">{worker.isWorkingMon}<br></br> {worker.timeWorkingMon}</TableCell>
+              <TableCell align="right">{worker.isWorkingTues} <br></br>{worker.timeWorkingTues}</TableCell>
+              <TableCell align="right">{worker.isWorkingWed} <br></br>{worker.timeWorkingWed}</TableCell>
+              <TableCell align="right">{worker.isWorkingThur} <br></br>{worker.timeWorkingThur}</TableCell>
+              <TableCell align="right">{worker.isWorkingFri} <br></br>{worker.timeWorkingFri}</TableCell>
+              <TableCell align="right">{worker.isWorkingSat} <br></br>{worker.timeWorkingSat}</TableCell>
               <TableCell align="right">  
                                         
                  <Button  as={Link} to={{pathname: `/scheduleEdition`,state: worker}} 

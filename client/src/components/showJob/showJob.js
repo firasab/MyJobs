@@ -70,7 +70,7 @@ export default function ShowJob() {
     <>
     <h2> Jobs's list </h2>
     <SearchBar
-    style={{marginLeft: '900px' , borderRadius:'300px' , marginTop: '-40px'}}
+    style={{marginLeft: '900px' , borderRadius:'300px' , marginTop: '-40px' , backgroundColor:"#DADADA"}}
           value={searched}
           onChange={(searchVal) => requestSearch(searchVal)}
           onCancelSearch={() => cancelSearch()}

@@ -71,7 +71,7 @@ export default function ShowCompany() {
     <h2> Companies's list </h2>
     
     <SearchBar
-    style={{marginLeft: '900px' , borderRadius:'300px' , marginTop: '-40px'}}
+    style={{marginLeft: '900px' , borderRadius:'300px' , marginTop: '-40px' , backgroundColor:"#DADADA"}}
           value={searched}
           onChange={(searchVal) => requestSearch(searchVal)}
           onCancelSearch={() => cancelSearch()}

@@ -40,7 +40,6 @@ export default function ShowWorker() {
 
 
   const requestSearch = (searchedVal) => {
-    console.log(searchedVal);
 
     if (searchedVal === "") {
     setWorkerList(rows);

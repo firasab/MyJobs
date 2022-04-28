@@ -39,18 +39,24 @@ export default function ShowCompany() {
 
   
   const requestSearch = (searchedVal) => {
-    const filteredRows = companiesList.filter((company) => {
-      return company.name.toLowerCase().includes(searchedVal.toLowerCase()); 
-    });
-    setCompaniesList(filteredRows);
+
+    if (searchedVal === "") {
+      setCompaniesList(rows);
+    }
+    else {
+      const filteredRows = rows.filter((company) => {
+        return company.name.toLowerCase().includes(searchedVal.toLowerCase()); 
+      });
+      setCompaniesList(filteredRows);
+    }
+    
   };
 
   const cancelSearch = () => {
     setSearched("");
-    setCompaniesList(rows);
-    //requestSearch(searched);
-
+    requestSearch(searched);
   };
+
 
 
  

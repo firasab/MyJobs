@@ -40,17 +40,22 @@ export default function ShowJob() {
 
 
   const requestSearch = (searchedVal) => {
-    const filteredRows = jobsList.filter((job) => {
-      return job.name.toLowerCase().includes(searchedVal.toLowerCase()); 
-    });
-    setJobsList(filteredRows);
+
+    if (searchedVal === "") {
+      setJobsList(rows);
+    }
+    else {
+      const filteredRows = rows.filter((job) => {
+        return job.name.toLowerCase().includes(searchedVal.toLowerCase()); 
+      });
+      setJobsList(filteredRows);
+    }
+    
   };
 
   const cancelSearch = () => {
     setSearched("");
-    setJobsList(rows);
-    //requestSearch(searched);
-
+    requestSearch(searched);
   };
 
   

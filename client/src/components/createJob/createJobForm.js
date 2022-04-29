@@ -11,6 +11,7 @@ import WorkIcon from '@mui/icons-material/Work';
 import ThirtyFpsSelectIcon from '@mui/icons-material/ThirtyFpsSelect';
 import DescriptionIcon from '@mui/icons-material/Description';
 import AttachFileIcon from '@mui/icons-material/AttachFile';
+import EmailIcon from '@mui/icons-material/Email';
 
 //set the job featuers
 export default function CreateJobForm() {
@@ -21,15 +22,43 @@ export default function CreateJobForm() {
     phone: '',
     address: '',
     description: '',
-    formImg: ''
+    formImg: '',
+    email: ''
    
   });
     //post method to add job to database
   const createJobForm = () => {
+    if (!jobForm.name ) {
+      alert("please add your name!")      
+    }
+    else  if ( !jobForm.jobName) {
+      alert("please add the Job name you are interested in!")      
+    }
+    else  if ( !jobForm.id ) {
+      alert("please add your ID!")      
+    }
+    else  if ( !jobForm.phone ) {
+      alert("please add your Phone Number!")      
+    }
+    else  if ( !jobForm.address ) {
+      alert("please add your address!")      
+    }
+    else  if ( !jobForm.email) {
+      alert("please add your email!")      
+    }
+    else  if ( !jobForm.description ) {
+      alert("please tell us about you alittle!")      
+    }
+    else  if ( !jobForm.formImg ) {
+      alert("please add your photo!")      
+    }
+  
+    else{
     axios.post('https://myjobss.herokuapp.com/jobForms', jobForm).then(() => {
       alert('Your Job Application has beed Sent!');
       window.location.replace('/view')
     })
+  }
     
 
   }
@@ -60,6 +89,8 @@ export default function CreateJobForm() {
       };
     });
   };
+
+  
 
 
 
@@ -96,6 +127,12 @@ export default function CreateJobForm() {
         <LocationOnIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
         <TextField id="input-with-sx" label="Address" variant="standard" value={jobForm.address}  onChange={(event) => {
           setJobForm({ ...jobForm, address:event.target.value })
+        }}/>
+      </Box>
+      <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+        <EmailIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+        <TextField id="input-with-sx" label="Email" variant="standard" value={jobForm.email}  onChange={(event) => {
+          setJobForm({ ...jobForm, email:event.target.value })
         }}/>
       </Box>
       <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>

@@ -5,6 +5,7 @@ import ViewComponent from './ViewComponent';
 import { AppBar } from '@material-ui/core'
 import makeStyles from '../../styles'
 
+
 export default function ViewJob() {
   const classes = makeStyles();
   const [jobsList, setJobsList] = useState([])
@@ -29,7 +30,8 @@ export default function ViewJob() {
             
               <>                 
                <AppBar className={classes.appBar} position="static" color="inherit">
-               <ViewComponent name={job.name} discription={job.discription} position={job.position} payPerHour={job.payPerHour} address={job.address} jobImg= { <img type="file" alt="profile Pic" class='img-40 rounded-circle' style= {{height: '100px', width: '100px',display:"flex" }} src={job.jobImg}></img>} />
+               <ViewComponent name={job.name} discription={job.discription} position={job.position} payPerHour={job.payPerHour} address={job.address}
+                jobImg= {<img type="file" alt="profile Pic" class='img-40 rounded-circle' style= {{height: '100px', width: '100px',display:"flex" }} src={job.jobImg}></img>} />
                <p></p>
                </AppBar>              
               </> 

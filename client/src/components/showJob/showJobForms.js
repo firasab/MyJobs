@@ -44,9 +44,10 @@ export default function ShowJob() {
             <TableCell align="right">Job title</TableCell>
             <TableCell align="right">ID</TableCell>
             <TableCell align="right">Phone Number</TableCell>
+            <TableCell align="right">Email</TableCell>
             <TableCell align="right">Address</TableCell>
             <TableCell align="right">Note</TableCell>
-            <TableCell align="right" >Files</TableCell>
+            <TableCell align="right" >Photo</TableCell>
             <TableCell align="right" >Action</TableCell>
           </TableRow>
         </TableHead>
@@ -61,11 +62,12 @@ export default function ShowJob() {
               <TableCell align="right">{jobForm.jobName}</TableCell>
               <TableCell align="right">{jobForm.id}</TableCell>
               <TableCell align="right">{jobForm.phone}</TableCell>
+              <TableCell align="right">{jobForm.email}</TableCell>
               <TableCell align="right">{jobForm.address}</TableCell>
               <TableCell align="right" >{jobForm.description}</TableCell>
               <TableCell align="right">{<img type="file" alt="profile Pic" class='img-40 rounded-circle' onclick="window.open(this.jobForm.formImg, '_blank')" style= {{height: '100px', width: '100px',display:"flex" }} src={jobForm.formImg}></img>}</TableCell>
               <TableCell align="right"> 
-              <Button aria-label="delete" onClick={() => deleteJobForm(jobForm._id)} style={{ marginLeft: "5px" }} ><DeleteIcon />  </Button>  
+              <Button aria-label="delete" onClick={() => deleteJobForm(jobForm._id)} style={{ marginLeft: "-3px" }} ><DeleteIcon />  </Button>  
                </TableCell>
             </TableRow>
           ))}

@@ -73,25 +73,7 @@ export default function EditSchedule() {
   return (
     <>
     <h2>Worker Schedule</h2>
-    <Box sx={{ '& > :not(style)': { m: 1 } }}>
-
-
-    {/* <LocalizationProvider dateAdapter={AdapterDateFns}>
-    <DatePicker
-    label="Pick a Date"
-    value={worker.isWorkingFri}
-    onChange={(event) => {
-     let x = JSON.stringify(event)
-     
-     let y = x[9]+x[10]+x[8]+x[6]+x[7]+x[5]+x[1]+x[2]+x[3]+x[4]
-     console.log(y)
-      setWorker({ ...worker, isWorkingSun:y })
-    }}
-    renderInput={(params) => <TextField {...params} />}
-   
-  />
-</LocalizationProvider> */}
- 
+    <Box sx={{ '& > :not(style)': { m: 1 } }}> 
       <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
         <EventIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
         <LocalizationProvider dateAdapter={AdapterDateFns}>
@@ -100,7 +82,8 @@ export default function EditSchedule() {
           value={worker.isWorkingSun}
           onChange={(event) => {
           let x = JSON.stringify(event)
-          let z = parseInt(x[10])+1
+          //let z = parseInt(x[10])+1;
+          let z = parseInt(x[10]);
           let k = parseInt(x[9]);
           if(z===10){
             z= 0;

@@ -143,7 +143,6 @@ router.post('/auth/login', (req, res) => {
                 worker.timeWorkingFri = req.body.timeWorkingFri;
                 worker.timeWorkingSat = req.body.timeWorkingSat;
                 
-    
                 worker.save()
                     .then(() => res.json('worker updated !'))
                     .catch(err => res.status(400).json('Error: '+err));
@@ -156,8 +155,6 @@ router.post('/auth/login', (req, res) => {
         workerData.findById(req.params.id)
             .then(worker => {
                 worker.shifts.push({hourE:req.body.hourE,hourS:req.body.hourS,date:req.body.date})
-
-
                 worker.save()
                     .then(() => res.json('worker updated !'))
                     .catch(err => res.status(400).json('Error: '+err));
@@ -169,15 +166,19 @@ router.post('/auth/login', (req, res) => {
     router.patch('/gethours/:id', async (req,res) => {
         try {
             const worker = await workerData.findById(req.params.id)
-         
-
-            
             const shifts = worker.shifts.filter(elemnt => elemnt.date.includes(req.body.mo))
-
-            
-            
-    
             res.status(200).json(shifts);
+        } catch (error) {
+            res.status(404).json({ message: error.message})
+        }
+    })
+
+
+    router.get('/refresh/:id', async (req,res) => {
+        try {
+            const worker = await workerData.findById(req.params.id)
+    
+            res.status(200).json(worker);
         } catch (error) {
             res.status(404).json({ message: error.message})
         }

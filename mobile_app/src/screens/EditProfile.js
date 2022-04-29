@@ -8,7 +8,7 @@ import SubmitButton from '../components/common/CustomButton';
 import { TextInput ,Alert  } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 import Container from '../components/common/Container';
-import {DevSettings} from 'react-native';
+//import {DevSettings} from 'react-native';
 
 const EditProfile = ({ route }) => {
     const worker = React.useContext(NetworkContext);
@@ -30,6 +30,14 @@ const EditProfile = ({ route }) => {
      isWorkingFri: worker.worker.worker.isWorkingFri,
      isWorkingSat: worker.worker.worker.isWorkingSat,
      workerImg: worker.worker.worker.workerImg,
+
+     timeWorkingSun:  worker.worker.worker.timeWorkingSun,
+     timeWorkingMon:  worker.worker.worker.timeWorkingMon,
+     timeWorkingTues:  worker.worker.worker.timeWorkingTues,
+     timeWorkingThur:  worker.worker.worker.timeWorkingThur,
+     timeWorkingWed:  worker.worker.worker.timeWorkingWed,
+     timeWorkingFri: worker.worker.worker.timeWorkingFri,
+     timeWorkingSat:  worker.worker.worker.timeWorkingSat,
      
   });
 
@@ -38,23 +46,18 @@ const EditProfile = ({ route }) => {
   const onEditPress = () => { 
    axios.post(`https://myjobss.herokuapp.com/workers/update/${worker.worker.worker._id}`,user)
       .then(() => {  
-       
-        DevSettings.reload()
+       // DevSettings.reload()
+       navigation.navigate('Login');
         Alert.alert(
           "Your Profile has been updated!",
           "please, Login to see the changes!",
-
         );
-       
-        
       })
       .catch((err) => alert("check your server"));
-   
   };
 
 
   const uploadPic = async (data) => {
-   
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.All,
       allowsEditing: true,
@@ -63,16 +66,12 @@ const EditProfile = ({ route }) => {
       base64: true,
     });
     
-
     if (result.cancelled) {
       //alert("Please pick a picture otherwise your profile pic will be deleted! ");
       //if the user cancel the pic selector  
     }
 
-
- 
    const pico = "data:image/png;base64," + result.base64;
-
      const profileImg = {
         workerImg: "" ,
         email: "" ,
@@ -86,7 +85,17 @@ const EditProfile = ({ route }) => {
         isWorkingMon: "" ,
         isWorkingTues: "" ,
         isWorkingThur: "" ,
-        isWorkingSat: ""
+        isWorkingSat: "",
+        isWorkingFri: "",
+        isWorkingWed: "",
+
+        timeWorkingSun: "",
+        timeWorkingMon: "",
+        timeWorkingTues: "",
+        timeWorkingThur: "",
+        timeWorkingWed: "",
+        timeWorkingFri: "",
+        timeWorkingSat: "",
        };
 
      profileImg.workerImg = pico;
@@ -104,24 +113,38 @@ const EditProfile = ({ route }) => {
      profileImg.isWorkingThur = worker.worker.worker.isWorkingThur,
      profileImg.isWorkingFri = worker.worker.worker.isWorkingFri,
      profileImg.isWorkingSat = worker.worker.worker.isWorkingSat,
+
+     profileImg.timeWorkingSun = worker.worker.worker.timeWorkingSun,
+     profileImg.timeWorkingMon = worker.worker.worker.timeWorkingMon,
+     profileImg.timeWorkingTues = worker.worker.worker.timeWorkingTues,
+     profileImg.timeWorkingWed = worker.worker.worker.timeWorkingWed,
+     profileImg.timeWorkingThur = worker.worker.worker.timeWorkingThur,
+     profileImg.timeWorkingFri = worker.worker.worker.timeWorkingFri,
+     profileImg.timeWorkingSat = worker.worker.worker.timeWorkingSat,
     
-   
-
     await axios.post(`https://myjobss.herokuapp.com/workers/update/${worker.worker.worker._id}`, profileImg)
-
       .then((resp) => {
-        DevSettings.reload()
+        //DevSettings.reload()
+        navigation.navigate('Login');
         Alert.alert(
           "Profile picture has been Updated!",
-          "please, Login to see the changes! ",
-
+          "please, Login again to see the changes! ",
         );
-        
-        
       })
       .catch((err) => alert("check your connection!"));
-   
   };
+
+    
+  // const onFreshPress = () => { 
+
+  //   navigation.navigate('Login' , { worker : res.data });
+  //    axios.get(`https://myjobss.herokuapp.com/workers/refresh/${worker.worker.worker._id}` ,user)
+  //   .then((res) => {
+  //    navigation.navigate('Login' , { worker : res.data });  
+  //    alert("refresh sucss");
+  //   }) .catch((err) =>   alert("something went wrong"));
+  
+  // };
   
 
   
@@ -153,9 +176,10 @@ const EditProfile = ({ route }) => {
       
     </SafeAreaView>
     <Container style={{flexDirection: "row" , marginLeft: 30,  justifyContent: 'center', height: 120 ,paddingHorizontal: 4, marginVertical: 120,  borderRadius: 500,  alignItems: 'center', justifyContent: 'space-evenly'}}>
-      <SubmitButton  style={{width: 160 , left: -10}} primary  title="Change Profile picture" onPress={uploadPic} ></SubmitButton>
-      <SubmitButton  style={{width: 160 , left: -8}} primary title="Update" onPress={onEditPress} type="FORTH" ></SubmitButton>
-     
+      <SubmitButton  style={{width: 180 , left: -10 }} primary  title="Change Profile picture" onPress={uploadPic} ></SubmitButton>
+      <SubmitButton  style={{width: 180 , left: -8}} primary title="Update" onPress={onEditPress} type="FORTH" ></SubmitButton>
+      {/* <SubmitButton  style={{width: 120 , left: -8}} primary title="Refresh" onPress={onFreshPress} type="FORTH" ></SubmitButton>
+      */}
       </Container>
       
     </>

@@ -7,7 +7,7 @@ import {
     StyleSheet,
     Image,
   } from "react-native";
-  import {DevSettings} from 'react-native';
+  //import {DevSettings} from 'react-native';
   import CustomButton from '../components/common/CustomButton';
 
 
@@ -16,21 +16,17 @@ const WorkerDetail = ({route}) => {
     const worker = React.useContext(NetworkContext);
     const navigation = useNavigation();
 
-
-  
-
       const goToEdit = () => {
         navigation.navigate('Edit' , { worker : worker }); 
         };
 
-      
-
-
-
       const goToLogOut = () => {
         alert("Your Profile has been Loged out! ");
-        DevSettings.reload()
+        navigation.navigate('Login'); 
+        //DevSettings.reload()
       }
+
+      
 
    
       let profilePic = worker.worker.worker.workerImg;
@@ -55,8 +51,8 @@ const WorkerDetail = ({route}) => {
            
 
              <Container style={{flexDirection: "row" , marginLeft: 30,  justifyContent: 'center', paddingHorizontal: 4, marginVertical: -50,  borderRadius: 500,  alignItems: 'center', justifyContent: 'space-evenly'}}>
-             <CustomButton  style={{width: 150 , left: -5}} danger title="Logout" onPress={goToLogOut} type="FORTH" />
-             <CustomButton  primary style={{width: 150 , left: -10}}   title="Edit Profile" onPress={goToEdit} />
+             <CustomButton  style={{width: 170 , left: -5 , top: 30}} danger title="Logout" onPress={goToLogOut} type="FORTH" />
+             <CustomButton  primary style={{width: 170 , left: -10, top: 30}}   title="Edit Profile" onPress={goToEdit} />
              </Container>
                
            </>

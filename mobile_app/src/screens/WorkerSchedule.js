@@ -17,27 +17,27 @@ const WorkerSchedule = ({ route }) => {
           <Row ><Text style={styles.time}>Sunday: 
             <Col><Row><Text style={styles.day}> {worker.worker.worker.isWorkingSun} | {worker.worker.worker.timeWorkingSun}</Text></Row></Col> 
           </Text></Row>
-          <Text>-------------------------------------------------------</Text>
+          <Text>--------------------------------------------------------------------------------------</Text>
           <Row><Text style={styles.time}>Monday:
             <Col><Row><Text style={styles.day}> {worker.worker.worker.isWorkingMon} | {worker.worker.worker.timeWorkingMon}</Text></Row></Col>
           </Text></Row>
-          <Text>-------------------------------------------------------</Text>
+          <Text>--------------------------------------------------------------------------------------</Text>
           <Row><Text style={styles.time}>Tuesday:
             <Col><Row><Text style={styles.day}> {worker.worker.worker.isWorkingTues} | {worker.worker.worker.timeWorkingTues}</Text></Row></Col>
           </Text></Row>
-          <Text>-------------------------------------------------------</Text>
+          <Text>--------------------------------------------------------------------------------------</Text>
           <Row><Text style={styles.time}>Wednesday:
             <Col><Row><Text style={styles.day}> {worker.worker.worker.isWorkingWed} | {worker.worker.worker.timeWorkingWed}</Text></Row></Col>
           </Text></Row>
-          <Text>-------------------------------------------------------</Text>
+          <Text>--------------------------------------------------------------------------------------</Text>
           <Row><Text style={styles.time}>Thursday:
             <Col><Row><Text style={styles.day}> {worker.worker.worker.isWorkingThur} | {worker.worker.worker.timeWorkingThur}</Text></Row></Col>
           </Text></Row>
-          <Text>-------------------------------------------------------</Text>
+          <Text>--------------------------------------------------------------------------------------</Text>
           <Row><Text style={styles.time}>Friday:
             <Col><Row><Text style={styles.day}> {worker.worker.worker.isWorkingFri} | {worker.worker.worker.timeWorkingFri}</Text></Row></Col>
           </Text></Row>
-          <Text>-------------------------------------------------------</Text>
+          <Text>--------------------------------------------------------------------------------------</Text>
           <Row><Text style={styles.time}>Saturday:
             <Col><Row><Text style={styles.day}> {worker.worker.worker.isWorkingSat} | {worker.worker.worker.timeWorkingSat}</Text></Row></Col>
           </Text></Row>
@@ -49,7 +49,7 @@ const WorkerSchedule = ({ route }) => {
             container: {
               paddingTop: 10,
               paddingHorizontal: 10,
-              left: 100
+              left: 50
               
             },
           

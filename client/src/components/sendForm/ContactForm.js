@@ -1,11 +1,7 @@
 import * as React from 'react';
-//import Box from '@mui/material/Box';
- import TextField from '@mui/material/TextField';
-// import EmailIcon from '@mui/icons-material/Email';
+import TextField from '@mui/material/TextField';
 import { useState , useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-// import PersonIcon from '@mui/icons-material/Person';
-// import MessageIcon from '@mui/icons-material/Message';
 import emailjs from '@emailjs/browser';
 
 export default function ContactForm() {

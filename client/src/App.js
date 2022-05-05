@@ -25,6 +25,10 @@ import jobEdition from "./components/editJob/jobEdition";
 import jobProfile from "./components/showJob/jobProfile";
 import schedule from "./components/schedule";
 import scheduleEdition from "./components/schedule/scheduleEdition";
+import ContactForm from "./components/sendForm/ContactForm";
+import ContactFormation from "./components/sendForm/ContactFormation";
+import ContactFormRef from "./components/sendForm2/ContactForm";
+import ContactFormationRef from "./components/sendForm2/ContactFormation";
 
 
 function App() {
@@ -53,6 +57,10 @@ function App() {
           <AuthRoute path="/jobProfile" component={jobProfile} />
           <AuthRoute path="/schedule" component={schedule} />
           <AuthRoute path="/scheduleEdition" component={scheduleEdition} />
+          <AuthRoute path="/ContactForm" component={ContactForm} />
+          <AuthRoute path="/ContactFormation" component={ContactFormation} />
+          <AuthRoute path="/ContactFormRef" component={ContactFormRef} />
+          <AuthRoute path="/ContactFormationRef" component={ContactFormationRef} />
         </div>
         <Route path="/" exact component={Home} />
       </Layout>

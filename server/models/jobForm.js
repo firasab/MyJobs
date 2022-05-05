@@ -32,6 +32,9 @@ const jobFormSchema = new Schema({
     ,
     email: {
         type: String,
+    },
+    message: {
+        type: String,
     }
 });
 module.exports = jobForm = mongoose.model('jobForm', jobFormSchema);

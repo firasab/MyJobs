@@ -10,6 +10,9 @@ import axios from 'axios';
 import { useState , useEffect } from 'react';
 import DeleteIcon from '@material-ui/icons/Delete';
 import {Button  } from 'react-bootstrap'
+import { Link} from 'react-router-dom'
+import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
+import ThumbDownIcon from '@mui/icons-material/ThumbDown';
 
 export default function ShowJob() {
   const [jobFormsList, setJobFormsList] = useState([])
@@ -66,8 +69,10 @@ export default function ShowJob() {
               <TableCell align="right">{jobForm.address}</TableCell>
               <TableCell align="right" >{jobForm.description}</TableCell>
               <TableCell align="right">{<img type="file" alt="profile Pic" class='img-40 rounded-circle' onclick="window.open(this.jobForm.formImg, '_blank')" style= {{height: '100px', width: '100px',display:"flex" }} src={jobForm.formImg}></img>}</TableCell>
-              <TableCell align="right"> 
-              <Button aria-label="delete" onClick={() => deleteJobForm(jobForm._id)} style={{ marginLeft: "-3px" }} ><DeleteIcon />  </Button>  
+              <TableCell align="right" sx={{ minWidth: 200}}> 
+              <Button  as={Link} to={{pathname: `/ContactFormation`,state: jobForm}}  style={{ marginLeft: "5px" }} ><ThumbUpAltIcon />  </Button> 
+              <Button  as={Link} to={{pathname: `/ContactFormationRef`,state: jobForm}}  style={{ marginLeft: "5px" }} ><ThumbDownIcon />  </Button>  
+              <Button aria-label="delete" onClick={() => deleteJobForm(jobForm._id)}  style={{ marginLeft: "5px"  }} ><DeleteIcon />  </Button>  
                </TableCell>
             </TableRow>
           ))}

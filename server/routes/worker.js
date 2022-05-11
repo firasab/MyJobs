@@ -71,6 +71,9 @@ router.route('/update/:id').post((req,res) => {
             worker.timeWorkingFri = req.body.timeWorkingFri;
             worker.timeWorkingSat = req.body.timeWorkingSat;
             
+            worker.dateStartWorking = req.body.dateStartWorking;
+            worker.dateFinishWorking = req.body.dateFinishWorking;
+                  
 
             worker.save()
                 .then(() => res.json('worker updated !'))
@@ -142,7 +145,10 @@ router.post('/auth/login', (req, res) => {
                 worker.timeWorkingThur = req.body.timeWorkingThur;
                 worker.timeWorkingFri = req.body.timeWorkingFri;
                 worker.timeWorkingSat = req.body.timeWorkingSat;
-                
+
+                worker.dateStartWorking = req.body.dateStartWorking;
+                worker.dateFinishWorking = req.body.dateFinishWorking;
+
                 worker.save()
                     .then(() => res.json('worker updated !'))
                     .catch(err => res.status(400).json('Error: '+err));

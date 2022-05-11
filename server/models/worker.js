@@ -70,6 +70,12 @@ const workerSchema = new Schema({
     timeWorkingSat:{
         type: String
     },
+    dateStartWorking:{
+        type: String
+    },
+    dateFinishWorking:{
+        type: String
+    },
     password:{
         type: String
     },

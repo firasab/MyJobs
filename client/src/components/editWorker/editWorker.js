@@ -13,6 +13,11 @@ import axios from 'axios';
 import { useLocation } from 'react-router-dom';
 import InsertPhotoIcon from '@mui/icons-material/InsertPhoto';
 
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import EventIcon from '@mui/icons-material/Event';
+
 
 //set the worker featuers
 export default function EditWorker() {
@@ -42,6 +47,9 @@ export default function EditWorker() {
     timeWorkingThur :x.timeWorkingThur,
     timeWorkingFri :x.timeWorkingFri,
     timeWorkingSat : x.timeWorkingSat,
+
+    dateStartWorking : x.dateStartWorking,
+    dateFinishWorking : x.dateFinishWorking,
   });
   
 
@@ -124,6 +132,29 @@ export default function EditWorker() {
         <TextField id="input-with-sx" label="Company name" variant="standard" value={worker.companyName}  onChange={(event) => {
           setWorker({ ...worker, companyName:event.target.value })
         }}/>
+      </Box>
+      <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+        <EventIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+        <LocalizationProvider dateAdapter={AdapterDateFns}>
+          <DatePicker
+          label="End work Date"
+          value={worker.dateFinishWorking}
+          onChange={(event) => {
+          let x = JSON.stringify(event)
+          //let z = parseInt(x[10])+1;
+          let z = parseInt(x[10]);
+          let k = parseInt(x[9]);
+          if(z===10){
+            z= 0;
+            k=k+1;
+          }
+          let y = x[6]+x[7]+x[8]+k+z+x[5]+x[1]+x[2]+x[3]+x[4]
+            setWorker({ ...worker, dateFinishWorking:y })
+          }}
+          renderInput={(params) => <TextField {...params} />}
+        
+        />
+      </LocalizationProvider>
       </Box>
       <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
         <InsertPhotoIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />

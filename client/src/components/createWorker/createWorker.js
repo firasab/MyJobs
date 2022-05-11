@@ -12,6 +12,11 @@ import { useState } from 'react';
 import axios from 'axios';
 import InsertPhotoIcon from '@mui/icons-material/InsertPhoto';
 
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import EventIcon from '@mui/icons-material/Event';
+
 
 //set the worker featuers
 export default function CreateWorker() {
@@ -24,6 +29,8 @@ export default function CreateWorker() {
     companyName: '',
     workerImg:'',
     password: '',
+    dateStartWorking:'',
+    dateFinishWorking:'',
    
   });
 
@@ -107,11 +114,59 @@ export default function CreateWorker() {
           setWorker({ ...worker, companyName:event.target.value })
         }}/>
       </Box>
+
+      <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+        <EventIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+        <LocalizationProvider dateAdapter={AdapterDateFns}>
+          <DatePicker
+          label="Start work Date"
+          value={worker.dateStartWorking}
+          onChange={(event) => {
+          let x = JSON.stringify(event)
+          //let z = parseInt(x[10])+1;
+          let z = parseInt(x[10]);
+          let k = parseInt(x[9]);
+          if(z===10){
+            z= 0;
+            k=k+1;
+          }
+          let y = x[6]+x[7]+x[8]+k+z+x[5]+x[1]+x[2]+x[3]+x[4]
+            setWorker({ ...worker, dateStartWorking:y })
+          }}
+          renderInput={(params) => <TextField {...params} />}
+        
+        />
+      </LocalizationProvider>
+      </Box>
+      <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+        <EventIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+        <LocalizationProvider dateAdapter={AdapterDateFns}>
+          <DatePicker
+          label="End work Date"
+          value={worker.dateFinishWorking}
+          onChange={(event) => {
+          let x = JSON.stringify(event)
+          //let z = parseInt(x[10])+1;
+          let z = parseInt(x[10]);
+          let k = parseInt(x[9]);
+          if(z===10){
+            z= 0;
+            k=k+1;
+          }
+          let y = x[6]+x[7]+x[8]+k+z+x[5]+x[1]+x[2]+x[3]+x[4]
+            setWorker({ ...worker, dateFinishWorking:y })
+          }}
+          renderInput={(params) => <TextField {...params} />}
+        
+        />
+      </LocalizationProvider>
+      </Box>
       <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
         <InsertPhotoIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
         <input type="file" accept="image/*"   onChange= {handleChange} />
         
       </Box>
+
       <Button variant="contained" color="success"  style= {{ marginLeft: '90px'}} onClick={createWorker}> Create </Button>
     </Box>
     </>

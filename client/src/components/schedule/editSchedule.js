@@ -40,6 +40,9 @@ export default function EditSchedule() {
     timeWorkingThur :x.timeWorkingThur,
     timeWorkingFri :x.timeWorkingFri,
     timeWorkingSat : x.timeWorkingSat,
+
+    dateStartWorking: x.dateStartWorking,
+    dateFinishWorking: x.dateFinishWorking,
   });
 
   const timePicker = [

@@ -10,7 +10,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 import EmailIcon from '@mui/icons-material/Email';
 import ApartmentIcon from '@mui/icons-material/Apartment';
-
+import EventIcon from '@mui/icons-material/Event';
 
 export default function ProfileWorker() {
   const location = useLocation()
@@ -22,7 +22,9 @@ export default function ProfileWorker() {
     phoneNumber: x.phoneNumber,
     email: x.email,
     companyName: x.companyName,
-    workerImg: x.workerImg
+    workerImg: x.workerImg,
+    dateStartWorking : x.dateStartWorking,
+    dateFinishWorking: x.dateFinishWorking,
   });
   
 
@@ -67,12 +69,20 @@ export default function ProfileWorker() {
         <TextField id="outlined-read-only-input" label="Company name" variant="standard" InputProps={{ readOnly: true }} value={worker.companyName}  onChange={(event) => {
           setWorker({ ...worker, companyName:event.target.value })
         }}/>
-
-     
-        
-        
       </AppBar>
-      <div className="pic"> <img  alt="profile Pic" style= {{  marginLeft:"-750px",marginTop:"-600px", height: '500px', width: '500px',display:"flex" }} src={worker.workerImg}></img></div>
+      <AppBar className={classes.appBar} position="static" color="inherit">
+      <EventIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+        <TextField id="outlined-read-only-input" label="Started working at this date" variant="standard" InputProps={{ readOnly: true }} value={worker.dateStartWorking}  onChange={(event) => {
+          setWorker({ ...worker, dateStartWorking:event.target.value })
+        }}/>
+      </AppBar>
+      <AppBar className={classes.appBar} position="static" color="inherit">
+      <EventIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+        <TextField id="outlined-read-only-input" label="Finishing working at this date" variant="standard" InputProps={{ readOnly: true }} value={worker.dateFinishWorking}  onChange={(event) => {
+          setWorker({ ...worker, dateFinishWorking:event.target.value })
+        }}/>
+      </AppBar>
+      <div className="pic"> <img  alt="profile Pic" style= {{  marginLeft:"-750px",marginTop:"-800px", height: '500px', width: '500px',display:"flex" }} src={worker.workerImg}></img></div>
      
     </>
   );

@@ -102,6 +102,8 @@ export default function ShowWorker() {
             <TableCell align="right">Phone Number</TableCell>
             <TableCell align="right">Email</TableCell>
             <TableCell align="right">Company</TableCell>
+            <TableCell align="right">Started working at</TableCell>
+            <TableCell align="right">Finished working at</TableCell>
             <TableCell align="right">Action</TableCell>
           </TableRow>
         </TableHead>
@@ -118,7 +120,9 @@ export default function ShowWorker() {
               <TableCell align="right">{worker.phoneNumber}</TableCell>
               <TableCell align="right">{worker.email}</TableCell>
               <TableCell align="right">{worker.companyName}</TableCell>
-              <TableCell align="right">  
+              <TableCell align="right">{worker.dateStartWorking}</TableCell>
+              <TableCell align="right">{worker.dateFinishWorking}</TableCell>
+              <TableCell align="right" style={{ width: "200px" }}>  
                                          <Button  variant="primary" aria-label="delete" onClick={() => deleteWorker(worker._id)} 
                                          style={{ marginLeft: "5px" }} > <DeleteIcon /> </Button>
                                          <Button  as={Link} to={{pathname: `/workerEdition`,state: worker}} 

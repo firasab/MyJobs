@@ -14,16 +14,18 @@ import InsertPhotoIcon from '@mui/icons-material/InsertPhoto';
 export default function EditJob() {
   const location = useLocation()
   const edt = location.state;
+  //set the job featuers
   const [job, setJob] = useState({
     name:edt.name,
     discription: edt.discription,
     position: edt.position,
     payPerHour: edt.payPerHour,
-    address: edt.address
+    address: edt.address,
+    jobImg: edt.jobImg,
   });
   
 
-     
+    // post job to data base
   const editJob = () => {
     axios.post(`https://myjobss.herokuapp.com/jobs/update/${edt._id}`, job).then(() => {
       
@@ -32,7 +34,7 @@ export default function EditJob() {
     })
   }
 
-
+//convert base64 
   const handleChange = async (e) => {
     const file = e.target.files[0];
     const base64 = await convertBase64(file);
@@ -44,7 +46,7 @@ export default function EditJob() {
    console.log(base64)
   
   };
-
+//convert base64
   const convertBase64 = (file) => {
     return new Promise((resolve, reject) => {
       const fileReader = new FileReader();
@@ -61,7 +63,7 @@ export default function EditJob() {
   };
 
 
- 
+   //the design of the create job funtion
   return (
     <>
     <h2>Edit job</h2>

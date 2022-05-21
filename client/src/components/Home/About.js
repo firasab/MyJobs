@@ -1,5 +1,6 @@
 import React from 'react'
 
+//presenting information about the company
 const About = () => {
     return (
        

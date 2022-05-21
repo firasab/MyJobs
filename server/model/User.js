@@ -1,6 +1,7 @@
 const mongoose=require('mongoose');
 const Schema=mongoose.Schema;
 
+//admin model
 const UserSchema = new Schema({
     name: {
         type: String,

@@ -3,7 +3,7 @@ import Show from './profileJob';
 import React from 'react'
 import makeStyles from '../../styles'
 
-//design of putting updating worker 
+//design of putting show job 
 const jobPr = () => {
     const classes = makeStyles();
     return (

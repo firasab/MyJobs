@@ -42,7 +42,7 @@ router.delete('/:id', async (req,res) => {
     }
 })
 
-
+//update worker to databse
 router.route('/update/:id').post((req,res) => {
     workerData.findById(req.params.id)
         .then(worker => {
@@ -119,7 +119,7 @@ router.post('/auth/login', (req, res) => {
     });
 
 
-    
+    //update worker in the application
     router.route('/appupdate/:id').post((req,res) => {
         workerData.findById(req.params.id)
             .then(worker => {
@@ -156,7 +156,7 @@ router.post('/auth/login', (req, res) => {
             .catch(err => res.status(400).json('Error: '+err));
     });
     
-
+    //get the shifts from database to application
     router.route('/shift/:id').post((req,res) => {
         workerData.findById(req.params.id)
             .then(worker => {
@@ -168,7 +168,7 @@ router.post('/auth/login', (req, res) => {
             .catch(err => res.status(400).json('Error: '+err));
     });
 
-    
+    //gethours from database to application
     router.patch('/gethours/:id', async (req,res) => {
         try {
             const worker = await workerData.findById(req.params.id)
@@ -179,7 +179,7 @@ router.post('/auth/login', (req, res) => {
         }
     })
 
-
+    //refresh worker in the application
     router.get('/refresh/:id', async (req,res) => {
         try {
             const worker = await workerData.findById(req.params.id)

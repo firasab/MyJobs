@@ -11,7 +11,7 @@ import NfcIcon from '@mui/icons-material/Nfc';
 import FormatListNumberedIcon from '@mui/icons-material/FormatListNumbered';
 import InsertPhotoIcon from '@mui/icons-material/InsertPhoto';
 
-//set the worker featuers
+//set the Company featuers
 export default function EditCompany() {
   const location = useLocation()
   const x = location.state;
@@ -19,11 +19,12 @@ export default function EditCompany() {
     name:x.name,
     field: x.field,
     numberOfWorker: x.numberOfWorker,
-    address: x.address
+    address: x.address,
+    companyImg : x.companyImg,
   });
   
 
-      //post method to update worker to database
+  //post method to update company to database
   const editCompany = () => {
     console.log(company)
     axios.post(`https://myjobss.herokuapp.com/companies/update/${x._id}`, company).then(() => {
@@ -33,7 +34,7 @@ export default function EditCompany() {
     })
   }
 
-  
+  //convert base64
   const handleChange = async (e) => {
     const file = e.target.files[0];
     const base64 = await convertBase64(file);
@@ -45,7 +46,7 @@ export default function EditCompany() {
    console.log(base64)
   
   };
-
+//convert base64
   const convertBase64 = (file) => {
     return new Promise((resolve, reject) => {
       const fileReader = new FileReader();
@@ -64,7 +65,7 @@ export default function EditCompany() {
 
 
 
-  //the design of the create worker funtion
+  //the design of the create company funtion
   return (
     <>
     <h2>Edit company</h2>

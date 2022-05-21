@@ -3,7 +3,7 @@ import Update from './editSchedule';
 import React from 'react'
 import makeStyles from '../../styles'
 
-//design of putting updating worker 
+//design of putting  worker schedule
 const workerSch = () => {
     const classes = makeStyles();
     return (

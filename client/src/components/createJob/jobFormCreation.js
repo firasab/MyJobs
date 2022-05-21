@@ -4,7 +4,7 @@ import React from 'react'
 import makeStyles from '../../styles'
 
 
-//design of putting creating job 
+//design of putting creating jobForm 
 const jobForm = () => {
     const classes = makeStyles();
     return (

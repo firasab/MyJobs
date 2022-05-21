@@ -3,7 +3,7 @@ import Sender from './ContactForm';
 import React from 'react'
 import makeStyles from '../../styles'
 
-
+//send refused application mail design
 const ContactFormation = () => {
     const classes = makeStyles();
     return (

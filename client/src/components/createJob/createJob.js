@@ -29,7 +29,7 @@ export default function CreateJob() {
     })
   }
 
-  
+  //change the pic to text base64
   const handleChange = async (e) => {
     const file = e.target.files[0];
     const base64 = await convertBase64(file);
@@ -41,7 +41,7 @@ export default function CreateJob() {
 
   
   };
-
+  //convert base64
   const convertBase64 = (file) => {
     return new Promise((resolve, reject) => {
       const fileReader = new FileReader();

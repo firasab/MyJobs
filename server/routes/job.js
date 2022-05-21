@@ -49,7 +49,7 @@ router.get('/view/:id', async (request, response) => {
 });
 
 
-
+//update jon to database
 router.route('/update/:id').post((req,res) => {
     jobData.findById(req.params.id)
         .then(job => {

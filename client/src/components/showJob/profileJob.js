@@ -13,6 +13,7 @@ import makeStyles from '../../styles'
 export default function EditJob() {
   const location = useLocation()
   const edt = location.state;
+  // jon profile feature
   const [job, setJob] = useState({
     name:edt.name,
     discription: edt.discription,
@@ -23,7 +24,7 @@ export default function EditJob() {
   });
   
   const classes = makeStyles();
- 
+   //the design of the show job profile
   return (
     <>
      <AppBar className={classes.appBar} position="static" color="inherit">

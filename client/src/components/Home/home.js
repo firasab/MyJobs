@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 
-
+//show the loged in user information
 class Home extends Component {
   constructor(props)
   {
@@ -38,7 +38,7 @@ class Home extends Component {
     }
   }
 }
-
+//get loged in user information
 const mapStateToProps = state => {
   if (state.auth.loggedIn && state.auth.user) {
     let userData = JSON.parse(state.auth.user);

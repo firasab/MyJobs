@@ -3,7 +3,7 @@ import Show from './profileWorker';
 import React from 'react'
 import makeStyles from '../../styles'
 
-//design of putting updating worker 
+//design of putting worker profile
 const workerPr = () => {
     const classes = makeStyles();
     return (

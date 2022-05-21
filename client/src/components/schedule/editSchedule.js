@@ -12,7 +12,7 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 
-//set the worker featuers
+//set the Schedule featuers
 export default function EditSchedule() {
   const location = useLocation()
   const x = location.state;
@@ -44,7 +44,7 @@ export default function EditSchedule() {
     dateStartWorking: x.dateStartWorking,
     dateFinishWorking: x.dateFinishWorking,
   });
-
+  //time picker options
   const timePicker = [
     { label: 'OFF', value: 'OFF' },
     { label: '6:00 - 15:00', value: 'morning' },
@@ -57,7 +57,7 @@ export default function EditSchedule() {
 
  
   
-      //post method to update worker to database
+  //post method to update worker schedule to database
   const editSchedule = () => {
     axios.post(`https://myjobss.herokuapp.com/workers/update/${x._id}`, worker).then(() => {
       
@@ -72,7 +72,7 @@ export default function EditSchedule() {
 
   
 
-  //the design of the create worker funtion
+  //the design of the create worker schedule funtion
   return (
     <>
     <h2>Worker Schedule</h2>

@@ -1,6 +1,7 @@
 const mongoose=require('mongoose');
 const Schema=mongoose.Schema;
 
+//jobForm model
 const jobFormSchema = new Schema({
     name: {
         type: String,

@@ -39,7 +39,7 @@ export default function ShowWorker() {
   }, [])
 
 
-
+//search bar
   const requestSearch = (searchedVal) => {
 
     if (searchedVal === "") {
@@ -84,7 +84,7 @@ export default function ShowWorker() {
       />
       </div>
      
-
+   
     <SearchBar
     style={{marginLeft: '900px' , borderRadius:'300px' , marginTop: '-60px' , backgroundColor:"#DADADA" }}
           value={searched}

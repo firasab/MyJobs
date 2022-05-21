@@ -3,7 +3,7 @@ import Show from './profileCompany';
 import React from 'react'
 import makeStyles from '../../styles'
 
-//design of putting updating worker 
+//design of showing the companies 
 const companyPr = () => {
     const classes = makeStyles();
     return (

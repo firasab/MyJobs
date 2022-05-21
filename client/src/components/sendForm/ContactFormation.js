@@ -3,7 +3,7 @@ import Sender from './ContactForm';
 import React from 'react'
 import makeStyles from '../../styles'
 
-
+//design of putting send mail
 const ContactFormation = () => {
     const classes = makeStyles();
     return (

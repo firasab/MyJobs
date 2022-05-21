@@ -13,7 +13,7 @@ import DescriptionIcon from '@mui/icons-material/Description';
 import AttachFileIcon from '@mui/icons-material/AttachFile';
 import EmailIcon from '@mui/icons-material/Email';
 
-//set the job featuers
+//set the jobForm featuers
 export default function CreateJobForm() {
   const [jobForm, setJobForm] = useState({
     name: '',
@@ -26,7 +26,7 @@ export default function CreateJobForm() {
     email: ''
    
   });
-    //post method to add job to database
+    //post method to add jobForm to database
   const createJobForm = () => {
     if (!jobForm.name ) {
       alert("please add your name!")      
@@ -59,10 +59,8 @@ export default function CreateJobForm() {
       window.location.replace('/view')
     })
   }
-    
-
   }
-
+  //convert base64
   const handleChange = async (e) => {
     const file = e.target.files[0];
     const base64 = await convertBase64(file);
@@ -74,7 +72,7 @@ export default function CreateJobForm() {
    console.log(base64)
   
   };
-
+  //convert base64
   const convertBase64 = (file) => {
     return new Promise((resolve, reject) => {
       const fileReader = new FileReader();
@@ -94,7 +92,7 @@ export default function CreateJobForm() {
 
 
 
-  //the design of the create job application
+  //the design of the create jobForm application
   return (
     <>
     <h2> Job Application</h2>

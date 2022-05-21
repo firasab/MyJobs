@@ -10,7 +10,7 @@ import NfcIcon from '@mui/icons-material/Nfc';
 import FormatListNumberedIcon from '@mui/icons-material/FormatListNumbered';
 
 
-//set the worker featuers
+//set the company featuers
 export default function ProfileCompany() {
   const location = useLocation()
   const x = location.state;
@@ -24,7 +24,7 @@ export default function ProfileCompany() {
   
   const classes = makeStyles();
 
-  //the design of the create worker funtion
+  //the design of the show company profile
   return (
     <>
    <AppBar className={classes.appBar} position="static" color="inherit">

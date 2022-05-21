@@ -18,7 +18,7 @@ export default function ShowWorker() {
 
 
 
-//get method to get worker from database
+//get method to get worker schedule from database
   useEffect(() => {
     axios.get('https://myjobss.herokuapp.com/workers').then( (allWorkers) => {
       setWorkerList(allWorkers.data);
@@ -27,7 +27,7 @@ export default function ShowWorker() {
   }, [])
 
  
-  //the design of workers list
+  //the design of workers schedule list
   return (
     <>
     <TableContainer component={Paper}>

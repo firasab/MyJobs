@@ -15,6 +15,7 @@ import EventIcon from '@mui/icons-material/Event';
 export default function ProfileWorker() {
   const location = useLocation()
   const x = location.state;
+  //worker feature
   const [worker, setWorker] = useState({
     name:x.name,
     id: x.id,
@@ -30,10 +31,9 @@ export default function ProfileWorker() {
 
   const classes = makeStyles();
 
- 
+ //the design of the show worker profile
  return (
     <>
-   
     <AppBar className={classes.appBar} position="static" color="inherit">
     <AccountCircle sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
         <TextField  id="outlined-read-only-input" className="name" label="Name" variant="standard" InputProps={{ readOnly: true }} value={worker.name} onChange={(event) => {

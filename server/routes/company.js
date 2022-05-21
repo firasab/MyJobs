@@ -40,7 +40,7 @@ router.delete('/:id', async (req,res) => {
 
 
 
-
+//update compnay to database
 router.route('/update/:id').post((req,res) => {
     companyData.findById(req.params.id)
         .then(company => {

@@ -3,7 +3,7 @@ const jobFormData = require('../models/jobForm');
 
 
 const router = express.Router();
-//get all jobs from database
+//get all jobForms from database
 router.get('/', async (req,res) => {
     try {
         const allJobForms = await jobFormData.find();
@@ -13,7 +13,7 @@ router.get('/', async (req,res) => {
         res.status(404).json({ message: error.message})
     }
 })
-//add a job to database
+//add a jobForm to database
 router.post('/', async (req,res) => {
     const jobFormDe = req.body;
     const newJobForm = new jobFormData(jobFormDe);
@@ -25,7 +25,7 @@ router.post('/', async (req,res) => {
         res.status(409).json({ message: error.message});
     }
 })
-//dalate a job from database
+//dalate a jobForm from database
 router.delete('/:id', async (req,res) => {
     const id = req.params.id;
 

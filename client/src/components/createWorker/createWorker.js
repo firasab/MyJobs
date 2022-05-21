@@ -34,7 +34,7 @@ export default function CreateWorker() {
    
   });
 
-      //post method to add worker to database
+  //post method to add worker to database
   const createWorker = () => {
     console.log(worker)
     worker.password = worker.id;
@@ -44,7 +44,7 @@ export default function CreateWorker() {
       window.location.replace('/worker')
     })
   }
-
+  //convert base64
   const handleChange = async (e) => {
     const file = e.target.files[0];
     const base64 = await convertBase64(file);
@@ -56,7 +56,7 @@ export default function CreateWorker() {
 
   
   };
-
+  //convert base64
   const convertBase64 = (file) => {
     return new Promise((resolve, reject) => {
       const fileReader = new FileReader();

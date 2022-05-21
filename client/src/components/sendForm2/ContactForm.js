@@ -7,13 +7,14 @@ import emailjs from '@emailjs/browser';
 export default function ContactForm() {
   const location = useLocation()
   const x = location.state;
+  //send mail feature
   const [emailForm, setEmailForm] = useState({
     name:x.name,
     email: x.email,
   });
 
   const [status, setStatus] = useState('');
-
+  //send refused application mail method
   const handleSubmit = (e) => {
     e.preventDefault();
     emailjs.send('service_wb6zqi8', 'template_riq6io3', emailForm, 'G1JVj5lolw5wfNIHI')
@@ -43,7 +44,7 @@ export default function ContactForm() {
       [e.target.name]: e.target.value
     }))
   }
-
+  //send refused application mail design
   return (
     <>
     <div className="lg:mt-48 lg:mr-48 pt-6 pb-8 bg-white shadow-xl rounded p-5">
@@ -61,7 +62,7 @@ export default function ContactForm() {
     </>
   );
 }
-
+  //alert when mail sent
 const renderAlert = () => (
   <div className="px-4 py-3 leading-normal text-blue-700 bg-blue-100 rounded mb-5 text-center">
     <p>your message submitted successfully</p>

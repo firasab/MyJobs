@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import axios from 'axios';
-import { NotificationContainer, NotificationManager } from 'react-notifications';
+import { NotificationContainer } from 'react-notifications';
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -10,7 +10,7 @@ class Login extends Component {
   handleForm = e => {
     e.preventDefault();
     if (this.state.email === '' || this.state.password === '') {
-      NotificationManager.warning("Email And Password Required");
+      alert("please fill the required fields");
       return false;
     }
     const data = { email: this.state.email, password: this.state.password };
@@ -20,14 +20,14 @@ class Login extends Component {
         localStorage.setItem("token", result.data.token);
         localStorage.setItem("user", JSON.stringify(result.data.user));
         this.props.setLogin(JSON.stringify(result.data.user));
-        NotificationManager.success(result.data.msg);
+        alert(result.data.msg);
         this.props.history.push("/home");
       })
       .catch(err => {
         if (err.response && err.response.status === 404)
-          NotificationManager.error(err.response.data.msg);
+         alert(err.response.data.msg);
         else
-          NotificationManager.error("Something Went Wrong");
+        alert("Something went wrong!");
         this.setState({ errors: err.response })
       });
   };

@@ -186,7 +186,7 @@ export default function CreateWorker() {
       </Box>
       <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
         <InsertPhotoIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-        <input type="file" accept="image/*"   onChange= {handleChange} />
+        <input type="file" accept="image/*"    onChange= {handleChange} />
         
       </Box>
 

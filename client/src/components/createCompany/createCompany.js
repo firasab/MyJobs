@@ -16,14 +16,32 @@ export default function CreateCompany() {
     name: '',
     field: '',
     numberOfWorker: '',
-    address: ''
+    address: '',
+    companyImg: ''
+
   });
   //post method to add company to database
   const createCompany = () => {
+    if (!company.name ) {
+      alert("please add company name!")      
+    }
+    else  if ( !company.field) {
+      alert("please add the company field!")      
+    }
+    else  if ( !company.numberOfWorker) {
+      alert("please add the company number Of Workers!")      
+    }
+    else  if ( !company.address) {
+      alert("please add the company address!")      
+    }
+    else  if ( !company.companyImg) {
+      alert("please add the company company Image!")      
+    }
+    else{
     axios.post('https://myjobss.herokuapp.com/companies', company).then(() => {
       alert('Company has beed added!');
       window.location.replace('/company')
-    })
+    })}
   }
 
   //change the pic to text base64

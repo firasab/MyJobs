@@ -36,13 +36,36 @@ export default function CreateWorker() {
 
   //post method to add worker to database
   const createWorker = () => {
-    console.log(worker)
+    if (!worker.name ) {
+      alert("please add worker name!")      
+    }
+    else  if ( !worker.id) {
+      alert("please add the worker id!")      
+    }
+    else  if ( !worker.location) {
+      alert("please add the worker location!")      
+    }
+    else  if ( !worker.phoneNumber) {
+      alert("please add the worker phone Number!")      
+    }
+    else  if ( !worker.companyName) {
+      alert("please add the worker company Name!")      
+    }
+    else  if ( !worker.dateStartWorking) {
+      alert("please add the worker date Start Working!")      
+    }
+    else  if ( !worker.dateFinishWorking) {
+      alert("please add the worker date Finish Working!")      
+    }
+    else  if ( !worker.workerImg) {
+      alert("please add the worker worker Image!")      
+    }
+    else{
     worker.password = worker.id;
-  
     axios.post('https://myjobss.herokuapp.com/workers', worker).then(() => {
       alert('Worker has beed added!');
       window.location.replace('/worker')
-    })
+    })}
   }
   //convert base64
   const handleChange = async (e) => {

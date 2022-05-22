@@ -23,10 +23,29 @@ export default function CreateJob() {
   });
     //post method to add job to database
   const createJob = () => {
+    if (!job.name ) {
+      alert("please add job name!")      
+    }
+    else  if ( !job.discription) {
+      alert("please add the Job discription!")      
+    }
+    else  if ( !job.position) {
+      alert("please add the Job position!")      
+    }
+    else  if ( !job.payPerHour) {
+      alert("please add the Job pay Per Hour!")      
+    }
+    else  if ( !job.address) {
+      alert("please add the Job address!")      
+    }
+    else  if ( !job.jobImg) {
+      alert("please add the Job job picture!")      
+    }
+    else {
     axios.post('https://myjobss.herokuapp.com/jobs', job).then(() => {
       alert('Job has beed added!');
       window.location.replace('/job')
-    })
+    })}
   }
 
   //change the pic to text base64

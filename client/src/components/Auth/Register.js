@@ -41,19 +41,19 @@ class Register extends Component {
     .post("https://myjobss.herokuapp.com/api/users/register", data)
     .then(result => {
        //if the register is success move me to login page
-      alert('your regustion is success!')
+      alert('new admin has been created!')
       window.location.replace('/home')
     })
     .catch(err => {
       if (err.response && err.response.status === 400){
-        //if the register is failed return return there is error and return us to the register page
-        alert('Something Went Wrong');
+        //if the register is failed  return there is error and return us to the register page
+        alert(err.response.data.msg);
         window.location.reload(false);
       }
       else
       {
-         //if the register is failed return return there is error and return us to the register page
-        alert('Something Went Wrong');
+         //if the register is failed  return there is error and return us to the register page
+         alert(err.response.data.msg);
         window.location.reload(false);
       }
       this.setState({ errors: err.response })

@@ -34,6 +34,9 @@ export default function CreateWorker() {
    
   });
 
+
+ 
+
   //post method to add worker to database
   const createWorker = () => {
     if (!worker.name ) {
@@ -65,8 +68,13 @@ export default function CreateWorker() {
     axios.post('https://myjobss.herokuapp.com/workers', worker).then(() => {
       alert('Worker has beed added!');
       window.location.replace('/worker')
-    })}
+    })
+  
+  
   }
+  }
+
+
   //convert base64
   const handleChange = async (e) => {
     const file = e.target.files[0];

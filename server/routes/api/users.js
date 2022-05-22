@@ -27,7 +27,7 @@ router.post('/register', (req, res) => {
     }).then(user => {
         if (user) {
             return res.status(400).json({
-                msg: "Email is already registred. Did you forgot your password."
+                msg: "Email is already registred."
             });
         }
     });

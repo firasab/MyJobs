@@ -2,6 +2,7 @@ import { Container, AppBar, Typography, Grid, Grow } from '@material-ui/core'
 import Admin from './showAdmin/showAdmin';
 import React from 'react'
 import makeStyles from '../styles'
+import { Link} from 'react-router-dom'
 
 //design of Admins list
 const user = () => {
@@ -11,6 +12,9 @@ const user = () => {
             <Container maxWidth="lg" >
                 <AppBar className={classes.appBar}  position="static" color="inherit">
                     <Typography className={classes.heading} variant="h2" align="center"> Admin's list </Typography>
+                </AppBar>
+                <AppBar className={classes.appBar} position="static" color="inherit" >
+                    <Link  to={{pathname: `/register`}}  >Create New Admin</Link>
                 </AppBar>
                 
 

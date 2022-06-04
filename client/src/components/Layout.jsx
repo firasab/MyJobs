@@ -47,6 +47,9 @@ function Layout(props) {
                 <li className={"nav-item " + (pathname === '/register' ? 'active' : '')}>
                   <NavLink isActive={checkActive} to="/register" className="nav-link">Add new admin</NavLink>
                 </li>
+                <li className={"nav-item " + (pathname === '/register' ? 'active' : '')}>
+                  <NavLink isActive={checkActive} to="/user" className="nav-link">Admins</NavLink>
+                </li>
                 { }
               </ul>
               <ul className="navbar-nav ml-auto">

@@ -29,6 +29,7 @@ import ContactForm from "./components/sendForm/ContactForm";
 import ContactFormation from "./components/sendForm/ContactFormation";
 import ContactFormRef from "./components/sendForm2/ContactForm";
 import ContactFormationRef from "./components/sendForm2/ContactFormation";
+import user from "./components/user";
 
 
 function App() {
@@ -61,6 +62,7 @@ function App() {
           <AuthRoute path="/ContactFormation" component={ContactFormation} />
           <AuthRoute path="/ContactFormRef" component={ContactFormRef} />
           <AuthRoute path="/ContactFormationRef" component={ContactFormationRef} />
+          <AuthRoute path="/user" component={user} />
         </div>
         <Route path="/" exact component={Home} />
       </Layout>

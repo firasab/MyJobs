@@ -29,7 +29,7 @@ const DrawerNavigator = ({route}) => {
           <Drawer.Screen name={WORKER_SCHEDULE} component={WorkerSchedule} />
           <Drawer.Screen name={WORKER_IN_OUT} component={WorkerStartOrOutOfWork} />
           <Drawer.Screen name={WORKER_HOUR_REPORT} component={WorkerHoursReport} />
-          <Drawer.Screen name={CHANGE_PHONE_NUMBER} component={ChangePhoneNumber} />
+          {/* <Drawer.Screen name={CHANGE_PHONE_NUMBER} component={ChangePhoneNumber} /> */}
         </Drawer.Navigator>
         </NetworkContext.Provider>
      

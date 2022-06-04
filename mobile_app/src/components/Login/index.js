@@ -44,11 +44,12 @@ const LoginComponent = ({
             label="Username"
             placeholder=" Enter your Username "
             value={form.phoneNumber || null}
+            keyboardType="numeric"
             onChangeText={(value) => {
             onChange({name: 'phoneNumber', value});}}
             icon="person"
               
-            keyboardType="email-address"
+           
             
           />
 
@@ -57,6 +58,7 @@ const LoginComponent = ({
             placeholder="Enter Password"
             icon="lock"
             iconPosition="right"
+            keyboardType="numeric"
             onChangeText={(value) => {
               onChange({name: 'password', value});
             }}

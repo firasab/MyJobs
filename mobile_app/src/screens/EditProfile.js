@@ -135,17 +135,7 @@ const EditProfile = ({ route }) => {
   };
 
     
-  // const onFreshPress = () => { 
 
-  //   navigation.navigate('Login' , { worker : res.data });
-  //    axios.get(`https://myjobss.herokuapp.com/workers/refresh/${worker.worker.worker._id}` ,user)
-  //   .then((res) => {
-  //    navigation.navigate('Login' , { worker : res.data });  
-  //    alert("refresh sucss");
-  //   }) .catch((err) =>   alert("something went wrong"));
-  
-  // };
-  
 
   
   return (
@@ -169,17 +159,19 @@ const EditProfile = ({ route }) => {
       <TextInput style={{backgroundColor: "white", top : 20, width: "50%", height: 30, borderRadius: 5, paddingHorizontal: 1, marginVertical: 10 , alignItems: 'center', left: 100}} 
       placeholder={"Enter Your Company Name"}  value={user.companyName} onChangeText={(text) => { setUser({ ...user, companyName:text }) }}  name="companyName" />
 
+      <Text style={{left: 100, top : 20}}>Phone Number</Text>
+      <TextInput style={{backgroundColor: "white", top : 20, width: "50%", height: 30, borderRadius: 5, paddingHorizontal: 1, marginVertical: 10 , alignItems: 'center', left: 100}} 
+      placeholder={"Enter Your Phone Number"}  value={user.phoneNumber} onChangeText={(text) => { setUser({ ...user, phoneNumber:text }) }}  name="phoneNumber" />
+
       
       <Text style={{left: 100, top : 20}}>App Password</Text>
       <TextInput style={{backgroundColor: "white", top : 20, width: "50%", height: 30, borderRadius: 5, paddingHorizontal: 1, marginVertical: 10 , alignItems: 'center', left: 100}} 
       placeholder={"Enter Your Password"} value={user.password} onChangeText={(text) => { setUser({ ...user, password:text }) }} name="phoneNumber" /> 
       
     </SafeAreaView>
-    <Container style={{flexDirection: "row" , marginLeft: 30,  justifyContent: 'center', height: 120 ,paddingHorizontal: 4, marginVertical: 120,  borderRadius: 500,  alignItems: 'center', justifyContent: 'space-evenly'}}>
+    <Container style={{flexDirection: "row" , marginLeft: 30,  justifyContent: 'center' ,paddingHorizontal: 4, marginVertical: -20,  borderRadius: 500,  alignItems: 'center', justifyContent: 'space-evenly'}}>
       <SubmitButton  style={{width: 180 , left: -10 }} primary  title="Change Profile picture" onPress={uploadPic} ></SubmitButton>
       <SubmitButton  style={{width: 180 , left: -8}} primary title="Update" onPress={onEditPress} type="FORTH" ></SubmitButton>
-      {/* <SubmitButton  style={{width: 120 , left: -8}} primary title="Refresh" onPress={onFreshPress} type="FORTH" ></SubmitButton>
-      */}
       </Container>
       
     </>

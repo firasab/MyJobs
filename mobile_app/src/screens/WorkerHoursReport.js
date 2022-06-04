@@ -8,9 +8,10 @@
   import { DataTable } from 'react-native-paper';
   import { Col, Row, Grid } from "react-native-easy-grid";
  
-  
+  //worker hours report 
   const WorkerHoursReport = ({ route  }) => {
     const worker = React.useContext(NetworkContext);
+    //to sort the date
     const d = new Date();
     let h = d.getHours() +3;
     let m = d.getMinutes();
@@ -25,7 +26,7 @@
     let user = {mo:""}
     user.mo = "-"+y
 
-
+    //to patch the report for each month
     useEffect(async ()  => {
 
         await axios.patch(`https://myjobss.herokuapp.com/workers/gethours/${worker.worker.worker._id}`,user)
@@ -39,7 +40,7 @@
       
   
     
-  
+    //the design of worker hours report 
     return (<>
       <SafeAreaView >
       <Text style={{ textAlign: "center", fontSize: 20,  fontWeight: "bold", padding: 20,}}>Current month hours report</Text>

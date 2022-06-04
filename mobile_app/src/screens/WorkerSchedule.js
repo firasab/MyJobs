@@ -7,7 +7,7 @@ import { Col, Row, Grid } from "react-native-easy-grid";
 const WorkerSchedule = ({ route }) => {
     const worker = React.useContext(NetworkContext);
 
-
+// get worker schedule report for this week
   return (
       <>
         <Text style={styles.title}> {worker.worker.worker.name}'s Work Schedule</Text>

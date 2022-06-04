@@ -5,7 +5,7 @@ import { SafeAreaView, Text, View, } from "react-native";
   import { NetworkContext } from '../context/NetworkContext';
   import SubmitButton from '../components/common/SubmitButton';
  
-  
+  //worker sign in and sign out page
   const WorkerStartOrOutOfWork = ({ route  }) => {
     const worker = React.useContext(NetworkContext);
     const inituser = {hourS:"",date:"",hourE:""};
@@ -31,7 +31,7 @@ import { SafeAreaView, Text, View, } from "react-native";
      
      }
 
-
+     //post method of sign in sign out worker hours
      const finishTime =  () => { 
       user.hourE = time;
       user.date = date;
@@ -48,7 +48,7 @@ import { SafeAreaView, Text, View, } from "react-native";
            .catch((err) => alert("check your server"));
      }
     
-  
+    //design of worker sign in and sign out page
     return (<>
       <SafeAreaView >
         <View >

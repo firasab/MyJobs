@@ -8,6 +8,7 @@ import Container from '../components/common/Container';
 import SubmitButton from '../components/common/CustomButton';
 
 const ChangePhoneNumber = ({ route }) => {
+  //the worker information
     const worker = React.useContext(NetworkContext);
     const [user, setUser] = useState({
       name:worker.worker.worker.name,
@@ -36,6 +37,7 @@ const ChangePhoneNumber = ({ route }) => {
       
    });
 
+   //post method to update worker
    const onEditPress = () => { 
     axios.post(`https://myjobss.herokuapp.com/workers/update/${worker.worker.worker._id}`,user)
        .then(() => {  
@@ -50,7 +52,7 @@ const ChangePhoneNumber = ({ route }) => {
  
      
    
-
+//the design of the change number page
     return (
         <>
         <Container >
@@ -72,9 +74,6 @@ const ChangePhoneNumber = ({ route }) => {
         );
         
 };
-
-
-
 
 
 const styles = StyleSheet.create({

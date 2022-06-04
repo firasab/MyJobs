@@ -11,7 +11,7 @@ import DrawerNavigator from './DrawerNavigator';
 
 const AuthNavigator = () => {
     const AuthStack = createStackNavigator();
-
+    //if the worker not loged in we have login page if he is loged in we have DrawerNav
     return (   
       <AuthStack.Navigator screenOptions={{headerShown: false}}>
           <AuthStack.Screen name={LOGIN} component={Login} />

@@ -14,6 +14,7 @@ const EditProfile = ({ route }) => {
     const worker = React.useContext(NetworkContext);
     const navigation = useNavigation();
     
+    //the worker information
     const [user, setUser] = useState({
      name:worker.worker.worker.name,
      id: worker.worker.worker.id,
@@ -42,7 +43,7 @@ const EditProfile = ({ route }) => {
   });
 
     
-  
+  //post method to change worker details
   const onEditPress = () => { 
    axios.post(`https://myjobss.herokuapp.com/workers/update/${worker.worker.worker._id}`,user)
       .then(() => {  
@@ -137,7 +138,7 @@ const EditProfile = ({ route }) => {
     
 
 
-  
+  //the design of the  edit worker information page
   return (
   <>
     <Text style={{left: 70 , fontSize: 20 , top : 20}}>Change your information please!</Text>

@@ -11,7 +11,7 @@ import {
   import CustomButton from '../components/common/CustomButton';
 
 
-
+//home page after login with the worker information 
 const WorkerDetail = ({route}) => {
     const worker = React.useContext(NetworkContext);
     const navigation = useNavigation();

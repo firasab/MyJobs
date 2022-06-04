@@ -23,12 +23,13 @@ const Login = () => {
     authState: {error, loading},
    } = useContext(GlobalContext);
 
+   //check if fields are empty
   const onSubmit = async () => {
     if (!form.phoneNumber || !form.password) {
       alert("please fill the required fields!")      
     }
 
-
+//to check if the worker in the database
     if (form.phoneNumber && form.password) {
       loginUser(form)(authDispatch);
       worker.phoneNumber = form.phoneNumber;
@@ -48,6 +49,7 @@ const Login = () => {
     setForm({...form, [name]: value});
   };
 
+  //design of login page
   return (
     <LoginComponent
       onSubmit={onSubmit}

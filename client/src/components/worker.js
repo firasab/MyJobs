@@ -9,22 +9,20 @@ const worker = () => {
     const classes = makeStyles();
     return (
         <div >
-            <Container maxWidth="lg">
-                <AppBar className={classes.appBar} position="static" color="inherit">
-                    <Typography className={classes.heading} variant="h2" align="center"> Worker Creation & Show </Typography>
+            <Container maxWidth="lg" >
+                <AppBar className={classes.appBar}  position="static" color="inherit">
+                    <Typography className={classes.heading} variant="h2" align="center"> Worker's list </Typography>
                 </AppBar>
+                <AppBar className={classes.appBar} position="static" color="inherit" >
+                    <Link  to={{pathname: `/workerCreation`}}  >Create New Wokrer</Link>
+                </AppBar>
+                
 
                 <Grow in>
                     <Container>
-                    
                         <Grid container justifyContent="space-between" alignItems="stretch">
-                            <Grid item style= {{ marginLeft: '400px'}} xs={12} sm={4}>
-                                <AppBar className={classes.appBar} position="static" color="inherit">
-                                <Link to={{pathname: `/workerCreation`}}  style={{ marginLeft: "5px" }} >Create New Wokrer</Link>
-                                </AppBar>
-                            </Grid>
                             <Grid  item xs={12} sm={12}>
-                            <AppBar className={classes.appBar} position="static" color="inherit">
+                            <AppBar className={classes.appBar} position="static" color="inherit" >
                              <Worker />
                                 </AppBar>
                             </Grid>

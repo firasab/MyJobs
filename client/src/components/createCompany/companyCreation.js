@@ -16,8 +16,8 @@ const companyCreation = () => {
 
                 <Grow in>
                     <Container>
-                        <Grid container justifyContent="space-between" alignItems="stretch">
-                            <Grid style= {{ marginLeft: '400px'}}  item xs={12} sm={4}>
+                        <Grid container spacing={0} direction="column" alignItems="center" justifyContent="center" style={{ minHeight: '50vh' }}>
+                            <Grid style= {{ marginLeft: 'center'}}  item xs={12} sm={4}>
                             <AppBar className={classes.appBar} position="static" color="inherit">
                                     <Create />
                                 </AppBar>

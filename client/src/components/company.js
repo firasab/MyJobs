@@ -11,17 +11,15 @@ const company = () => {
         <div >
             <Container maxWidth="lg">
                 <AppBar className={classes.appBar} position="static" color="inherit">
-                    <Typography className={classes.heading} variant="h2" align="center"> Company Create & Show </Typography>
+                    <Typography className={classes.heading} variant="h2" align="center"> Companie's list </Typography>
+                </AppBar>
+                <AppBar className={classes.appBar} position="static" color="inherit">
+                    <Link to={{pathname: `/companyCreation`}}  style={{ marginLeft: "5px" }} >Create New Copmany</Link>
                 </AppBar>
 
                 <Grow in>
                     <Container>
                         <Grid container justifyContent="space-between" alignItems="stretch">
-                            <Grid item  style= {{ marginLeft: '400px'}} xs={12} sm={4}>
-                                <AppBar className={classes.appBar} position="static" color="inherit">
-                                <Link to={{pathname: `/companyCreation`}}  style={{ marginLeft: "5px" }} >Create New Copmany</Link>
-                                </AppBar>
-                            </Grid>
                             <Grid  item xs={12} sm={12}>
                             <AppBar className={classes.appBar} position="static" color="inherit">
                            

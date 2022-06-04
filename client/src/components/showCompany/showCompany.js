@@ -69,8 +69,8 @@ export default function ShowCompany() {
   //the design of the table of the companies list 
   return (
     <>
-    <h2> Companies's list </h2>
-    <div style={{marginLeft: '-1000px' , marginTop: '-20px'  }}>
+    <h2 style={{ marginTop: '70px'}}>  </h2>
+    <div style={{marginRight: 'auto' , marginTop: '-20px'  }}>
     <ReactHTMLTableToExcel   
         id="test-table-xls-button"
         className="download-table-xls-button"
@@ -83,7 +83,7 @@ export default function ShowCompany() {
       </div>
     
     <SearchBar
-    style={{marginLeft: '900px' , borderRadius:'300px' , marginTop: '-40px' , backgroundColor:"#DADADA"}}
+    style={{marginLeft: 'auto' , borderRadius:'300px' , marginTop: '-40px' , backgroundColor:"#DADADA" , width: '130px'}}
           value={searched}
           onChange={(searchVal) => requestSearch(searchVal)}
           onCancelSearch={() => cancelSearch()}

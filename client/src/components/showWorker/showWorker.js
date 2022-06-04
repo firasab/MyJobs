@@ -70,9 +70,9 @@ export default function ShowWorker() {
   //the design of workers list
   return (
     <>
-    <h2 style={{ marginTop: '20px'}}> Worker's list </h2>
+    <h2 style={{ marginTop: '70px'}}> </h2>
 
-    <div style={{marginLeft: '-1000px' , marginTop: '-20px'  }}>
+    <div style={{marginRight: 'auto' , marginTop: '-20px'  }}>
     <ReactHTMLTableToExcel   
         id="test-table-xls-button"
         className="download-table-xls-button"
@@ -86,7 +86,7 @@ export default function ShowWorker() {
      
    
     <SearchBar
-    style={{marginLeft: '900px' , borderRadius:'300px' , marginTop: '-60px' , backgroundColor:"#DADADA" }}
+    style={{marginLeft: 'auto' , borderRadius:'300px' , marginTop: '-60px' , backgroundColor:"#DADADA", width: '130px'  }}
           value={searched}
           onChange={(searchVal) => requestSearch(searchVal)}
           onCancelSearch={() => cancelSearch()}

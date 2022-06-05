@@ -9,15 +9,16 @@ class Register extends Component {
       email: "",
       password: "",
       password_confirmation: "",
+      id:"",
       errors: {}
     };
   }
   handleForm = e => {
     //check if password, confirme password and email are not empty
     e.preventDefault();
-    if(this.state.password==='' || this.state.password_confirmation==='' || this.state.email==='' || this.state.name==='')
+    if(this.state.password==='' || this.state.password_confirmation==='' || this.state.email==='' || this.state.name==='' || this.state.id==='')
     {
-      alert('Please Enter Name,Email Password And Confirm Password');
+      alert('Please Enter Name,Email,id, Password And Confirm Password');
       window.location.reload(false);
     }
         //check if password and the confimation password are the same 
@@ -34,7 +35,8 @@ class Register extends Component {
       name: this.state.name,
       email: this.state.email,
       password: this.state.password,
-      password_confirmation: this.state.password_confirmation
+      password_confirmation: this.state.password_confirmation,
+      id: this.state.id,
     };
     //post method to send the admin infromation to database
     axios
@@ -84,6 +86,10 @@ class Register extends Component {
                                     <div className="form-group">
                                         <label >Email address</label>
                                         <input type="email" required name="email" onChange={this.handleInput} className="form-control" placeholder="Enter email" />
+                                    </div>
+                                    <div className="form-group">
+                                        <label >ID</label>
+                                        <input type="text" required name="id" onChange={this.handleInput} className="form-control" placeholder="Enter ID" />
                                     </div>
                                     <div className="form-group">
                                         <label >Password</label>

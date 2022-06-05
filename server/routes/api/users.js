@@ -102,7 +102,18 @@ router.get('/', async (req,res) => {
     }
 })
 
+//delete Admin from database
+router.delete('/:id', async (req,res) => {
+    const id = req.params.id;
 
+    try {
+       await User.findByIdAndRemove(id).exec();
+       res.send(' Admin has been deleted successfully! ')
+       
+    } catch (error) {
+        console.log(error);
+    }
+})
 
 
 

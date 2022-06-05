@@ -21,7 +21,7 @@ export default function ShowAdmin() {
 //delete method to delete worker from database
   const deleteWorker = (id) => {
     axios.delete(`https://myjobss.herokuapp.com/api/users/${id}`).then (() => {
-      alert('Worker has beed deleted!');
+      alert('Admin has beed deleted!');
       window.location.reload(false);
     })
   }

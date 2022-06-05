@@ -37,6 +37,10 @@ const UserSchema = new Schema({
     deletedDate: {
         type: Date,
         default: null
+    },
+    id:{
+        type:String,
     }
+  
 });
 module.exports = User = mongoose.model('users', UserSchema);

@@ -1,6 +1,7 @@
 # MyJobs
 
 To run the web App u have to:
+<p></p>
 1)download the files from the github
 2)open visual studio code and then open the terminal
 3)cd server

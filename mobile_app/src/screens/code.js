@@ -17,6 +17,7 @@ const code = ({route}) => {
                console.log(resp.data.valid);
                if(resp.data.valid=true){
               change();
+
                }
         else{
             alert("Verifcation code is not correct");
@@ -28,7 +29,8 @@ const code = ({route}) => {
     const change = async ()=>{
        await axios.post(`https://myjobss.herokuapp.com/workers/update/${worker.worker.worker._id}`,user.worker)
         .catch((err) => alert("check your server"));
-        alert("Your Phone has been changed");
+        alert("Your Phone Number has been changed");
+        
     }
    
    //the design of the  edit worker information page

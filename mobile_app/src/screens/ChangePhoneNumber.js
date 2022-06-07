@@ -6,9 +6,7 @@ import { NetworkContext } from '../context/NetworkContext';
 import { useNavigation } from '@react-navigation/native';
 import SubmitButton from '../components/common/CustomButton';
 import { TextInput ,Alert  } from "react-native";
-import * as ImagePicker from "expo-image-picker";
 import Container from '../components/common/Container';
-//import auth from '@react-native-firebase/auth';
 
 const ChangePhoneNumber = ({ route }) => {
     const worker = React.useContext(NetworkContext);
@@ -46,6 +44,7 @@ const ChangePhoneNumber = ({ route }) => {
     
   //post method to change worker details
   const onEditPress = async() => { 
+    
    
    await axios.get(`https://myjobss.herokuapp.com/ChangeN?phoneNumber=${user.phoneNumber}`)
       .then(() => {  

@@ -1,7 +1,6 @@
 const express = require('express');
 const mongoose= require('mongoose');
 const bodyParser=require('body-parser');
-
 const cors = require('cors');
 const path = require('path');
 const passport=require('passport');
@@ -10,12 +9,11 @@ const jobRoutes = require('./routes/job.js');
 const companyRoutes = require('./routes/company.js');
 const jobFormRoutes = require('./routes/jobForm.js');
 require("dotenv").config();
-
 const app = express();
-
 const config = require("./models/config");
 const  client = require("twilio")(config.accountSID,config.authToken);
 
+//verify the code
 app.get("/verifyN",(req,res)=>{
  client
     .verify
@@ -31,7 +29,7 @@ app.get("/verifyN",(req,res)=>{
  })
 
 
-
+//send code to phone number
 app.get("/changeN",(req,res)=>{
     client
         .verify

@@ -21,7 +21,6 @@ const code = ({route}) => {
         else{
             alert("Verifcation code is not correct");
         }
-        
            })
            .catch((err) => alert("Verifcation code is not correct"));
     };

@@ -116,7 +116,7 @@ export default function CreateJob() {
         <input type="file" id="input"   onChange= {handleChange} multiple/>
         {/* <input type="file" accept="image/*"  /> */}
       </Box>
-      <Button variant="contained" color="success"  style= {{ marginLeft: '90px'}} onClick={createJob}> Create </Button>
+      <Button variant="contained" color="success"  style= {{ marginLeft: '120px'}} onClick={createJob}> Create </Button>
     </Box>
     </>
   );

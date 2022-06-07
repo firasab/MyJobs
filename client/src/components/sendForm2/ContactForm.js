@@ -50,7 +50,7 @@ export default function ContactForm() {
     <div className="lg:mt-48 lg:mr-48 pt-6 pb-8 bg-white shadow-xl rounded p-5">
       {status && renderAlert()}
       <form onSubmit={handleSubmit}>
-        <h3 className="text-gray-700 mb-7 text-xl font-semibold">Send message</h3>
+        <h3 className="text-gray-700 mb-7 text-xl font-semibold">Send rejection Email</h3>
         <TextField value={emailForm.name} handleChange={handleChange} style={{marginTop:"20px" , width: "300px"}} label="Full Name" name="fullName" type="text" placeholder="John Doe" />
         <TextField value={emailForm.email} handleChange={handleChange} style={{marginTop:"20px" , width: "300px"}} label="E-Mail" name="email" type="email" placeholder="jphn@example.com" />
         <button type="submit"

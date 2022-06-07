@@ -108,7 +108,7 @@ export default function CreateCompany() {
         <input type="file" accept="image/*"   onChange= {handleChange} />
         
       </Box>
-      <Button variant="contained" color="success"  style= {{ marginLeft: '90px'}} onClick={createCompany}> Create </Button>
+      <Button variant="contained" color="success"  style= {{ marginLeft: '120px'}} onClick={createCompany}> Create </Button>
     </Box>
     </>
   );

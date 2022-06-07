@@ -42,7 +42,7 @@ export default function ShowWorker() {
             <TableCell align="right">Thursday</TableCell>
             <TableCell align="right">Friday</TableCell>
             <TableCell align="right">Saturday</TableCell>
-            <TableCell align="right">Action</TableCell>
+            <TableCell align="right">Create</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

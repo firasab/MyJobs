@@ -7,6 +7,8 @@
   import { View, StyleSheet } from 'react-native';
   import { DataTable } from 'react-native-paper';
   import { Col, Row, Grid } from "react-native-easy-grid";
+  import { useFocusEffect } from "@react-navigation/core";
+
  
   //worker hours report 
   const WorkerHoursReport = ({ route  }) => {
@@ -27,7 +29,8 @@
     user.mo = "-"+y
 
     //to patch the report for each month
-    useEffect(async ()  => {
+    useFocusEffect(
+      React.useCallback(async () => {
 
         await axios.patch(`https://myjobss.herokuapp.com/workers/gethours/${worker.worker.worker._id}`,user)
         .then((resp) => {  
@@ -36,7 +39,7 @@
         })
         .catch((err) => alert("check your server"));
 
-      },[arr]);
+      },[]));
       
   
     

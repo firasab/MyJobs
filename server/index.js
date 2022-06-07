@@ -1,9 +1,10 @@
 const express = require('express');
 const mongoose= require('mongoose');
 const bodyParser=require('body-parser');
+
 const cors = require('cors');
 const path = require('path');
-const passport=require('passport')
+const passport=require('passport');
 const workerRoutes = require('./routes/worker.js');
 const jobRoutes = require('./routes/job.js');
 const companyRoutes = require('./routes/company.js');
@@ -12,7 +13,38 @@ require("dotenv").config();
 
 const app = express();
 
+const config = require("./models/config");
+const  client = require("twilio")(config.accountSID,config.authToken);
 
+app.get("/verifyN",(req,res)=>{
+ client
+    .verify
+    .services(config.serviceID)
+    .verificationChecks
+    .create({
+        to:`+${req.query.phoneNumber}`,
+        code:`${req.query.code}`
+    })
+    .then((data)=>{
+        res.status(200).send(data)
+    })
+ })
+
+
+
+app.get("/changeN",(req,res)=>{
+    client
+        .verify
+        .services(config.serviceID)
+        .verifications
+        .create({
+            to:`+${req.query.phoneNumber}`,
+            channel:"sms"
+    })
+    .then((data)=>{
+        res.status(200).send(data)
+    })
+    })
 
 app.use(bodyParser.urlencoded({ limit: "20mb", extended:true }));
 app.use(bodyParser.json({ limit: "20mb", extended:true }));

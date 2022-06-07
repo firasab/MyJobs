@@ -8,7 +8,7 @@ import SubmitButton from '../components/common/CustomButton';
 import { TextInput ,Alert  } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 import Container from '../components/common/Container';
-
+//import auth from '@react-native-firebase/auth';
 
 const ChangePhoneNumber = ({ route }) => {
     const worker = React.useContext(NetworkContext);
@@ -19,7 +19,7 @@ const ChangePhoneNumber = ({ route }) => {
      name:worker.worker.worker.name,
      id: worker.worker.worker.id,
      location: worker.worker.worker.location,
-     phoneNumber:worker.worker.worker.phoneNumber,
+     phoneNumber:"",
      password:worker.worker.worker.password,
      email: worker.worker.worker.email,
      companyName: worker.worker.worker.companyName,
@@ -44,17 +44,14 @@ const ChangePhoneNumber = ({ route }) => {
 
     
   //post method to change worker details
-  const onEditPress = () => { 
-   axios.post(`https://myjobss.herokuapp.com/workers/update/${worker.worker.worker._id}`,user)
+  const onEditPress = async() => { 
+   
+   await axios.get(`https://myjobss.herokuapp.com/ChangeN?phoneNumber=${user.phoneNumber}`)
       .then(() => {  
-       // DevSettings.reload()
-       navigation.navigate('Login');
-        Alert.alert(
-          "Your Phone Number has been updated!",
-          "please, Login to see the changes!",
-        );
+    alert("Verifaction code has been sent");
+    navigation.navigate('code' , { worker : user });  
       })
-      .catch((err) => alert("check your server"));
+      .catch((err) => alert("Enter your phone number in this format :+9725********"));
   };
 
 
@@ -66,10 +63,16 @@ const ChangePhoneNumber = ({ route }) => {
   <>
     <Text style={{left: 50 , fontSize: 20 , top : 20}}>Phone Number Change application!</Text>
     <SafeAreaView >
+
+      <Text style={{left: 100, top : 20}}>Your current Phone Number:</Text>
+      <TextInput style={{backgroundColor: "white",color:'black', top : 20, width: "50%", height: 30, borderRadius: 5, paddingHorizontal: 1, marginVertical: 10 , alignItems: 'center', left: 100}} 
+      placeholder={"Enter Your Phone Number"} editable = {false}   value={worker.worker.worker.phoneNumber} name="phoneNumber" />
+
       
-      <Text style={{left: 100, top : 20}}>Your current Phone Number is:</Text>
+
+      <Text style={{left: 100, top : 20}}>Enter your new phone Number:</Text>
       <TextInput style={{backgroundColor: "white", top : 20, width: "50%", height: 30, borderRadius: 5, paddingHorizontal: 1, marginVertical: 10 , alignItems: 'center', left: 100}} 
-      placeholder={"Enter Your Phone Number"}  value={user.phoneNumber} onChangeText={(text) => { setUser({ ...user, phoneNumber:text }) }}  name="phoneNumber" />
+      placeholder={"+9725********"}  value={user.phoneNumber} onChangeText={(text) => { setUser({ ...user, phoneNumber:text }) }}  name="phoneNumber" />
 
     </SafeAreaView>
 

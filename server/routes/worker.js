@@ -21,7 +21,7 @@ router.get('/', async (req,res) => {
 router.post('/', async (req,res) => {
     const workerDe = req.body;
     const newWorker = new workerData(workerDe);
-
+    
     try {
        await newWorker.save();
        res.status(201).json(newWorker);

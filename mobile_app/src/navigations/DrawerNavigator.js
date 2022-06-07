@@ -11,7 +11,8 @@ import WorkerSchedule from '../screens/WorkerSchedule';
 import WorkerStartOrOutOfWork from '../screens/WorkerStartOrOutOfWork';
 import ChangePhoneNumber from '../screens/ChangePhoneNumber';
 import { NetworkContext } from "../context/NetworkContext";
-
+import {CODE}from '../constants/routeNames';
+import code from '../screens/code';
 
 
 import {  WORKER_DETAIL } from '../constants/routeNames';
@@ -32,6 +33,7 @@ const DrawerNavigator = ({route}) => {
           <Drawer.Screen name={WORKER_IN_OUT} component={WorkerStartOrOutOfWork} />
           <Drawer.Screen name={WORKER_HOUR_REPORT} component={WorkerHoursReport} />
           <Drawer.Screen name={CHANGE_PHONE_NUMBER} component={ChangePhoneNumber} />
+          <Drawer.Screen name={CODE} component={code} />
          
         </Drawer.Navigator>
         </NetworkContext.Provider>

@@ -1,11 +1,10 @@
-  import { SafeAreaView, Text, FlatList , Table } from "react-native";
+  import { SafeAreaView, Text, FlatList} from "react-native";
   import axios from "axios";
   import React from "react";
   import { useEffect } from "react";
   import { useState } from "react";
   import { NetworkContext } from '../context/NetworkContext';
-  import { View, StyleSheet } from 'react-native';
-  import { DataTable } from 'react-native-paper';
+  import {  StyleSheet } from 'react-native';
   import { Col, Row, Grid } from "react-native-easy-grid";
   import { useFocusEffect } from "@react-navigation/core";
 
@@ -30,9 +29,9 @@
 
     //to patch the report for each month
     useFocusEffect(
-      React.useCallback(async () => {
+      React.useCallback( () => {
 
-        await axios.patch(`https://myjobss.herokuapp.com/workers/gethours/${worker.worker.worker._id}`,user)
+         axios.patch(`https://myjobss.herokuapp.com/workers/gethours/${worker.worker.worker._id}`,user)
         .then((resp) => {  
          setArr (resp.data);
          

@@ -5,12 +5,17 @@ import axios from "axios";
 import { NetworkContext } from '../context/NetworkContext';
 import { useNavigation } from '@react-navigation/native';
 import SubmitButton from '../components/common/CustomButton';
-import { TextInput ,Alert  } from "react-native";
+import { TextInput  } from "react-native";
 import Container from '../components/common/Container';
+import {useContext} from 'react';
+import loginUser from '../context/actions/auth/loginUser';
+import {GlobalContext} from '../context/Provider';
+import loginFail from '../context/actions/auth/loginFail';
 
 const ChangePhoneNumber = ({ route }) => {
     const worker = React.useContext(NetworkContext);
     const navigation = useNavigation();
+    const [form, setForm] = useState({});
     
     //the worker information
     const [user, setUser] = useState({
@@ -40,10 +45,16 @@ const ChangePhoneNumber = ({ route }) => {
      
   });
 
+  const {
+    authDispatch,
+   authState: {error, loading},
+  } = useContext(GlobalContext);
+
   
     
-  //post method to change worker details
+  //post method to send a one time code
   const onEditPress = async() => { 
+    loginUser(form)(authDispatch);
     
    
    await axios.get(`https://myjobss.herokuapp.com/ChangeN?phoneNumber=${user.phoneNumber}`)
@@ -51,10 +62,8 @@ const ChangePhoneNumber = ({ route }) => {
     alert("Verifaction code has been sent");
     navigation.navigate('code' , { worker : user });  
       })
-      .catch((err) => alert("Enter your phone number in this format :+9725********"));
+      .catch((err) => alert("Enter your phone number in this format :+9725********")), loginFail(form)(authDispatch)
   };
-
-
 
 
 
@@ -77,7 +86,7 @@ const ChangePhoneNumber = ({ route }) => {
     </SafeAreaView>
 
     <Container style={{flexDirection: "row" , marginLeft: 30,  justifyContent: 'center' ,paddingHorizontal: 4, marginVertical: -20,  borderRadius: 500,  alignItems: 'center', justifyContent: 'space-evenly'}}>
-      <SubmitButton  style={{width: 180 , left: -8}} primary title="Change" onPress={onEditPress} type="FORTH" ></SubmitButton>
+      <SubmitButton  form={form}  error={error}  loading={loading}  style={{width: 180 , left: -8}} primary title="Change" onPress={onEditPress} type="FORTH" ></SubmitButton>
       </Container>
       
     </>

@@ -1,17 +1,31 @@
-import { View, Text,SafeAreaView,TextInput } from 'react-native'
+import { Text,SafeAreaView,TextInput } from 'react-native'
 import React from 'react'
 import {useState} from 'react'
 import axios from 'axios'
 import SubmitButton from '../components/common/CustomButton'
 import Container from '../components/common/Container';
 import { NetworkContext } from '../context/NetworkContext';
+import {useContext} from 'react';
+import loginUser from '../context/actions/auth/loginUser';
+import {GlobalContext} from '../context/Provider';
+import loginFail from '../context/actions/auth/loginFail';
 
-const code = ({route}) => {
+const Code = ({route}) => {
     const worker = React.useContext(NetworkContext);
+    const [form, setForm] = useState({});
 
     const [vcode,setVcode] = useState("");
     const user = route.params;
+
+
+    const {
+      authDispatch,
+     authState: {error, loading},
+    } = useContext(GlobalContext);
+
+//a method to verify the one time code 
     const onEditPress = async () => { 
+      loginUser(form)(authDispatch);
         await axios.get(`https://myjobss.herokuapp.com/verifyN?phoneNumber=${user.worker.phoneNumber}&code=${vcode}`)
            .then((resp) => {  
                console.log(resp.data.valid);
@@ -23,7 +37,7 @@ const code = ({route}) => {
             alert("Verifcation code is not correct");
         }
            })
-           .catch((err) => alert("Verifcation code is not correct"));
+           .catch((err) => alert("Verifcation code is not correct")), loginFail(form)(authDispatch)
     };
 
     const change = async ()=>{
@@ -46,11 +60,11 @@ const code = ({route}) => {
       </SafeAreaView>
   
       <Container style={{flexDirection: "row" , marginLeft: 30,  justifyContent: 'center' ,paddingHorizontal: 4, marginVertical: -20,  borderRadius: 500,  alignItems: 'center', justifyContent: 'space-evenly'}}>
-        <SubmitButton  style={{width: 180 , left: -8}} primary title="Verify" onPress={onEditPress} type="FORTH" ></SubmitButton>
+        <SubmitButton  form={form}  error={error}  loading={loading} style={{width: 180 , left: -8}} primary title="Verify" onPress={onEditPress} type="FORTH" ></SubmitButton>
         </Container>
         
       </>
     );
 }
 
-export default code
+export default Code

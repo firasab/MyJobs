@@ -11,10 +11,14 @@ import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 import EmailIcon from '@mui/icons-material/Email';
 import ApartmentIcon from '@mui/icons-material/Apartment';
 import EventIcon from '@mui/icons-material/Event';
+import {Button  } from 'react-bootstrap';
+import { Link} from 'react-router-dom';
+
 
 export default function ProfileWorker() {
   const location = useLocation()
   const x = location.state;
+
   //worker feature
   const [worker, setWorker] = useState({
     name:x.name,
@@ -83,7 +87,8 @@ export default function ProfileWorker() {
         }}/>
       </AppBar>
       
-      <div className="pic"> <img  alt="profile Pic" style= {{  marginLeft:"-750px",marginTop:"-800px", height: '500px', width: '500px',display:"flex" }} src={worker.workerImg}></img></div>
+      <div className="pic"> <img  alt="profile Pic" style= {{  marginLeft:"-750px",marginTop:"-800px", height: '500px', width: '500px',display:"flex" }} src={worker.workerImg}></img>
+      <Button as={Link} to={{pathname: `/workerHour`,state: x._id}}  style={{ marginLeft: "-600px",width:"200px" , height:"40px", marginTop:"10px" }} >{worker.name} Hours</Button></div>
      
     </>
   );

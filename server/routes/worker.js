@@ -156,7 +156,7 @@ router.post('/auth/login', (req, res) => {
             .catch(err => res.status(400).json('Error: '+err));
     });
     
-    //get the shifts from database to application
+    //post the shifts from database to application
     router.route('/shift/:id').post((req,res) => {
         workerData.findById(req.params.id)
             .then(worker => {

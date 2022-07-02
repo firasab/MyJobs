@@ -25,11 +25,13 @@ import jobEdition from "./components/editJob/jobEdition";
 import jobProfile from "./components/showJob/jobProfile";
 import schedule from "./components/schedule";
 import scheduleEdition from "./components/schedule/scheduleEdition";
+import workerHours from "./components/showWorker/workerHours";
 import ContactForm from "./components/sendForm/ContactForm";
 import ContactFormation from "./components/sendForm/ContactFormation";
 import ContactFormRef from "./components/sendForm2/ContactForm";
 import ContactFormationRef from "./components/sendForm2/ContactFormation";
 import user from "./components/user";
+import workerHour from "./components/workerHour";
 
 
 function App() {
@@ -42,6 +44,7 @@ function App() {
           <AuthRoute path="/home" component={Home} />
           <GuestRoute path="/about" component={About} />
           <AuthRoute path="/worker" component={worker} />
+          <AuthRoute path="/workerHour" component={workerHour} />
           <AuthRoute path="/job" component={job} />
           <GuestRoute path="/view" component={view} />
           <AuthRoute path="/company" component={company} />
@@ -58,6 +61,8 @@ function App() {
           <AuthRoute path="/jobProfile" component={jobProfile} />
           <AuthRoute path="/schedule" component={schedule} />
           <AuthRoute path="/scheduleEdition" component={scheduleEdition} />
+          <AuthRoute path="/workerhours" component={workerHours} />
+
           <AuthRoute path="/ContactForm" component={ContactForm} />
           <AuthRoute path="/ContactFormation" component={ContactFormation} />
           <AuthRoute path="/ContactFormRef" component={ContactFormRef} />

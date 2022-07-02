@@ -44,7 +44,7 @@ const LoginComponent = ({
             label="Username"
             placeholder=" Enter your Username "
             value={form.phoneNumber || null}
-            keyboardType="numeric"
+           
             onChangeText={(value) => {
             onChange({name: 'phoneNumber', value});}}
             icon="person"

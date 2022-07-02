@@ -10,10 +10,10 @@ import loginUser from '../context/actions/auth/loginUser';
 import {GlobalContext} from '../context/Provider';
 import loginFail from '../context/actions/auth/loginFail';
 
+
 const Code = ({route}) => {
     const worker = React.useContext(NetworkContext);
     const [form, setForm] = useState({});
-
     const [vcode,setVcode] = useState("");
     const user = route.params;
 
@@ -42,8 +42,11 @@ const Code = ({route}) => {
 
     const change = async ()=>{
        await axios.post(`https://myjobss.herokuapp.com/workers/update/${worker.worker.worker._id}`,user.worker)
-        .catch((err) => alert("check your server"));
+       .then (() =>{
         alert("Your Phone Number has been changed");
+       })
+        .catch((err) => alert("check your server"));
+          
         
     }
    

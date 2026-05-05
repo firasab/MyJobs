@@ -14,21 +14,20 @@ import Select from 'react-select';
 
 export default function WorkerHours() {
   const location = useLocation()
-  const x = location.state;
-  console.log(x);
+  const workerId = location.state;
+  console.log(workerId);
   const [hours,setHours]=useState([]);
   const [year , setYear] = useState("2022");
   const [month , setMonth] = useState("6");
-  const user = {mo:""}
 
   //get method to get worker hours from database
   useEffect(() => {
-    user.mo = year +"-"+month;
-    axios.patch(`https://myjobss.herokuapp.com/workers/gethours/${x}`,user).then( (resp) => {
+    const payload = { mo: `${year}-${month}` };
+    axios.patch(`https://myjobss.herokuapp.com/workers/gethours/${workerId}`, payload).then( (resp) => {
       setHours(resp.data);
       console.log(resp.data);
     } )
-  }, [year,month])
+  }, [month, workerId, year])
 
   const yearPicker = [
     { label: '2022', value: '2022' },

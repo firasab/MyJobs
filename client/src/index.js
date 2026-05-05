@@ -6,13 +6,6 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import store from "./store/index";
 import { Provider } from "react-redux";
-import jwt from "jsonwebtoken";
-const jwt_secret = "xsrHWRQStAHvOd4Eqe7tXvtKWCgFtkOhSXmmHtLNGVEvnOWAaWGMVtIVWnB8DBjC";
-let token =localStorage.getItem('token');
-if (token) {
-  jwt.verify(token, jwt_secret, (err, decoded) => {
-  });
-}
 
 const render = () => {
   ReactDOM.render(
@@ -22,10 +15,5 @@ const render = () => {
     document.getElementById("root")
   );
 };
-if (token) {
-  render();
-
-} else {
-  render();
-}
+render();
 serviceWorker.unregister();

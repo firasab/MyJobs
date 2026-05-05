@@ -1,26 +1,17 @@
 {
   "files": {
-    "main.css": "./static/css/main.bf57e93a.chunk.css",
-    "main.js": "./static/js/main.9de3f0d2.chunk.js",
-    "main.js.map": "./static/js/main.9de3f0d2.chunk.js.map",
-    "runtime-main.js": "./static/js/runtime-main.8b0ae790.js",
-    "runtime-main.js.map": "./static/js/runtime-main.8b0ae790.js.map",
-    "static/css/2.20f1fe8a.chunk.css": "./static/css/2.20f1fe8a.chunk.css",
-    "static/js/2.6c28c9dc.chunk.js": "./static/js/2.6c28c9dc.chunk.js",
-    "static/js/2.6c28c9dc.chunk.js.map": "./static/js/2.6c28c9dc.chunk.js.map",
+    "main.css": "./static/css/main.94c84653.css",
+    "main.js": "./static/js/main.195f88b0.js",
+    "static/media/notification.svg?s3g3t9": "./static/media/notification.5d0158671dd860c714c4.svg",
+    "static/media/notification.eot": "./static/media/notification.3657084dc0419605a91c.eot",
+    "static/media/notification.woff?s3g3t9": "./static/media/notification.c392cd33d9d9de730f9d.woff",
+    "static/media/notification.ttf?s3g3t9": "./static/media/notification.c5d9251ea82e42f75381.ttf",
     "index.html": "./index.html",
-    "precache-manifest.fcfcfdec816d27022ea123c9e849ad9c.js": "./precache-manifest.fcfcfdec816d27022ea123c9e849ad9c.js",
-    "service-worker.js": "./service-worker.js",
-    "static/css/2.20f1fe8a.chunk.css.map": "./static/css/2.20f1fe8a.chunk.css.map",
-    "static/css/main.bf57e93a.chunk.css.map": "./static/css/main.bf57e93a.chunk.css.map",
-    "static/js/2.6c28c9dc.chunk.js.LICENSE.txt": "./static/js/2.6c28c9dc.chunk.js.LICENSE.txt",
-    "static/media/notifications.css": "./static/media/notification.c0d3c94c.eot"
+    "main.94c84653.css.map": "./static/css/main.94c84653.css.map",
+    "main.195f88b0.js.map": "./static/js/main.195f88b0.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.8b0ae790.js",
-    "static/css/2.20f1fe8a.chunk.css",
-    "static/js/2.6c28c9dc.chunk.js",
-    "static/css/main.bf57e93a.chunk.css",
-    "static/js/main.9de3f0d2.chunk.js"
+    "static/css/main.94c84653.css",
+    "static/js/main.195f88b0.js"
   ]
 }
